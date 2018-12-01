@@ -1,0 +1,2 @@
+Defaults:redmine !requiretty
+redmine ALL=(git) NOPASSWD:ALL
