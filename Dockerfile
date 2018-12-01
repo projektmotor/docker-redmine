@@ -19,9 +19,8 @@ RUN apt-get update && apt-get install -y \
 RUN chown -R redmine:redmine /usr/local/bundle
 
 # prepare redmine user for gitolite
-RUN mkdir /home/redmine && \
+RUN mkdir -p /home/redmine/.ssh && \
     usermod --shell /bin/bash redmine && \
-    mkdir -p /home/redmine/.ssh && \
     ssh-keygen -N '' -f /home/redmine/.ssh/id_rsa && \
     chown -R redmine:redmine /home/redmine
 
