@@ -1,11 +1,11 @@
 # ProjektMOTOR Redmine Docker
 
-Redmine Docker Image depending on offical Image, including redmine git hosting and some additional themes.
+Redmine Docker Image depending on offical Redmine Image, including redmine git hosting and some additional themes.
 
 ## How to use
 
 * clone this repository
-* add additional plugins into plugins directory
+* add additional plugins into ```plugins``` directory
 * build docker image (gems installation included):
     ```
     $ docker build -t [YOUR-IMAGE-NAME] .
