@@ -41,17 +41,14 @@ RUN sed -i -e "s/GIT_CONFIG_KEYS.*/GIT_CONFIG_KEYS  =>  '.*',/g" /etc/gitolite3/
 RUN sed -i -e "s/#Port 22/Port 2222/g" /etc/ssh/sshd_config && \
     sed -i -e "s/AcceptEnv LANG .*/#AcceptEnv LANG LC_\*/g" /etc/ssh/sshd_config
 
-COPY ./plugins /usr/src/redmine/plugins
-
-
 # clone redmine git hosting repository & fix dependency problem
 RUN cd /usr/src/redmine/plugins && \
-#    git clone https://github.com/jbox-web/redmine_bootstrap_kit.git -b 0.2.5 && \
-#    git clone https://github.com/jbox-web/redmine_git_hosting.git -b 1.2.3 && \
+    git clone https://github.com/jbox-web/redmine_bootstrap_kit.git -b 0.2.5 && \
+    git clone https://github.com/jbox-web/redmine_git_hosting.git -b 1.2.3 && \
     sed -i -e "s/gem 'redcarpet'.*/gem 'redcarpet', '~> 3.4.0'/g" ./redmine_git_hosting/Gemfile
 
 COPY ./sudoers.d/redmine /etc/sudoers.d/redmine
-#COPY ./plugins /usr/src/redmine/plugins
+COPY ./plugins /usr/src/redmine/plugins
 COPY ./gitolite-entrypoint.sh /gitolite-entrypoint.sh
 
 RUN chmod 440 /etc/sudoers.d/redmine
