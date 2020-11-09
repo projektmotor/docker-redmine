@@ -46,6 +46,7 @@ RUN cd /usr/src/redmine/plugins && \
     git clone https://github.com/jbox-web/redmine_bootstrap_kit.git -b 0.2.5 && \
     git clone https://github.com/jbox-web/redmine_git_hosting.git -b 1.2.3 && \
     sed -i -e "s/gem 'redcarpet'.*/gem 'redcarpet', '~> 3.4.0'/g" ./redmine_git_hosting/Gemfile && \
+    ls -la . && \
     cat ./redmine_git_hosting/Gemfile
 
 COPY ./sudoers.d/redmine /etc/sudoers.d/redmine
