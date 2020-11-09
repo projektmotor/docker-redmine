@@ -45,9 +45,7 @@ RUN sed -i -e "s/#Port 22/Port 2222/g" /etc/ssh/sshd_config && \
 RUN cd /usr/src/redmine/plugins && \
     git clone https://github.com/jbox-web/redmine_bootstrap_kit.git -b 0.2.5 && \
     git clone https://github.com/jbox-web/redmine_git_hosting.git -b 1.2.3 && \
-    sed -i -e "s/gem 'redcarpet'.*/gem 'redcarpet', '~> 3.4.0'/g" ./redmine_git_hosting/Gemfile && \
-    ls -la . && \
-    cat ./redmine_git_hosting/Gemfile
+    sed -i -e "s/gem 'redcarpet'.*/gem 'redcarpet', '~> 3.4.0'/g" ./redmine_git_hosting/Gemfile
 
 COPY ./sudoers.d/redmine /etc/sudoers.d/redmine
 COPY ./plugins /usr/src/redmine/plugins
