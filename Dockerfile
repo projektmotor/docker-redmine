@@ -21,7 +21,7 @@ RUN chown -R redmine:redmine /usr/local/bundle
 # prepare redmine user for gitolite
 RUN mkdir -p /home/redmine/.ssh && \
     usermod --shell /bin/bash redmine && \
-    ssh-keygen -N '' -f /home/redmine/.ssh/id_rsa && \
+    ssh-keygen -m PEM -N '' -f /home/redmine/.ssh/id_rsa && \
     chown -R redmine:redmine /home/redmine
 
 # install gitolite as apt-package
