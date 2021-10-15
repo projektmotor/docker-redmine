@@ -44,6 +44,7 @@ RUN sed -i -e "s/#Port 22/Port 2222/g" /etc/ssh/sshd_config && \
 # clone redmine git hosting repository & fix dependency problem
 RUN cd /usr/src/redmine/plugins && \
     git clone https://github.com/jbox-web/redmine_bootstrap_kit.git -b 0.2.5 && \
+    git clone https://github.com/AlphaNodes/additionals.git -b 3.0.3 && \
     git clone https://github.com/jbox-web/redmine_git_hosting.git -b 4.0.2 && \
     sed -i -e "s/gem 'redcarpet'.*/gem 'redcarpet', '~> 3.5.1'/g" ./redmine_git_hosting/Gemfile
 
@@ -53,16 +54,7 @@ COPY ./gitolite-entrypoint.sh /gitolite-entrypoint.sh
 
 RUN chmod 440 /etc/sudoers.d/redmine
 
-RUN ls -la /usr/src/redmine/ && \
-    #cp /usr/src/redmine/Gemfile.lock.mysql2 /usr/src/redmine/Gemfile.lock && \
-    gosu redmine sh -c "bundle install --without development test"
-
-# clone plugins
-#RUN cd /usr/src/redmine/plugins && \
-#    git clone https://github.com/haru/redmine_theme_changer.git redmine_theme_changer -b 0.3.1
-# && \
-#    cd redmine_theme_changer && \
-#    git checkout 0.3.1
+RUN gosu redmine sh -c "bundle install --without development test"
 
 # clone themes
 RUN cd /usr/src/redmine/public/themes && \
