@@ -53,7 +53,8 @@ COPY ./gitolite-entrypoint.sh /gitolite-entrypoint.sh
 
 RUN chmod 440 /etc/sudoers.d/redmine
 
-RUN cp /usr/src/redmine/Gemfile.lock.mysql2 /usr/src/redmine/Gemfile.lock && \
+RUN ls -la /usr/src/redmine/ && \
+    cp /usr/src/redmine/Gemfile.lock.mysql2 /usr/src/redmine/Gemfile.lock && \
     gosu redmine sh -c "bundle install --without development test"
 
 # clone plugins
