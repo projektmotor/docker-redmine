@@ -55,7 +55,7 @@ RUN chmod 440 /etc/sudoers.d/redmine
 
 RUN ls -la /usr/src/redmine/ && \
     #cp /usr/src/redmine/Gemfile.lock.mysql2 /usr/src/redmine/Gemfile.lock && \
-    gosu redmine sh -c "bundle install --without development test"
+    gosu redmine sh -c "bundle update --without development test"
 
 # clone plugins
 #RUN cd /usr/src/redmine/plugins && \
