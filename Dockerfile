@@ -46,7 +46,7 @@ RUN cd /usr/src/redmine/plugins && \
     git clone https://github.com/jbox-web/redmine_bootstrap_kit.git -b 0.2.5 && \
     git clone https://github.com/AlphaNodes/additionals.git -b 3.0.3 && \
     git clone https://github.com/jbox-web/redmine_git_hosting.git -b 4.0.2 && \
-    sed -i -e "s/gem 'redcarpet'.*/gem 'redcarpet', '~> 3.5.1'/g" ./redmine_git_hosting/Gemfile
+    sed -i -e "s/gem 'rubocop'.*/gem 'rubocop', '~> 0.76.0'/g" ./redmine_git_hosting/Gemfile
 
 COPY ./sudoers.d/redmine /etc/sudoers.d/redmine
 COPY ./plugins /usr/src/redmine/plugins
