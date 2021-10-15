@@ -61,7 +61,8 @@ RUN cd /usr/src/redmine/public/themes && \
     git clone https://github.com/tsi/redmine-theme-flat.git redmine-theme-flat && \
     git clone https://github.com/hardpixel/minelab.git minelab && \
     git clone https://github.com/makotokw/redmine-theme-gitmike.git redmine-theme-gitmike && \
-    git clone -b redmine4.2  https://github.com/farend/redmine_theme_farend_bleuclair.git bleuclair
+    git clone https://github.com/mrliptontea/PurpleMine2.git redmine-theme-purplemine2 && \
+    git clone -b redmine4.2  https://github.com/farend/redmine_theme_farend_bleuclair.git redmine-theme-bleuclair
 
 ENTRYPOINT ["/gitolite-entrypoint.sh"]
 CMD ["rails", "server", "-b", "0.0.0.0"]
