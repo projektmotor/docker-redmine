@@ -1,4 +1,4 @@
-FROM redmine:3.4
+FROM redmine:4.0
 
 # install dependencies
 RUN apt-get update && apt-get install -y \
