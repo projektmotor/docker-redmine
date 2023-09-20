@@ -1,0 +1,13 @@
+<table class="person_data" id="person_data_<%= person_data.id %>">
+  <tr>
+    <td class="avatar"><%= link_to avatar(person_data, :size => "32"), person_path(person_data), :id => "avatar" %></td>
+    <td class="name">
+      <h4 class="contacts_header">
+        <%= link_to person_data.name, person_path(person_data) %>
+      </h4>
+      <p>
+          <span class="job_title"><%= person_data.job_title %></span>
+      </p>
+    </td> 
+  </tr>
+</table>

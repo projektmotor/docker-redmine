@@ -1,0 +1,44 @@
+#Portuguese Portugal strings go here for Rails i18n
+pt:
+  activerecord:
+    attributes:
+      checklists:
+        subject: Checklist conteúdo
+  label_checklist_plural: Checklist
+  field_checklist: Checklist
+  label_checklist_save_log: Salvar alterações nas notas
+  label_checklist_done_ratio: Atribuir % conclusão
+  permission_view_checklists: Ver checklist
+  permission_done_checklists: Prontos do checklist
+  permission_edit_checklists: Editar checklist
+  label_checklist_template_category_plural: Categoria de templates
+  label_checklist_template_category_new: Nova categoria
+  field_checklist_template_category: Categoria
+  label_checklist_templates: Checklist templates
+  label_checklist_new_checklist_template: Novo checklist template
+  field_template_items: Template items
+  label_checklist_template: Checklist template
+  label_add_checklists_from_template: Adicionar do template
+  label_checklists_from_template: Do template
+  label_select_template: "-- Selecione o template --"
+  label_checklist_category_not_specified: "-- Não especificado --"
+  label_checklists_description: 'Permitir multiplos valores'
+  label_checklist_item: Checklist item
+  label_checklist_section: Checklist sessão
+  label_checklist_deleted: deletado
+  label_checklist_changed_from: alterado por
+  label_checklist_changed_to: para
+  label_checklist_added: adicionado
+  label_checklist_done: alterar para concluído
+  label_checklist_undone: alterar para não concluído
+  label_checklist_updated: Checklist item editado
+  label_checklist_status: Checklist status
+  label_checklist_status_done: Pronto
+  label_checklist_status_undone: Não pronto
+  label_checklist_is_default: Padrão
+  field_is_for_tracker: Tipo
+  label_checklists_must_be_completed: Para concluir a tarefa, todos os checklists devem estar prontos
+  label_checklist_block_issue_closing: Bloquear tarefa ao concluir
+  label_checklist_show_closed: Mostrar concluídos
+  label_checklist_hide_closed: Esconder concluídos
+  label_checklist_new_section: Nova sessão

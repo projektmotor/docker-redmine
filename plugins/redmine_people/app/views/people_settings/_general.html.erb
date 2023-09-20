@@ -1,0 +1,48 @@
+<% content_for :header_tags do %>
+  <%= select2_assets %>
+<% end %>
+
+<%= form_tag({:controller => :people_settings, :action => :update, :id => '1', :tab => 'general'},
+               :method => :put, :id => "people_acl_form") do %>
+  <div class="box tabular">
+  <p>
+    <%= label_tag 'settings[organization_name]', l(:label_people_organization_name) %>
+    <%= text_field_tag 'settings[organization_name]', RedminePeople.settings['organization_name'] %>
+  </p>
+
+  <p>
+    <%= label_tag 'settings[organization_head]', l(:label_people_organization_head) %>
+    <%= select2_tag 'settings[organization_head]',
+                    options_for_select2_people(RedminePeople.settings['organization_head']),
+                    width: '20%',
+                    url: autocomplete_for_person_people_path,
+                    format_state: 'formatStateWithAvatar',
+                    allow_clear: true,
+                    include_blank: true %>
+  </p>
+
+  <p>
+    <label for="settings_visibility"><%= l(:label_people_show_for_registered_users) %></label>
+    <%= hidden_field_tag 'settings[visibility]', 0, :id => nil %>
+    <%= check_box_tag 'settings[visibility]', 1, Setting.plugin_redmine_people["visibility"].to_i > 0 %>
+  </p>
+
+  <p>
+    <label for="settings_edit_own_data"><%= l(:label_people_edit_own_data) %></label>
+    <%= hidden_field_tag 'settings[edit_own_data]', 0, :id => nil %>
+    <%= check_box_tag 'settings[edit_own_data]', 1, Setting.plugin_redmine_people['edit_own_data'].to_i > 0 %>
+  </p>
+
+  <p>
+    <label><%= l(:label_people_default_group) %></label>
+    <%= select_tag 'settings[default_group]', options_from_collection_for_select(@groups, :id, :name, Setting.plugin_redmine_people["default_group"]), :include_blank => true %>
+  </p>
+
+  <p>
+    <label for="settings_hide_age"><%= l(:label_people_hide_age) %></label>
+    <%= hidden_field_tag 'settings[hide_age]', 0, :id => nil %>
+    <%= check_box_tag 'settings[hide_age]', 1, Setting.plugin_redmine_people["hide_age"].to_i > 0 %>
+  </p>
+  </div>
+  <%= submit_tag l(:button_apply) %>
+<% end %>

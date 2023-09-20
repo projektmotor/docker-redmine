@@ -1,0 +1,60 @@
+# Turkish strings go here for Rails i18n
+tr:
+  label_people: Kişiler
+  label_people_edit_person: Kişi bilgisi düzenle
+  label_people_new_person: Yeni kişi
+  label_people_group_plular: Gruplar
+  label_people_search: İsimden ara
+  label_people_show_on_map: Haritada göster
+  label_people_person: Kişi
+  label_people_all: Tüm kişileri göster
+  label_people_next_birthdays: Sonraki doğumgünleri
+  label_people_new_people: Yeni kişiler
+  label_people_male: Erkek
+  label_people_female: Kadın
+  label_people_settings: Kişiler ayarları
+
+  button_people_edit_profile: Profili düzenle
+
+  label_people_avatar: Avatar
+  label_people_job_title: Pozisyon
+  label_people_phone: Telefon
+  label_people_phone_plural: Telefonlar
+  label_people_skype: Skype
+  label_people_twitter: Twitter
+  label_people_facebook: Facebook
+  label_people_linkedin: LinkedIn
+  label_people_middlename: İkinci adı
+  label_people_background: Hakkında
+  label_people_address: Adres
+  label_people_gender: Cinsiyet
+  label_people_birthday: Doğumgünü
+  label_people_appearance_date: Başlama tarihi
+  label_people_age: Yaş
+
+  people_permission_edit_people: Kişileri düzenle
+  people_permission_view_people: Kişileri gör
+  people_permission_add_people: Kişi ekle
+  people_permission_delete_people: Kişi sil
+  people_permission_add_attachments: Ek ekle
+
+  #0.0.2
+  label_people_acl_settings: Erişim (ACL) ayarları
+  label_people_visibility: Kişilerin görünürlüğü
+  label_people_visibility_select: Kişileri göster
+  label_people_visibility_resistered: Kayıtlı kullanıcılara
+  label_people_visibility_selected: Seçilen kullanıcılara
+  label_people_visibility_anonymous: Anonim kullanıcılara
+
+  #0.0.3
+  label_department_plural: Bölümler
+  label_department_new: Yeni Bölüm
+  label_department: Bölüm
+  label_department_head: Yönetici
+  label_people_department: Bölüm
+  label_people_at_department: at
+  field_department_parent: Üst bölümü
+  people_permission_edit_departments: Bölümleri düzenle
+
+  #0.1.5
+  people_permission_delete_departments: Bölümleri Sil

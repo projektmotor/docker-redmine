@@ -1,0 +1,115 @@
+<%= error_messages_for 'query' %>
+
+<div class="box">
+<div class="tabular">
+  <%= hidden_field_tag 'gantt', '1' if params[:gantt] %>
+
+  <p><label for="query_name"><%=l(:field_name)%></label>
+  <%= text_field 'query', 'name', :size => 80 %></p>
+
+  <% if User.current.admin? || User.current.allowed_to?(:manage_public_agile_queries, @project) %>
+    <% if Redmine::VERSION.to_s < "2.4" %>
+      <p><label for="query_is_public"><%=l(:field_is_public)%></label>
+      <%= check_box 'query', 'is_public',
+            :onchange => (User.current.admin? ? nil : 'if (this.checked) {$("#query_is_for_all").removeAttr("checked"); $("#query_is_for_all").attr("disabled", true);} else {$("#query_is_for_all").removeAttr("disabled");}') %></p>
+    <% else %>
+      <p><label><%=l(:field_visible)%></label>
+        <label class="block"><%= radio_button 'query', 'visibility', Query::VISIBILITY_PRIVATE %> <%= l(:label_visibility_private) %></label>
+        <label class="block"><%= radio_button 'query', 'visibility', Query::VISIBILITY_ROLES %> <%= l(:label_visibility_roles) %>:</label>
+        <% Role.givable.sorted.each do |role| %>
+          <label class="block role-visibility"><%= check_box_tag 'query[role_ids][]', role.id, @query.roles.include?(role), :id => nil %> <%= role.name %></label>
+        <% end %>
+        <label class="block"><%= radio_button 'query', 'visibility', Query::VISIBILITY_PUBLIC %> <%= l(:label_visibility_public) %></label>
+        <%= hidden_field_tag 'query[role_ids][]', '' %>
+      </p>
+    <% end %>
+  <% end %>
+
+  <p><label for="query_is_for_all"><%=l(:field_is_for_all)%></label>
+  <%= check_box_tag 'query_is_for_all', 1, @query.project.nil?,
+        :disabled => (!@query.new_record? && (@query.project.nil? || (@query.is_public? && !User.current.admin?))) %></p>
+  <p>
+    <label>
+      <%= l(:label_agile_default_board) %>
+    </label>
+    <%= check_box_tag 'query[is_default]', 1, @query.is_default? %>
+  </p>
+  <fieldset><legend><%= l(:label_options) %></legend>
+    <p><label for="query_default_columns"><%=l(:label_agile_board_default_fields)%></label>
+    <%= check_box_tag 'default_columns', 1, @query.has_default_columns?, :id => 'query_default_columns',
+          :onclick => 'if (this.checked) {$("#columns").hide();} else {$("#columns").show();}' %></p>
+    <p>
+      <label class="agile_options_label" for='sprints_enabled'><%= l(:label_agile_board_type) %></label>
+      <%= select_tag('sprints_enabled', options_for_select([[l(:label_agile_board_type_kanban), '0'], [l(:label_agile_board_type_scrum), '1']], @query.sprints_enabled.to_s)) if @project.try(:agile_sprints_any?) || @query.visibility == Query::VISIBILITY_PUBLIC %>
+    </p>
+
+    <% if @query.sprints_enabled.to_i > 0 %>
+      <p>
+        <label class="agile_options_label" for='backlog_column'><%= l(:label_agile_board_backlog_column) %></label>
+        <%= check_box_tag('backlog_column', 1, @query.backlog_column, id: 'backlog_column') %>
+      </p>
+    <% end %>
+
+    <% if RedmineAgile.use_colors? && @query.respond_to?(:color_base) %>
+      <p><label for='color_base'><%= l(:label_agile_color_based_on) %></label>
+      <%= select 'query', 'color_base', options_for_select(options_card_colors_for_select(@query.color_base)) %></p>
+    <% end %>
+    <p><label for="query_group_by"><%= l(:label_agile_swimlanes) %></label>
+      <%= select 'query', 'group_by', @query.groupable_columns.collect {|c| [c.caption, c.name.to_s]}, :include_blank => true %>
+    </p>
+
+    <p>
+      <label for='default_chart'><%= l(:label_agile_sprint_default_chart) %></label>
+      <%= select_tag('default_chart', options_charts_for_select(@query.default_chart || RedmineAgile.default_chart)) %>
+    </p>
+
+    <p>
+      <label for='chart_unit'><%= l(:label_agile_sprint_chart_units) %></label>
+      <%= select_tag('chart_unit', options_chart_units_for_select(@query.chart_unit)) %>
+    </p>
+
+    <% if Redmine::VERSION.to_s > '3.2' %>
+      <% if @query.sprints_enabled.to_i > 0 %>
+      <p>
+        <label><%= l(:button_show) %></label>
+        <label class="inline">
+          <%= check_box_tag 'query[show_description]', 1, @query.show_description?, id: nil %>
+          <%= l(:label_agile_board_totals_description) %>
+        </label>        
+      </p>
+      <% end %>
+      <p>
+        <label><%= l(:label_agile_board_totals) %></label>
+        <%= available_totalable_columns_tags(@query) %>
+      </p>
+    <% end %>
+  </fieldset>
+</div>
+
+<fieldset id="filters"><legend><%= l(:label_filter_plural) %></legend>
+<%= render :partial => 'agile_queries/filters', :locals => {:query => query}%>
+</fieldset>
+
+<% if Redmine::VERSION.to_s > '2.4' %>
+  <%= content_tag 'fieldset', :class => "card-fields" do %>
+  <legend><%= l(:label_agile_board_columns) %></legend>
+  <%= render_board_fields_status(query) %>
+  <% end %>
+<% end %>
+
+
+<%= content_tag 'fieldset', :id => 'columns', :style => (query.has_default_columns? ? 'display:none;' : nil), :class => "card-fields" do %>
+<legend><%= l(:label_agile_fields) %></legend>
+<%= render_board_fields_selection(query) %>
+<% end %>
+
+</div>
+
+<%= javascript_tag do %>
+$(document).ready(function(){
+  $("input[name='query[visibility]']").change(function(){
+    var checked = $('#query_visibility_1').is(':checked');
+    $("input[name='query[role_ids][]'][type=checkbox]").attr('disabled', !checked);
+  }).trigger('change');
+});
+<% end %>

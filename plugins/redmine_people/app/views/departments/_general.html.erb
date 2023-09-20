@@ -1,0 +1,5 @@
+  <%= labelled_form_for @department do |f| %>
+  <%= render :partial => 'form', :locals => {:f => f} %>
+
+  <%= submit_tag l(:button_save) %>
+  <% end %>

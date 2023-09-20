@@ -1,0 +1,19 @@
+<%  if !@issue.blank? &&  @issue.checklists.any? && User.current.allowed_to?(:view_checklists, @project) %>
+<hr />
+<div id="checklist">
+  <div class="contextual">
+    <%= link_to l("label_checklist_hide_closed"), '#', id: 'switch_link' %>
+  </div>
+  <p><strong><%=l(:label_checklist_plural)%></strong></p>
+
+  <ul id="checklist_items">
+  <% @issue.checklists.each do |checklist_item| %>
+    <%= render :partial => 'checklists/checklist_item', :object => checklist_item %>
+  <% end %>
+  </ul>
+</div>
+  <%= javascript_tag do %>
+    new Redmine.ChecklistToggle('<%= l("label_checklist_show_closed") %>', '<%= l("label_checklist_hide_closed") %>');
+    $("#checklist_items").checklist();
+  <% end %>
+<% end %>

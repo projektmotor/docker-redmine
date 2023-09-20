@@ -1,0 +1,8 @@
+<% unless @person.all_visible_memberships.empty? %>
+<ul>
+<% @person.all_visible_memberships.each do |membership| %>
+  <li><%= link_to_project(membership.project) %>
+    (<%=h membership.roles.sort.collect(&:to_s).join(', ') %>, <%= format_date(membership.created_on) %>)</li>
+<% end %>
+</ul>
+<% end %>

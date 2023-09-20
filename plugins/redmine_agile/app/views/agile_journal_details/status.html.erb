@@ -1,0 +1,70 @@
+<%= title [issue_heading(@issue) , issue_path(@issue)],  l(:label_issue_status) %>
+
+<% html_title(l(:label_issue_status_plural)) %>
+
+<%= form_tag({ controller: 'agile_journal_details', action: 'status' }, method: :get, id: 'query_form') do %>
+  <div id="query_form_with_buttons" class="hide-when-print">
+    <div id="query_form_content">
+      <fieldset id="options" class="collapsible collapsed">
+        <legend onclick="toggleFieldset(this);" class="icon icon-expended icon-expanded"><%= l(:label_options) %></legend>
+        <div style="display: none;">
+          <table>
+            <tr>
+              <td><label for='group_by'><%= l(:field_group_by) %></label></td>
+              <td><%= select_tag('group_by', options_for_select([[]] + [[l(:field_status), 'status']], params[:group_by])) %></td>
+            </tr>
+          </table>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+
+  <p class="buttons hide-when-print">
+    <%= link_to_function l(:button_apply), 'submit_query_form("query_form")', :class => 'icon icon-checked' %>
+    <%= link_to l(:button_clear), { }, :class => 'icon icon-reload'  %>
+  </p>
+<% end %>
+
+<% if @statuses_collector.data.any? %>
+  <table class="list"><thead>
+  <tr>
+      <th>#</th>
+      <th><%= l(:field_created_on) %></th>
+      <th><%= l(:field_status) %></th>
+      <th><%= l(:field_duration) %></th>
+      <th><%= l(:field_author) %></th>
+      <th><%= l(:field_assigned_to) %></th>
+  </tr></thead>
+  <% if @group %>
+    <% @statuses_collector.grouped_by(@group).each do |group_id, group_data| %>
+      <% group_object = @statuses_collector.object_for(@group).where(:id => group_id).first %>
+      <tr class="group open">
+        <td colspan="6">
+          <span class="expander icon icon-expended icon-expanded" onclick="toggleRowGroup(this);">&nbsp;</span>
+          <span class="name"><%= group_object.name %></span>
+          <span class="badge badge-count count"><%= group_data.count %></span>
+          <span class="totals">
+            <%= l('datetime.distance_in_words.x_days', count: @statuses_collector.group_total_for(@group, group_data)) %>
+          </span>
+          <%= link_to_function("#{l(:button_collapse_all)}/#{l(:button_expand_all)}",
+                               "toggleAllRowGroups(this)", :class => 'toggle-all') %>
+        </td>
+      </tr>
+      <% group_data.each_with_index do |data, index| %>
+        <%= render partial: 'status_detail', locals: { issue_status: @statuses_collector.issue_status_for(@group, group_id), data: data, index: index } %>
+      <% end %>
+    <% end %>
+  <% else %>
+    <% @statuses_collector.data.each_with_index do |data, index| %>
+      <% issue_status = IssueStatus.where(:id => data.status_id).first %>
+      <%= render partial: 'status_detail', locals: { issue_status: issue_status, data: data, index: index } %>
+    <% end %>
+  <% end %>
+  </table>
+<% else %>
+  <p class="nodata"><%= l(:label_no_data) %></p>
+<% end %>
+
+<% other_formats_links do |f| %>
+  <%= f.link_to 'CSV', :url => params.respond_to?(:to_unsafe_hash) ? params.to_unsafe_hash : params %>
+<% end %>

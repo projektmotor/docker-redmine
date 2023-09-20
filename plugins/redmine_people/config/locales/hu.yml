@@ -1,0 +1,231 @@
+# Hungarian strings go here for Rails i18n
+hu:
+  label_people: Személyek
+  label_people_edit_person: Személyi adatok szerkesztése
+  label_people_new_person: Új személy
+  label_people_group_plular: Csoportok
+  label_people_search: Keresés név alapján
+  label_people_show_on_map: Megjelenítés térképen
+  label_people_person: Személy
+  label_people_all: Minden ember megjelenítése
+  label_people_next_birthdays: Következő születésnapok
+  label_people_new_people: Új személy
+  label_people_male: Férfi 
+  label_people_female: Nő
+  label_people_settings: Személyek beállításai
+
+  button_people_edit_profile: Profil szerkesztése
+
+  label_people_avatar: Avatár
+  label_people_job_title: Munkakör megnevezése
+  label_people_phone: Telefon
+  label_people_phone_plural: Telefonok
+  label_people_skype: Skype
+  label_people_twitter: Twitter
+  label_people_facebook: Facebook
+  label_people_linkedin: LinkedIn
+  label_people_workday_length: A munkanap hossza
+  label_people_middlename: Középső név
+  label_people_background: Háttérinformáció
+  label_people_address: Cím 
+  label_people_gender: Nem
+  label_people_birthday: Születésnap
+  label_people_appearance_date: Megjelenés időpontja
+  label_people_age: Életkor
+
+  people_permission_edit_people: Személyek szerkesztése
+  people_permission_view_people: Személyek megtekintése
+  people_permission_add_people: Személyek felvétele
+  people_permission_delete_people: Személyek törlése
+  people_permission_add_attachments: Csatolmányok hozzáadása
+  people_permission_edit_announcement: Bejelentés szerkesztése
+  people_permission_view_performance: Teljesítmény megtekintése
+  people_permission_view_leave: Szabadság megtekintése
+  people_permission_edit_leave: Szabadság szerkesztése
+  people_permission_edit_personal_leave: Edit personal leave
+
+
+  #0.0.2
+  label_people_acl_settings: ACL beállítása
+  label_people_visibility: Személyek láthatósága
+  label_people_visibility_select: Mutasd a személyeket
+  label_people_visibility_resistered: Regisztrált személyek számára
+  label_people_visibility_selected: Kijelölt személyek számára
+  label_people_visibility_anonymous: Anonim személyek számára
+
+  #0.0.3
+  label_department_plural: Részlegek
+  label_department_new: Új részleg
+  label_department: Részleg
+  label_department_head: Fej
+  label_people_department: Részleg
+  label_people_at_department: A részlegen dolgozó emberek
+  field_department_parent: Alosztálya a 
+  people_permission_edit_departments: Részlegek szerkesztése
+  
+  #0.1.5
+  people_permission_delete_departments: Részlegek törlése
+
+  #0.1.6
+  label_people_new_mail: Új üzenet
+
+  #0.1.7
+  label_people_show_for_registered_users: Emberek megjelenítése regisztrált felhasználók számára
+
+  #1.1.0
+  label_people_tags_plural: Címkék
+  label_visibility_public: bármely felhasználónak
+  label_visibility_private: csak számomra
+  label_people_default_list_style: Alapértelmezett lista stílusa
+  label_people_list_partial_style: Lista stílusa
+  label_people_list_excerpt: Kivonatok listája
+  label_people_list_list: Táblázat
+  label_people_company: Cég
+  button_people_edit_query: Lekérdezés szerkesztése
+  button_people_delete_query:  Lekérdezés törlése
+  people_permission_manage_public_people_queries: Nyilvános lekérdezések kezelése
+  label_people_add_tag: + címke hozzáadása
+  field_person_full_name: Teljes név
+  label_people_edit_tags: Címkék szerkesztése
+  people_permission_manage_tags: Címkék kezelése
+  label_people_hide_age: Életkor elrejtése
+  label_people_is_system: Rendszer
+  label_people_edit_own_data: Saját adatok szerkesztése
+
+  # 1.2.0
+  label_announcement_description: Leírás
+  label_announcement_frequency: Gyakoriság
+  label_announcement_active: Tevékenység
+  label_announcement_start_date: Kezdeti időpont
+  label_announcement_end_date: Záró időpont
+  label_announcement_end_department: Részleg
+  label_announcement_new: Új bejelentés
+  label_announcement_plural: Bejelentések
+  label_announcement_successful_update: A bejelentés sikeresen frissült.
+  label_announcement: Bejelentés
+  label_people_use_announcement: Bejelentések használata
+  field_frequency: Gyakoriság
+  field_end_date: Záró időpont
+  field_kind: Fajta
+
+  frequency_once: egyszer
+  frequency_everyday: minden nap
+  frequency_wday: hetente egyszer
+  frequency_mday: havonta egyszer
+
+  announcement_kind_notice: Értesítés
+  announcement_kind_warning: Figyelmeztetés
+  announcement_kind_error: Hiba
+  announcement_status_active: Működő
+  announcement_status_all: Mind
+  label_people_close: Bezár
+  label_people_birthday_today: Mai születésnapok
+  label_people_birthday_tomorrow: Holnapi születésnapok
+  label_people_birthday_this_week: Születésnapok ezen a héten
+  label_people_show_birthday_announcements: Születésnapi bejelentések megjelenítése
+  label_people_subordinates: Alárendeltek
+  label_people_manager: Vezető
+  people_permission_edit_subordinates: Beosztottak szerkesztése
+
+  label_people_default_group: Alapértelmezett csoport
+  label_people_choose_manager: Válasszon vezetőt
+
+  label_people_work_experience: Munkatapasztalat
+  label_people_work_experience_new: Új munkatapasztalat
+  label_people_work_experience_edit: Munkatapasztalat szerkesztése
+  label_people_previous_company_name: Korábbi cég neve
+  label_people_previous_job_title: Előző munkakör címe
+  label_people_from_date: Időponttól
+  label_people_to_date: Időpontig
+  label_people_to_description: Leírás
+
+  label_people_performance: Teljesítmény
+  label_people_total_hours: Összes óraszám
+  label_people_overtime: Túlóra
+  label_people_weekends: Hétvégék
+  label_people_hour: óra
+  label_people_minute: perc
+  label_people_deviation: Eltérés
+  label_time_spent: Elköltött idő
+  label_people_period: Időszak
+
+  label_people_calendar: Naptár
+  label_people_holidays: Szabadságok
+  label_people_organization_chart: Szervezeti ábra
+  label_people_organization_name: A szervezet neve
+  label_people_set_organization_name: A szervezet nevének beállítása
+  label_people_organization_head: A szervezet vezetője
+  label_people_birthdays: Születésnapok
+
+  label_people_holiday_name: A szabadság megnevezése
+  label_people_holiday_start_date: A szabadság kezdete
+  label_people_holiday_end_date: A szabadság vége
+  label_people_holiday_description: Leírás
+  label_people_holiday_is_workday: Munkanap
+  label_people_holiday_notify: Értesítés
+  label_people_holiday_notify_subject: "Szabadság %{name} hozzáadva a időpont(ok)ban %{from}%{to}."
+  label_people_holidays_next: Következő szabadnapok
+
+  label_people_holiday_new: Új szabadság
+  label_people_holiday_edit: Szabadnapok szerkesztése
+
+  people_permission_manage_departments: Osztályok kezelése
+
+  people_permission_edit_work_experience: Munkatapasztalat szerkesztése
+  people_permission_edit_own_work_experience: Saját munkatapasztalat szerkesztése
+  people_permission_manage_calendar: Naptár kezelése
+
+  notice_failed_to_save_people: "Nem sikerült elmenteni %{count} személy(eke)t a %{total} kiválasztott: %{ids}."
+  people_label_bulk_edit_selected_people: Az összes kiválasztott személy szerkesztése
+
+  label_people_add_tags: Címkék hozzáadása
+  label_people_delete_tags: Címkék törlése
+  label_people_report_plural: Jelentések
+  label_people_user_activity: Felhasználói tevékenység
+  label_people_average_time_per_day: Átlagos napi idő
+  label_people_total_coverage: Teljes lefedettség
+  label_people_filter_activity_type: Tevékenység típusa
+  label_people_filter_time_interval: Jelentés időintervallum
+
+  label_activity_type_issue_create: jegy létrehozása
+  label_activity_type_issue_update: jegy frissítése
+  label_activity_type_spent_time_added: Eltöltött idő hozzáadása
+
+  label_people_by_month: Hónapok szerint
+  label_people_by_year: Évek szerint
+
+  label_people_leave_plural: Leaves
+  label_people_leave_planner: Hagyja el a tervezőt
+  label_people_leave_type: A szabadság típusa
+  label_people_leave_types: A szabadság típusai
+  label_people_leave_type_new: Új szabadságtípus
+  label_people_leave_type_edit: Szabadságtípus szerkesztése
+  label_people_leave_new: Új szabadság
+  label_people_leave_edit: Szabadság szerkesztése
+  label_people_leave_comment: Hagyj megjegyzést
+  label_people_graph: Grafikon
+  label_people_not_approved: Nem jóváhagyott
+  label_people_scheduled_for: a számára
+  label_people_added_day_off: Hozzáadott szabadnap
+  label_people_appoved_notification: Day off status changed
+  label_people_notes_notification: Day off notes changed
+
+  notice_leave_type_successfully_destroyed: A szabadság típus sikeresen megsemmisült
+
+  field_paid: Fizetett
+  field_approvable: Jóváhagyható
+  field_approved: Jóváhagyva
+  field_color: Szín
+  field_leave_type: Szabadság típusa
+  field_hours_per_day: Óra/Nap
+  field_duration: Időtartam
+  field_hours_per_day_abbreviation: óra/nap
+
+  label_people_contact_plural: Kapcsolatok
+
+  people_permission_view_reports: Jelentések megtekintése
+
+  activerecord:
+    errors:
+      messages:
+        greater_than_or_equal_to_start_date: nagyobbnak vagy egyenlőnek kell lennie a kezdeti időpontnál

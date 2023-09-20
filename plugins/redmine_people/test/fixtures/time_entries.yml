@@ -1,0 +1,190 @@
+---
+# === The last week of March 2017 ===
+people_time_entries_1:
+  id: 1
+  project_id: 1
+  user_id: 4
+  issue_id: 1
+  hours: 6
+  spent_on: 2017-03-27 # Monday
+  tyear: 2017
+  tweek: 13
+  tmonth: 3
+  created_on: 2017-03-27 00:00:00
+  updated_on: 2017-03-27 00:00:00
+  activity_id: 9
+people_time_entries_2:
+  id: 2
+  project_id: 1
+  user_id: 4
+  issue_id: 1
+  hours: 6.75
+  spent_on: 2017-03-28 # Tuesday
+  tyear: 2017
+  tweek: 13
+  tmonth: 3
+  created_on: 2017-03-28 00:00:00
+  updated_on: 2017-03-28 00:00:00
+  activity_id: 9
+people_time_entries_3:
+  id: 3
+  project_id: 1
+  user_id: 4
+  issue_id: 1
+  hours: 7
+  spent_on: 2017-03-29 # Wednesday
+  tyear: 2017
+  tweek: 13
+  tmonth: 3
+  created_on: 2017-03-29 00:00:00
+  updated_on: 2017-03-29 00:00:00
+  activity_id: 9
+people_time_entries_4:
+  id: 4
+  project_id: 1
+  user_id: 4
+  issue_id: 2
+  hours: 7.25
+  spent_on: 2017-03-30 # Thursday
+  tyear: 2017
+  tweek: 13
+  tmonth: 3
+  created_on: 2017-03-30 00:00:00
+  updated_on: 2017-03-30 00:00:00
+  activity_id: 9
+people_time_entries_5:
+  id: 5
+  project_id: 1
+  user_id: 4
+  issue_id: 2
+  hours: 9.5
+  spent_on: 2017-03-31 # Friday
+  tyear: 2017
+  tweek: 13
+  tmonth: 3
+  created_on: 2017-03-31 00:00:00
+  updated_on: 2017-03-31 00:00:00
+  activity_id: 9
+
+# === The first week of April 2017 ===
+people_time_entries_6:
+  id: 6
+  project_id: 1
+  user_id: 4
+  issue_id: 1
+  hours: 7.25
+  spent_on: 2017-04-03 # Monday
+  tyear: 2017
+  tweek: 14
+  tmonth: 4
+  created_on: 2017-04-03 00:00:00
+  updated_on: 2017-04-03 00:00:00
+  activity_id: 9
+people_time_entries_7:
+  id: 7
+  project_id: 1
+  user_id: 4
+  issue_id: 1
+  hours: 8.5
+  spent_on: 2017-04-04 # Tuesday
+  tyear: 2017
+  tweek: 14
+  tmonth: 4
+  created_on: 2017-04-04 00:00:00
+  updated_on: 2017-04-04 00:00:00
+  activity_id: 9
+people_time_entries_8:
+  id: 8
+  project_id: 1
+  user_id: 4
+  issue_id: 2
+  hours: 8
+  spent_on: 2017-04-05 # Wednesday
+  tyear: 2017
+  tweek: 14
+  tmonth: 4
+  created_on: 2017-04-05 00:00:00
+  updated_on: 2017-04-05 00:00:00
+  activity_id: 9
+people_time_entries_9:
+  id: 9
+  project_id: 1
+  user_id: 4
+  issue_id: 2
+  hours: 1.75
+  spent_on: 2017-04-06 # Thursday
+  tyear: 2017
+  tweek: 14
+  tmonth: 4
+  created_on: 2017-04-06 00:00:00
+  updated_on: 2017-04-06 00:00:00
+  activity_id: 9
+people_time_entries_10:
+  id: 10
+  project_id: 1
+  user_id: 4
+  issue_id: 2
+  hours: 5.5
+  spent_on: 2017-04-07 # Friday
+  tyear: 2017
+  tweek: 14
+  tmonth: 4
+  created_on: 2017-04-07 00:00:00
+  updated_on: 2017-04-07 00:00:00
+  activity_id: 9
+people_time_entries_11:
+  id: 11
+  project_id: 1
+  user_id: 4
+  issue_id: 2
+  hours: 8
+  spent_on: 2017-04-08 # Saturday
+  tyear: 2017
+  tweek: 14
+  tmonth: 4
+  created_on: 2017-04-08 00:00:00
+  updated_on: 2017-04-08 00:00:00
+  activity_id: 9
+
+# === Time entries for admin ===
+people_time_entries_12:
+  id: 12
+  project_id: 1
+  user_id: 1
+  issue_id: 1
+  hours: 6
+  spent_on: 2017-03-27 # Monday of March 2017
+  tyear: 2017
+  tweek: 13
+  tmonth: 3
+  created_on: 2017-03-27 00:00:00
+  updated_on: 2017-03-27 00:00:00
+  activity_id: 9
+
+# === Time entries for person without information ===
+people_time_entries_13:
+  id: 13
+  project_id: 1
+  user_id: 5
+  issue_id: 1
+  hours: 6
+  spent_on: 2017-03-27 # Monday of March 2017
+  tyear: 2017
+  tweek: 13
+  tmonth: 3
+  created_on: 2017-03-27 00:00:00
+  updated_on: 2017-03-27 00:00:00
+  activity_id: 9
+people_time_entries_14:
+  id: 14
+  project_id: 3
+  user_id: 5
+  issue_id: 1
+  hours: 2
+  spent_on: 2017-03-27 # Monday of March 2017
+  tyear: 2017
+  tweek: 13
+  tmonth: 3
+  created_on: 2017-03-27 00:00:00
+  updated_on: 2017-03-27 00:00:00
+  activity_id: 9

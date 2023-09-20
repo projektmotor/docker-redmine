@@ -1,0 +1,12 @@
+<div id="company_contacts">
+  <div class="contextual">
+    <% if User.current.allowed_people_to?(:add_people, @person) %>
+      <%= link_to l(:label_user_new), {:controller => 'people', :action => 'new', :manager_id => @person.id} %>
+    <% end %>
+  </div>
+  <h3><%= l(:label_people_contact_plural) %></h3>
+
+  <%= render :partial => 'person_data', :collection => @person.all_visible_subordinates(params[:page], @limit) %>
+  <div style="clear:both;"> </div>
+</div>
+

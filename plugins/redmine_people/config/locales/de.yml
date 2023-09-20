@@ -1,0 +1,187 @@
+# German strings go here for Rails i18n
+de:
+  announcement_kind_error: Fehler
+  announcement_kind_notice: Anmerkung
+  announcement_kind_warning: Warnung
+  announcement_status_active: Aktiv
+  announcement_status_all: Alle
+  button_people_delete_query: Anfrage löschen
+  button_people_edit_profile: Profil bearbeiten
+  button_people_edit_query: Anfrage bearbeiten
+  field_approvable: Genehmigungsfähig
+  field_approved: Genehmigt
+  field_color: Farbe
+  field_department_parent: Unterabteilung von
+  field_duration: Dauer
+  field_end_date: End Datum
+  field_frequency: Häufigkeit
+  field_hours_per_day: Stunden/Tag
+  field_hours_per_day_abbreviation: h/d
+  field_kind: Art
+  field_leave_type: Abwesenheitsart
+  field_paid: Bezahlt
+  field_person_full_name: Vollständiger Name
+  frequency_everyday: jeden Tag
+  frequency_mday: monatlich
+  frequency_once: einmalig
+  frequency_wday: wöchentlich
+  label_activity_type_issue_create: Ticket erstellen
+  label_activity_type_issue_update: Ticket aktualisieren
+  label_activity_type_spent_time_added: Füge aufgewendete Zeit hinzu
+  label_announcement: Mitteilung
+  label_announcement_active: Aktiv
+  label_announcement_description: Beschreibung
+  label_announcement_end_date: Enddatum
+  label_announcement_frequency: Häufigkeit
+  label_announcement_new: Neue Benachrichtigung
+  label_announcement_plural: Benachrichtigung
+  label_announcement_start_date: Startdatum
+  label_announcement_successful_update: Benachrichtigung aktualisiert
+  label_department: Abteilung
+  label_department_head: Abteilungsleiter
+  label_department_new: Neue Abteilung
+  label_department_plural: Abteilungen
+  label_people: Mitarbeiter
+  label_people_acl_settings: ACL Einstellungen
+  label_people_add_tag: + Tag hinzufügen
+  label_people_add_tags: Tags hinzufügen
+  label_people_added_day_off: Ruhetag hinzugefügt
+  label_people_address: Adresse
+  label_people_age: Alter
+  label_people_all: Zeige alle Mitarbeiter
+  label_people_appearance_date: Beschäftigt seit
+  label_people_at_department: in
+  label_people_avatar: Avatar
+  label_people_average_time_per_day: Durchschnitt pro Tag
+  label_people_background: Weitere Informationen
+  label_people_birthday: Geburtstag
+  label_people_birthday_this_week: Geburtstage diese Woche
+  label_people_birthday_today: Heutige Geburtstage
+  label_people_birthday_tomorrow: Morgige Geburtstage
+  label_people_birthdays: Geburtstage
+  label_people_by_month: Nach Monat
+  label_people_by_year: Nach Jahr
+  label_people_calendar: Kalendar
+  label_people_choose_manager: Wähle Manager
+  label_people_close: Schließen
+  label_people_company: Unternehmen
+  label_people_contact_plural: Kontakte
+  label_people_default_group: Standard Gruppe
+  label_people_default_list_style: Standard Anzeigeart
+  label_people_delete_tags: Tags löschen
+  label_people_department: Abteilung
+  label_people_deviation: Abweichung
+  label_people_edit_own_data: Eigene Daten bearbeiten
+  label_people_edit_person: Persönliche Informationen bearbeiten
+  label_people_edit_tags: Tags bearbeiten
+  label_people_facebook: Facebook
+  label_people_female: Weiblich
+  label_people_filter_activity_type: Aktivitätsart
+  label_people_filter_time_interval: Report time interval
+  label_people_from_date: Ab Datum
+  label_people_gender: Geschlecht
+  label_people_graph: Graph
+  label_people_group_plular: Gruppen
+  label_people_hide_age: Alter verstecken
+  label_people_holiday_description: Beschreibung
+  label_people_holiday_edit: Feiertag bearbeiten
+  label_people_holiday_end_date: End Datum
+  label_people_holiday_is_workday: Arbeitstag
+  label_people_holiday_name: Name
+  label_people_holiday_new: Neuer Feiertag
+  label_people_holiday_notify: Benachrichtigen
+  label_people_holiday_notify_subject: "Feiertag %{name} wurde eingetren in date(s) %{from}%{to}."
+  label_people_holiday_start_date: Start Datum
+  label_people_holidays: Feiertage
+  label_people_holidays_next: Nächster Feiertag
+  label_people_hour: h
+  label_people_is_system: System
+  label_people_job_title: Berufsbezeichnung
+  label_people_leave_comment: Verfasse einen Kommentar
+  label_people_leave_edit: Abwesenheit bearbeiten
+  label_people_leave_new: Neue Abwesenheit
+  label_people_leave_planner: Abwesenheiten
+  label_people_leave_type: Abwesenheitsart
+  label_people_leave_type_edit: Abwesenheitsart bearbeiten
+  label_people_leave_type_new: Neue Abwesenheitsart
+  label_people_leave_types: Abwesenheitsarten
+  label_people_linkedin: LinkedIn
+  label_people_list_excerpt: Excerpt list
+  label_people_list_list: Tabelle
+  label_people_list_partial_style: Anzeigen als
+  label_people_male: Männlich
+  label_people_manager: Manager
+  label_people_middlename: Mittelname
+  label_people_minute: m
+  label_people_new_mail: Neue Nachricht
+  label_people_new_people: Neue Mitarbeiter
+  label_people_new_person: Neuer Mitarbeiter
+  label_people_next_birthdays: Nächste Geburtstage
+  label_people_not_approved: Nicht genehmigt
+  label_people_organization_chart: Organigramm
+  label_people_organization_head: Kopf des Unternehmens
+  label_people_organization_name: Unternehmensname
+  label_people_overtime: Überstunden
+  label_people_performance: Leistung
+  label_people_period: Period
+  label_people_person: Person
+  label_people_phone: Telefonnummer
+  label_people_phone_plural: Telefonnummern
+  label_people_previous_company_name: Vorheriger Firmenname
+  label_people_previous_job_title: Vorherige Stellenbezeichnung
+  label_people_report_plural: Mitarbeiterberichte
+  label_people_scheduled_for: für
+  label_people_search: Suche nach Namen
+  label_people_set_organization_name: Setze Unternehmensnamen
+  label_people_settings: Miterbeiter Einstellungen
+  label_people_show_birthday_announcements: Zeige Geburtstags Benachrichtigungen
+  label_people_show_for_registered_users: Plugin People registrierten Benutzern anzeigen
+  label_people_show_on_map: Auf der Karte zeigen
+  label_people_skype: Skype
+  label_people_subordinates: Untergeordnete
+  label_people_tags_plural: Tags
+  label_people_to_date: Bis Datum
+  label_people_to_description: Beschreibung
+  label_people_total_coverage: Vollständige Abdeckung
+  label_people_total_hours: Gesamtstunden
+  label_people_twitter: Twitter
+  label_people_use_announcement: Verwende Benachrichtigungen
+  label_people_user_activity: Benutzeraktivität
+  label_people_visibility: Sichtbarkeit
+  label_people_visibility_anonymous: für jeden
+  label_people_visibility_resistered: nur für registrierte Benutzer
+  label_people_visibility_select: Mitarbeiter anzeigen
+  label_people_visibility_selected: nur für ausgewählte Benutzer
+  label_people_weekends: Wochenenden
+  label_people_work_experience: Berufserfahrung
+  label_people_work_experience_edit: Berufserfahrung bearbeiten
+  label_people_work_experience_new: Berufserfahrung hinzufügen
+  label_people_workday_length: Länge des Arbeitstages
+  label_time_spent: Zeitaufwand
+  label_visibility_private: nur für mich
+  label_visibility_public: für alle Benutzer
+  notice_failed_to_save_people: "Fehler beim Speichern von %{count} Person(people) aus %{total} ausgewählten: %{ids}."
+  notice_leave_type_successfully_destroyed: Urlaubstyp wurde erfolgreich gelöscht
+  people_label_bulk_edit_selected_people: Alle ausgewählten Personen bearbeiten
+  people_permission_add_attachments: Anhänge hinzufügen
+  people_permission_add_people: Mitarbeiter hinzufügen
+  people_permission_delete_departments: Abteilungen löschen
+  people_permission_delete_people: Mitarbeiter löschen
+  people_permission_edit_announcement: Benachrichtigung bearbeiten
+  people_permission_edit_departments: Abteilungen bearbeiten
+  people_permission_edit_leave: Abwesenheit bearbeiten
+  people_permission_edit_own_work_experience: Eigene Berufserfahrung bearbeiten
+  people_permission_edit_people: Mitarbeiter bearbeiten
+  people_permission_edit_subordinates: Untergebene bearbeiten
+  people_permission_edit_work_experience: Berufserfahrung bearbeiten
+  people_permission_manage_calendar: Kalender verwalten
+  people_permission_manage_departments: Abteilungen verwalten
+  people_permission_manage_public_people_queries: Allgemeine Anfragen verwalten
+  people_permission_manage_tags: Tags verwalten
+  people_permission_view_leave: Abwesenheit anzeigen
+  people_permission_view_people: Mitarbeiter anzeigen
+  people_permission_view_performance: Leistung anzeigen
+  activerecord:
+    errors:
+      messages:
+        greater_than_or_equal_to_start_date: muss größer oder gleich dem Startdatum sein

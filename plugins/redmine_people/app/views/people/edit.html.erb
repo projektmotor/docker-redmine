@@ -1,0 +1,23 @@
+<div class="contextual">
+    <%= link_to(l(:button_people_edit_profile), edit_user_path(@person), :class => 'icon icon-edit') if User.current.admin? %>
+</div>
+
+<h2><%= l(:label_people_edit_person) %></h2>
+
+<%= labelled_form_for :person, @person,
+                             :url => {:action => 'update', :id => @person},
+                             :html => { :multipart => true, :method => :put, :id => "person_form" } do |f|  %>
+  <%= error_messages_for 'person' %>
+
+  <%= render :partial => 'form', :locals => {:f => f} %>
+  <%= submit_tag l(:button_save) -%>
+<% end -%>
+
+<% content_for :sidebar do %>
+<% end %>
+
+<% content_for :header_tags do %>
+  <%= select2_assets %>
+  <%= javascript_include_tag :redmine_people, :plugin => 'redmine_people'  %>
+  <%= robot_exclusion_tag %>
+<% end %>

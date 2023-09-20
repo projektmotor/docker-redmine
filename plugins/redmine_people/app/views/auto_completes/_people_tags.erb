@@ -1,0 +1,6 @@
+<%= raw @people_tags.map { |people_tag| {
+        'id' => people_tag.name,
+        'text' => people_tag.name
+      }
+    }.to_json
+%>

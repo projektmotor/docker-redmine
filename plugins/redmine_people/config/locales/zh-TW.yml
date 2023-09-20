@@ -1,0 +1,130 @@
+# encoding: utf-8
+# Traditional Chinese strings go here for Rails i18n
+# Author: Salivaxiu@163.com
+# Based on file: en.yml
+
+zh-TW:
+  label_people: 人員
+  label_people_edit_person: 編輯個人信息
+  label_people_new_person: 新人員
+  label_people_group_plular: 組
+  label_people_search: 搜索名字
+  label_people_show_on_map: 地圖上顯示
+  label_people_person: 人員
+  label_people_all: 顯示所有人員
+  label_people_next_birthdays: 馬上過生日
+  label_people_new_people: 新人員
+  label_people_male: 男
+  label_people_female: 女
+  label_people_settings: 人員設置
+
+  button_people_edit_profile: 編輯屬性
+
+  label_people_avatar: 大頭貼
+  label_people_job_title: 職位
+  label_people_phone: 電話
+  label_people_phone_plural: 手機
+  label_people_skype: Skype
+  label_people_twitter: Twitter
+  label_people_facebook: Facebook
+  label_people_linkedin: LinkedIn
+  label_people_middlename: 中間名
+  label_people_background: 背景信息
+  label_people_address: 地址
+  label_people_gender: 性別
+  label_people_birthday: 生日
+  label_people_appearance_date: 見面日期
+  label_people_age: 年齡
+
+  people_permission_edit_people: 編輯人員
+  people_permission_view_people: 瀏覽人員
+  people_permission_add_people: 增加人員
+  people_permission_delete_people: 刪除人員
+  people_permission_add_attachments: 增加附件
+
+  #0.0.2
+  label_people_acl_settings: ACL設置
+  label_people_visibility: 知名度
+  label_people_visibility_select: 顯示人員
+  label_people_visibility_resistered: 對于注冊用戶
+  label_people_visibility_selected: 對于選定用戶
+  label_people_visibility_anonymous: 對于匿名用戶
+
+  #0.0.3
+  label_department_plural: 部門
+  label_department_new: 新部門
+  label_department: 系
+  label_department_head: 頭
+  label_people_department: 系
+  label_people_at_department: 在
+  field_department_parent: 的子部門
+  people_permission_edit_departments: 編輯部門
+
+  #0.1.5
+  people_permission_delete_departments: 刪除部門
+
+  #0.1.6
+  label_people_new_mail: 新消息
+
+  #0.1.7
+  label_people_show_for_registered_users: 顯示注冊用戶的人員
+
+     #1.1.0
+  label_people_tags_plural: 標籤
+  label_visibility_public: 任何用戶
+  label_visibility_private: 只有我
+  label_people_default_list_style: 預設的清單樣式
+  label_people_list_partial_style: 清單樣式
+  label_people_list_excerpt: 摘錄列表
+  label_people_list_list: 名片
+
+  label_people_company: 公司
+
+  button_people_edit_query: 編輯查詢
+  button_people_delete_query: 刪除查詢
+  people_permission_manage_public_people_queries: 管理公共查詢
+  label_people_add_tag: + 添加標籤
+  field_person_full_name: 姓名
+  label_people_edit_tags: 編輯標籤
+  people_permission_manage_tags: 管理標籤
+  label_people_hide_age: 隱藏年齡
+  label_people_is_system: 系統
+  label_people_edit_own_data: 編輯自己的資料
+
+  # 1.2.0
+  label_announcement_description: 描述
+  label_announcement_frequency: 頻率
+  label_announcement_active: 活動
+  label_announcement_start_date: 開始日期
+  label_announcement_end_date: 結束日期
+  label_announcement_new: 新通知
+  label_announcement_plural: 通知
+  label_announcement_successful_update: 通知成功更新
+  label_announcement: 通知
+  label_people_use_announcement: 使用通知
+  field_frequency: 頻率
+  field_end_date: 結束日期
+  field_kind: 類型
+
+  frequency_once: 只一次
+  frequency_everyday: 每一天
+  frequency_wday: 每週一次
+  frequency_mday: 每月一次
+
+  announcement_kind_notice: 注意
+  announcement_kind_warning: 警告
+  announcement_kind_error: 錯誤
+  announcement_status_active: 活動
+  announcement_status_all: 所有
+  label_people_close: 關閉
+  label_people_birthday_today: 今日生日
+  label_people_birthday_tomorrow: 明日生日
+  label_people_birthday_this_week: 本周生日
+  label_people_show_birthday_announcement: 顯示生日通知
+  label_people_subordinates: 下屬
+  label_people_manager: 經理
+  people_permission_edit_subordinates: 編輯下屬
+
+  label_people_hour: 小時
+  label_people_minute: 分鐘
+  label_people_deviation: 偏差

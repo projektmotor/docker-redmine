@@ -1,0 +1,60 @@
+# Czech strings go here for Rails i18n
+cs:
+  label_people: Lidé
+  label_people_edit_person: Upravit člověka
+  label_people_new_person: Nový človek
+  label_people_group_plular: Skupiny
+  label_people_search: Hledat podle jména
+  label_people_show_on_map: Zobrazit na mapě
+  label_people_person: Človek
+  label_people_all: Zobrazit všechny lidi
+  label_people_next_birthdays: Následující narozeniny
+  label_people_new_people: Noví lidé
+  label_people_male: Muž
+  label_people_female: Žena
+  label_people_settings: Nastavení lidí
+
+  button_people_edit_profile: Upravit profil
+
+  label_people_avatar: Avatar
+  label_people_job_title: Funkce
+  label_people_phone: Telefon
+  label_people_phone_plural: Telefony
+  label_people_skype: Skype
+  label_people_twitter: Twitter
+  label_people_facebook: Facebook
+  label_people_linkedin: LinkedIn
+  label_people_middlename: Střední jméno
+  label_people_background: Vzdělání
+  label_people_address: Adresa
+  label_people_gender: Pohlaví
+  label_people_birthday: Narozeniny
+  label_people_appearance_date: Nastoupil/a dne
+  label_people_age: Věk
+
+  people_permission_edit_people: Upravit lidi
+  people_permission_view_people: Zobrazit lidi
+  people_permission_add_people: Přidat lidi
+  people_permission_delete_people: Vymazat lidi
+  people_permission_add_attachments: Přidat přílohy
+
+  #0.0.2
+  label_people_acl_settings: Oprávnění
+  label_people_visibility: Viditelnost lidí
+  label_people_visibility_select: Zobrazit lidi
+  label_people_visibility_resistered: Pro registrované uživatele
+  label_people_visibility_selected: Pro vybrané uživatele
+  label_people_visibility_anonymous: Pro anonymní uživatele
+
+  #0.0.3
+  label_department_plural: Oddělení
+  label_department_new: Nové oddělení
+  label_department: Oddělení
+  label_department_head: Vedoucí
+  label_people_department: Oddělení
+  label_people_at_department: v
+  field_department_parent: Nadřízené oddělení
+  people_permission_edit_departments: Upravit oddělení
+
+  #0.1.5
+  people_permission_delete_departments: Vymazat oddělení

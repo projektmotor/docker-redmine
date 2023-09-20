@@ -1,0 +1,9 @@
+<% assignee = Principal.where(:id => data.assigned_to_id).first %>
+<tr class="<%= cycle('odd', 'even') %>">
+  <td class="index"><%= index + 1 %></td>
+  <td class="name"><%= format_time(data.journal.created_on) %></td>
+  <td><%= issue_status.name %></td>
+  <td><%= distance_of_time_in_words(data.end_time, data.start_time).html_safe %></td>
+  <td><%= data.journal.user.name %></td>
+  <td><%= assignee.try(:name) %></td>
+</tr>

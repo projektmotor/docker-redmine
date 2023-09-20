@@ -1,0 +1,70 @@
+# Spanish strings go here for Rails i18n
+es:
+  label_people: Personas
+  label_people_edit_person: Editando información de personas
+  label_people_new_person: Nueva Persona
+  label_people_group_plular: Grupos
+  label_people_search: Buscar por nombre
+  label_people_show_on_map: Mostrar en el mapa
+  label_people_person: Persona
+  label_people_all: Mostrar toda la gente
+  label_people_next_birthdays: Próximos cumpleaños
+  label_people_new_people: Gente nueva
+  label_people_male: Masculino
+  label_people_female: Femenino
+  label_people_settings: Opciones de persona
+
+  button_people_edit_profile: Editar perfil
+
+  label_people_avatar: Avatar
+  label_people_job_title: Puesto
+  label_people_phone: Teléfono
+  label_people_phone_plural: Teléfonos
+  label_people_skype: Skype
+  label_people_twitter: Twitter
+  label_people_facebook: Facebook
+  label_people_linkedin: LinkedIn
+  label_people_middlename: Segundo nombre
+  label_people_background: Información adicional
+  label_people_address: Dirección
+  label_people_gender: Genero
+  label_people_birthday: Cumpleaños
+  label_people_appearance_date: Fecha de registro
+  label_people_age: Edad
+
+  people_permission_edit_people: Editar persona
+  people_permission_view_people: Ver persona
+  people_permission_add_people: Agregar gente
+  people_permission_delete_people: Borrar gente
+  people_permission_add_attachments: Adjuntar
+
+  #0.0.2
+  label_people_acl_settings: Opciones ACL
+  label_people_visibility: Visibilidad de persona
+  label_people_visibility_select: Mostrar gente
+  label_people_visibility_resistered: Por usuarios registrados
+  label_people_visibility_selected: Por usuarios seleccionados
+  label_people_visibility_anonymous: Por usuarios anónimos
+
+  #0.0.3
+  label_department_plural: Departamentos
+  label_department_new: Nuevo departamento
+  label_department: Departamento
+  label_department_head: Encabezado
+  label_people_department: Departamento
+  label_people_at_department: en
+  field_department_parent: Subdepartamento de
+  people_permission_edit_departments: Editar departamentos
+
+  #0.1.5
+  people_permission_delete_departments: Borrar departamentos
+
+  #0.1.6
+  label_people_new_mail: Nuevo mensaje
+
+  #0.1.7
+  label_people_show_for_registered_users: Mostrar Personas a usuarios registrados
+
+  label_people_hour: h
+  label_people_minute: m
+  label_people_deviation: Desviación

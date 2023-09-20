@@ -1,0 +1,8 @@
+<%= raw @managers.map {|manager| {
+      'id' => manager.id,
+      'text' => manager.name.html_safe,
+      'avatar' => avatar(manager, :size => 16),
+      'value' => manager.id
+      }
+    }.to_json
+%>

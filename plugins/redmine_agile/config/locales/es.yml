@@ -1,0 +1,221 @@
+# Spanish strings go here for Rails i18n
+es:
+  label_agile: Ágil
+  label_agile_board: Tablero ágil
+  label_agile_board_plural: Tableros ágiles
+  label_agile_board_thumbnails: Thumbnails
+  label_agile_board_more_issues: Más peticiones
+  error_agile_status_transition: No se puede cambiar el estado de la petición
+  label_agile_board_new: Nuevo tablero ágil
+  label_agile_board_edit: Editar tablero ágil
+  label_agile_my_boards: Mis tableros ágiles
+  label_agile_issue_id: ID de petición
+
+  permission_manage_public_agile_queries: Administrar tableros ágiles públicos
+  permission_add_agile_queries: Agregar tableros ágiles
+  permission_view_agile_queries: Ver tableros ágiles
+
+  #1.1.0
+  label_agile_board_default_fields: Columnas por defecto
+  label_agile_charts_issues_burndown: Peticiones burndown
+  label_agile_charts_work_burndown: Horas burndown
+  label_agile_charts_work_burndown_sp: Story points burndown
+  label_agile_charts_number_of_hours: Número de horas
+  label_agile_charts_number_of_issues: Número de peticiones
+  label_agile_charts_cumulative_flow: Flujo acumulado
+  label_agile_charts_trackers_cumulative_flow: Seguimiento de flujo acumulado
+  label_agile_charts_issues_velocity: Velocidad
+  label_agile_charts_cycle_time: Ciclo de tiempo
+  label_agile_charts_lead_time: Tiempo de ejecución
+  label_agile_charts_average_lead_time: Tiempo medio de entrega
+  label_agile_chart_plural: Gráficas Agile
+  label_agile_chart_new: Nueva gráfica Agile
+  label_agile_chart_edit: Editar gráfica Agile
+  permission_view_agile_charts: Ver gráfica Agile
+  label_agile_ideal_work_remaining: Ideal
+  label_agile_actual_work_remaining: Actual
+  label_agile_chart: Gráfica
+  label_agile_date_from: Desde
+  label_agile_date_to: a
+  label_agile_chart_dates: Gráfica de interválos
+  label_agile_weighed_ideal_work_remaining: Ideal ponderado
+  label_agile_status_colors: Estado de colores
+  label_agile_charts_burnup: Peticiones burnup
+  label_agile_charts_number_of_days: Número de días
+  label_agile_too_many_items: El gráfico no puede ser creado por exceder el número máximo de items que pueden ser mostrados (%{max})
+  label_agile_time_reports_items_limit: Tiempo de entradas basado en gráfico de peticiones límite
+  label_agile_total_work_remaining: Total
+  label_agile_default_chart: Versión gráfica por defecto
+
+  #1.1.1
+  label_agile_charts_average_velocity: Velocidad promedio
+  label_agile_charts_average_number_of_issues: Número de peticiones promedio
+  label_agile_charts_average_number_of_hours: Número de horas promedio
+
+  #1.2.0
+  label_agile_color: Color
+  permission_manage_agile_verions: Administrar planificación de versiones
+  label_agile_version_planning: planificación de versiones
+  error_agile_version_transition: No se puede cambiar la versión de la petición
+  label_agile_tracker_colors: Colores de tipos
+  label_agile_issue_priority_colors: Colores de prioridades de la petición
+  label_agile_color_based_on: Color por
+  label_agile_color_no_colors: Sin colores
+  label_agile_manage_colors: Administrar colores
+  label_agile_fullscreen: Pantalla completa
+  label_agile_no_version_issues: Petición sin version
+  label_agile_charts_work_burnup_hours: burnup de horas
+  label_agile_charts_work_burnup_sp: burnup de Story points
+  label_agile_completed: Completado
+  label_agile_exclude_weekends: Excluir los fines de semana del esfuerzo ideal
+  label_agile_board_truncated: El tablero se truncó porque excede el número máximo de elementos que se pueden mostrar (%{max})
+  label_agile_board_items_limit: Límite de elementos del tablero ágil
+  label_agile_swimlanes: Swimlanes
+  label_agile_minimize_closed: minimizar las peticiones cerradas
+  label_agile_fields: Campos de la tarjeta
+  label_agile_default_board: tablero por defecto
+
+  #1.3.6
+  text_agile_move_not_possible: Esté movimiento no es posible ()
+
+  #1.3.8
+  label_agile_parent_issue_tracker_id: Tipo petición padre
+  label_agile_sub_issues: SubTareas
+  label_agile_color_green: Verde
+  label_agile_color_blue: Azul
+  label_agile_color_turquoise: Turquesa
+  label_agile_color_lightgreen: Verde claro
+  label_agile_color_yellow: Amarillo
+  label_agile_color_orange: Naranja
+  label_agile_color_red: Rojo
+  label_agile_color_purple: Morado
+  label_agile_color_gray: Gris
+  label_agile_has_sub_issues: Tiene SubTareas
+  label_agile_light_free_version: Versión gratuita Agile
+  label_agile_link_to_pro: Actualizar a PRO
+  label_agile_link_to_pro_demo: demo version PRO
+  label_agile_link_to_more_plugins: Encontrar más extensiones de RedmineUP
+  label_agile_button_agree: Acuerdo
+  label_agile_license: Licencia RedmineUP
+  label_agile_saving_boards: Guardar tablero
+  label_agile_horizontal_swim_lines: swimlines horizontales
+  label_agile_board_sub_columns: sub-columns del tablero
+  label_agile_additional_agile_charts: Additional agile charts
+  label_agile_coloured_issue_cards: Tarjetas de colores
+  label_agile_4_more_features: 4 funcionalides más...
+  label_agile_upgrade_to_pro: Actualice a la version PRO apra usar estas funcionalidades
+
+  label_agile_day_in_state: En estado
+
+  #1.3.10
+  label_agile_hide_closed_issues_data: Ocultar datos de las peticiones cerradas
+  project_module_agile: Agile
+
+  #1.3.13
+  label_agile_last_comment: Último comentario
+
+  #1.4.0
+  label_agile_esitmate_units: Unidades estimadas
+  label_agile_trackers_for_sp: Tipos para  story points
+  label_agile_story_points: Story points
+  field_story_points: Story points
+  label_agile_charts_number_of_story_points: Número de story points
+  label_agile_board_columns: Columnas del tablero
+  lable_agile_wip_limit_exceeded: Excedido límite de dedicación
+  label_agile_wip_limit: límite de dedicación
+  label_agile_add_new_issue: "+ AÑADIR NUEVA PETICION"
+  label_agile_allow_create_cards: Crear una tarjeta
+  label_agile_auto_assign_on_move: Auto-Asignar al mover
+  text_agile_create_issue_error: Se produjo un error al crear la petición
+  label_agile_inline_comment: Comentario en linea
+  label_agile_hours: Horas
+  field_color: Color
+
+  field_duration: Duración
+
+  field_closed_on_trendline: Trendline cerrada
+  field_created_on_trendline: Trendline creada
+
+  label_agile_sp_values: Valores Story points
+
+  label_agile_interval_size: Tamaño intervalo
+  label_agile_day: Día
+  label_agile_week: Semana
+  label_agile_month: Mes
+  label_agile_quarter: Trimestre
+  label_agile_year: Año
+  label_cards_search: Búsqueda por asunto
+
+  field_agile_sprint: Sprint
+  field_end_date: Fecha fin
+  label_agile_sprints_on: Activar sprints por defecto
+  label_agile_sprint: Sprint
+  label_agile_sprint_plural: Sprints
+  label_agile_sprint_name: Nombre
+  label_agile_sprint_description: Descripción
+  label_agile_sprint_status: Estado
+  label_agile_sprint_start_date: Fecha inicio
+  label_agile_sprint_end_date: Fecha fin
+  label_agile_sprint_new: nuevo sprint
+  label_agile_sprint_status_open: Abierto
+  label_agile_sprint_status_active: Activo
+  label_agile_sprint_status_closed: Cerrado
+  label_agile_sprint_duration: Duraccion
+  label_agile_sprint_duration_select: <<Seleccionar duración>>
+  label_agile_sprint_duration_week_1: 1 semana
+  label_agile_sprint_duration_week_2: 2 semanas
+  label_agile_sprint_duration_week_3: 3 semanas
+  label_agile_sprint_duration_week_4: 4 semanas
+  label_agile_sprint_errors_crossed: Las fechas del Sprint se cruza con otro Sprint
+  label_agile_sprint_errors_end_more_start: La fecha fin debe ser mayor que la fecha de inicio
+  label_agile_sprint_errors_open_issues: las tareas abiertas del Sprint se puede cerrar
+  label_agile_sprint_default_chart: Gráfica
+  label_agile_sprint_chart_units: Estimación
+  label_agile_chart_for_sprint: "Para el sprint: %{sprint}"
+
+  label_agile_charts: Gráficas
+  label_agile_chart_burndown: Gráficas Burndown
+  label_agile_chart_burnup: Gráfica Burnup
+  label_agile_chart_units: Unidades
+
+  label_agile_planning_board_more: cargar más...
+  label_agile_version_query_new: Nueva consulta de version  Agile
+  label_agile_version_my_boards: Mis tableros Ágiles
+  label_agile_version_board_plural: Tablero versión Agil
+  label_agile_version_board_edit: Editar tablero versión Agil
+
+  label_agile_edit_issue: Editar petición
+
+  label_agile_board_type: Tipo de tablero
+  label_agile_board_type_kanban: Tablero Kanban
+  label_agile_board_type_scrum: Tablero Scrum
+  label_agile_board_totals: Totales
+  label_agile_board_totals_story_points: Story points
+  label_agile_board_totals_hours: Horas
+  label_agile_board_totals_spent_time: Tiempo dedicado
+  label_agile_board_totals_percent_done: "% Realizado"
+  label_agile_board_totals_velocity: Velocidad
+  label_agile_board_totals_interval: Intervalo
+  label_agile_board_totals_remaining: Restante
+
+  label_agile_sprint_list_active: Sprints activos
+  label_agile_sprint_list_future: Sprints futuros
+
+  label_agile_mixed_trackers: Tipos mixtos
+  label_agile_moving_average: Moving Average
+
+  label_agile_board_backlog: Backlog
+  label_agile_board_backlog_column: columna Backlog
+  label_agile_board_search_backlog_issues: Buscar peticiones en backlog
+  label_agile_version_plural: Versiones
+  label_agile_sprint_add: Añadir sprint
+  label_agile_version_add: Añadir versión
+
+  label_agile_sprint_query_new: Nueva consulta Sprint ágil
+  label_agile_sprint_my_boards: Mis tableros Sprint ágil
+  label_agile_sprint_board_plural: Tablero Sprint ágil
+  label_agile_sprint_board_edit: Editar tablero Sprint ágil
+  field_sprint: Sprint
+  label_agile_no_sprint_issues: Peticiones sin sprint
+  field_closed_sprints: sprints cerrados
+  field_closed_versions: Versiones cerradas

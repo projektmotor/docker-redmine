@@ -1,0 +1,31 @@
+<% if @issues.any? && User.current.allowed_to?(:view_agile_charts, @project) %>
+  <fieldset>
+    <legend>
+      <%= l(:label_agile_chart) %>
+      <%= select_tag('chart', options_charts_for_select(params[:chart] || RedmineAgile.default_chart),
+                     id: 'chart_by_select',
+                     onchange: "toggleChartUnit($(this).val(), 'chart-unit-row'); updateVersionAgileChart('#{agile_charts_select_version_chart_path(version_id: @version)}');") %>
+
+      <span id="chart-unit-row">
+        <label for='chart_unit'><%= l(:label_agile_chart_units) %></label>
+        <%= select_tag 'chart_unit', options_chart_units_for_select,
+                       onchange: "updateVersionAgileChart('#{agile_charts_select_version_chart_path(version_id: @version)}');" %>
+      </span>
+    </legend>
+    <div id='agile_chart'>
+      <%= render_agile_chart(RedmineAgile::Charts::Helper.valid_chart_name_by(params[:chart] || RedmineAgile.default_chart), @version.fixed_issues) %>
+    </div>
+  </fieldset>
+<% end %>
+
+<% content_for :header_tags do %>
+  <%= chartjs_assets %>
+  <%= javascript_include_tag 'redmine_agile', plugin: 'redmine_agile' %>
+<% end %>
+
+<%= javascript_tag do %>
+  var chartsWithUnits = <%= raw RedmineAgile::Charts::Helper::CHARTS_WITH_UNITS.to_json %>
+  $(document).ready(function() {
+    toggleChartUnit($('#chart_by_select').val(), 'chart-unit-row');
+  });
+<% end %>

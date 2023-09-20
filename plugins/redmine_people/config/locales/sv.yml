@@ -1,0 +1,148 @@
+# Swedish translation based on RedmineCRM
+# Helpdesk plugin version 2.2.13
+# Created by Khedron Wilk (khedron.wilk@gmail.com) 2014 Dec 09
+
+sv:
+  label_helpdesk: Helpdesk
+  label_helpdesk_auto_answer_template: Autosvarsmall
+  text_helpdesk_answer_macros: Tillgängliga makron %{macro}
+  label_is_send_mail: Skicka anteckning
+  label_send_auto_answer: Skicka autosvar
+  label_received_from: Mottagen från
+  label_sent_to: Skickad till
+  project_module_contacts_helpdesk: Helpdesk
+  permission_send_response: Skicka svar till kontakt
+  permission_edit_helpdesk_settings: Redigera Helpdesk-inställningar
+  label_not_create_contacts: Vitlista för kontakter
+  field_created_contact_tags: Lägg till etiketter efter skapa
+  label_helpdesk_save_as_attachment: Spara e-post som bilaga
+
+#1.0.2
+  label_helpdesk_assign_author: Gör avsändare till författare av ärende
+
+#1.0.3
+  label_helpdesk_answered_status: Status för besvarat ärende
+  label_helpdesk_reopen_status: Status för återöppnat ärende
+  label_helpdesk_tracker: Ärendetyp
+  label_helpdesk_assigned_to: Tilldela ärende till
+  label_helpdesk_lifetime: Giltighetstid för ärende
+  label_helpdesk_server_settings: Serverinställningar e-posts
+  label_helpdesk_protocol: Protokoll
+  label_helpdesk_host: Värd
+  label_helpdesk_port: Port
+  label_helpdesk_username: Användarnamn
+  label_helpdesk_password: Lösenord
+  label_helpdesk_ssl: SSL
+  label_helpdesk_imap_folder: IMAP-folder
+  label_helpdesk_move_on_success: Flytta till vid framgång
+  label_helpdesk_move_on_failure: Flytta till vid misslyckande
+  label_helpdesk_apop: APOP
+  label_helpdesk_delete_unprocessed: Radera obearbetade meddelanden
+  label_helpdesk_first_answer_template: Mall
+  label_helpdesk_test_connection: Test förbindelse
+  label_helpdesk_get_mail: Hämta e-post
+  label_helpdesk_get_mail_success: "Bearbetat %{count} brev"
+  label_helpdesk_css: Stylesheet (CSS) för e-post
+  label_helpdesk_original: Original
+
+#1.0.4
+  label_helpdesk_blacklist: Blockeringslista för e-postmeddelanden
+  label_helpdesk_previous_issues: Kundens tidigare ärenden
+  permission_view_helpdesk_tickets: Visa Helpdesk-ärenden
+  label_helpdesk_last_message: Senaste meddelandet
+  label_helpdesk_enable_modules: Modulerna Kontakter och Ärenden bör vara aktiverade för detta projekt
+  label_helpdesk_customer_profile: Kundprofil
+  label_helpdesk_show_contact_card: Visa kundprofiler
+
+#2.0.0
+  label_helpdesk_send_note_by_default: Skicka anteckning som standard
+  label_helpdesk_ticket_attributes: Ärendeegenskaper
+  label_helpdesk_to_address: Till-adress
+  label_helpdesk_from_address: Från-adresss
+  label_helpdesk_ticket_date: Ärendedatum
+  label_helpdesk_customer: Kund
+  label_helpdesk_from: Från
+  label_helpdesk_cc: Kopia
+  label_helpdesk_bcc: Dold kopia
+  label_helpdesk_ticket_plural: Helpdesk-ärenden
+  label_helpdesk_template: Helpdesk-mall
+  label_helpdesk_general: Allmänt
+  permission_edit_helpdesk_tickets: Redigera ärendeinfo
+
+#2.1.0
+  label_helpdesk_ticket: Helpdesk-ärende
+  label_helpdesk_spam: Skräppost
+  label_helpdesk_add_cc: Lägg till Kopia/Dold kopiac
+  label_helpdesk_add_contact_notes: Lägg till första e-post som kontakt
+  text_helpdesk_customer_count: "%{count} kund(er)"
+  text_helpdesk_ticket_count: "%{count} ärende(n)"
+  label_helpdesk_tickets_report: Rapport Helpdesk-ärenden
+  label_helpdesk_staff_report: Rapport medarbetare Helpdesk-ärenden
+  label_helpdesk_tickets_email: E-post
+  label_helpdesk_tickets_phone: Telefon
+  label_helpdesk_tickets_web: Web
+  label_helpdesk_tickets_twitter: Twitter
+  label_helpdesk_ticket_source: Ärendekälla
+  label_helpdesk_ticket_time: Ärendetid
+  label_helpdesk_save_cc: Spara Kopia som kontakter
+  permission_view_helpdesk_reports: Visa rapporter
+
+#2.1.2
+  label_helpdesk_answer_template: Svarsmall
+
+#2.1.3
+  label_helpdesk_previous_tickets: Tidigare ärenden
+  label_helpdesk_public_tickets: Aktivera publika ärenden
+  label_helpdesk_public_title: Titel publik sida
+  label_helpdesk_settings_public: Publika ärenden
+  label_helpdesk_public_comments: Tillåt kommentarer
+  label_helpdesk_public_show_spent_time: Visa använd tid
+  label_helpdesk_public_link: Publik länk
+
+#2.1.4
+  label_helpdesk_ticket_new: Nytt ärende
+  label_helpdesk_report_plural: Helpdesk-rapporter
+
+#2.2.0
+  label_helpdesk_customer_company: Kundföretag
+  label_helpdesk_canned_response_plural: Svarsmallar
+  label_helpdesk_new_canned_response: Ny svarsmall
+  label_helpdesk_canned_response: Svarsmall
+  permission_manage_public_canned_responses: Hantera publika svarsmallar
+  permission_manage_canned_responses: Hantera svarsmallar
+
+#2.2.1
+  my_helpdesk_tickets: Mina Helpdesk-ärenden
+  label_helpdesk_view_all_tickets: Visa alla ärenden
+
+#2.2.3
+  label_helpdesk_tickets_conversation: Konversation
+
+#2.2.4
+  label_helpdesk_required_custom_fields_error: Kontakter bör inte ha de anpassade obligatoriska fälten
+
+#2.2.6
+  label_helpdesk_last_message_date: Ärendet uppdaterat
+  label_helpdesk_ago: "%{value} sen"
+
+#2.2.8
+  label_helpdesk_to: Till
+  label_helpdesk_send_as: Skicka som
+  label_helpdesk_not_send: "(Inte skickad)"
+  label_helpdesk_send_as_notification: Skicka som anteckning
+  label_helpdesk_send_as_message: Skicka som intialt meddelande
+
+#2.2.9
+  label_helpdesk_incoming_mail_server: Inkommande e-postserver
+  label_helpdesk_outgoing_mail_server: Utgående e-postserver
+  label_helpdesk_smtp_use_default_settings: Använd standardinställningar
+  label_helpdesk_smtp_server: SMTP-server
+  label_helpdesk_smtp_tls: TLS
+  label_helpdesk_authentication: Verifieringsmetod
+  label_helpdesk_authentication_plain: Plain
+  label_helpdesk_authentication_login: Login
+  label_helpdesk_authentication_cram_md5: MD5 Challenge-Response
+  label_helpdesk_smtp_domain: Domän
+
+ #2.2.10
+  label_helpdesk_email_sending_problems: Problem att skicka e-post

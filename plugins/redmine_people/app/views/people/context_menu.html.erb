@@ -1,0 +1,9 @@
+<ul>
+
+  <% if @person.present? %>
+    <li><%= context_menu_link l(:button_edit), {:controller => 'people', :action => 'edit', :id => @person}, :class => 'icon icon-edit', :disabled => !@can[:edit] %></li>
+  <% else %>
+  <% end %>
+
+</ul>
+

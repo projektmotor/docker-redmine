@@ -1,0 +1,93 @@
+--- 
+custom_fields_001: 
+  name: Car model
+  min_length: 1
+  regexp: ""
+  is_for_all: true
+  is_filter: true
+  type: UserCustomField
+  max_length: 100
+  id: 1
+  is_required: false
+  field_format: string
+  searchable: true
+  default_value: ""
+  editable: true
+  position: 1
+custom_fields_006: 
+  name: Height
+  regexp: ""
+  is_for_all: true
+  is_filter: true
+  type: UserCustomField
+  possible_values: ""
+  id: 2
+  is_required: false
+  field_format: int
+  default_value: 
+  editable: true
+  position: 2
+custom_fields_007:
+  name: Test field 7
+  min_length: 1
+  regexp: ""
+  is_for_all: true
+  is_filter: true
+  type: UserCustomField
+  max_length: 100
+  id: 3
+  is_required: false
+  field_format: string
+  searchable: true
+  default_value: ""
+  editable: true
+  visible: true
+  position: 1
+custom_fields_008:
+  name: Test field 8
+  min_length: 1
+  regexp: ""
+  is_for_all: true
+  is_filter: true
+  type: UserCustomField
+  max_length: 100
+  id: 4
+  is_required: false
+  field_format: string
+  searchable: true
+  default_value: ""
+  editable: false
+  visible: true
+  position: 1
+custom_fields_009:
+  name: Test field 9
+  min_length: 1
+  regexp: ""
+  is_for_all: true
+  is_filter: true
+  type: UserCustomField
+  max_length: 100
+  id: 5
+  is_required: false
+  field_format: string
+  searchable: true
+  default_value: ""
+  editable: true
+  visible: false
+  position: 1
+custom_fields_010:
+  name: Test field 10
+  min_length: 1
+  regexp: ""
+  is_for_all: true
+  is_filter: true
+  type: UserCustomField
+  max_length: 100
+  id: 6
+  is_required: false
+  field_format: string
+  searchable: true
+  default_value: ""
+  editable: false
+  visible: false
+  position: 1

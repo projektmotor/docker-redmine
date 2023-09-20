@@ -1,0 +1,1 @@
+$('<%= column_version_class(@tab_versions, @version || @sprint) %> .load_more').replaceWith('<%= escape_javascript(render partial: "issues_list", locals: { issues: @issues, page: @paginator.try(:next_page), more_url: @more_url }) %>')

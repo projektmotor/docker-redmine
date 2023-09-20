@@ -1,0 +1,155 @@
+# encoding: utf-8
+# English strings go here for Rails i18n
+pt-BR:
+  label_people: Pessoas
+  label_people_edit_person: Editando informações do pessoa
+  label_people_new_person: Novo pessoa
+  label_people_group_plular: Grupos
+  label_people_search: Buscar por nome
+  label_people_show_on_map: Mostrar no mapa
+  label_people_person: Pessoa
+  label_people_all: Mostrar todas as pessoas
+  label_people_next_birthdays: Próximos aniversários
+  label_people_new_people: Nova pessoa
+  label_people_male: Masculino
+  label_people_female: Feminino
+  label_people_settings: Configurações da pessoa
+
+  button_people_edit_profile: Editar perfil
+
+  label_people_avatar: Avatar
+  label_people_job_title: Cargo
+  label_people_phone: Telefone
+  label_people_phone_plural: Telefones
+  label_people_skype: Skype
+  label_people_twitter: Twitter
+  label_people_facebook: Facebook
+  label_people_linkedin: LinkedIn
+  label_people_middlename: Segundo nome
+  label_people_background: Informação
+  label_people_address: Endereço
+  label_people_gender: Sexo
+  label_people_birthday: Data de nascimento
+  label_people_appearance_date: Data de registro
+  label_people_age: Idade
+
+  people_permission_edit_people: Editar pessoa
+  people_permission_view_people: Visualizar pessoa
+  people_permission_add_people: Adicionar pessoa
+  people_permission_delete_people: Excluir pessoa
+  people_permission_add_attachments: Adicionar anexos
+
+  #0.0.2
+  label_people_acl_settings: Configuração de ACL
+  label_people_visibility: Visibilidade de pessoas
+  label_people_visibility_select: Mostrar pessoa
+  label_people_visibility_resistered: Para usuários registrados
+  label_people_visibility_selected: Para usuários selecionados
+  label_people_visibility_anonymous: Para usuários anônimos
+
+  #0.0.3
+  label_department_plural: Departamentos
+  label_department_new: Novo departamento
+  label_department: Departamento
+  label_department_head: Chefe
+  label_people_department: Departamento
+  label_people_at_department: em
+  field_department_parent: Sub-departamento de
+  people_permission_edit_departments: Editar departamento
+
+  #0.1.5
+  people_permission_delete_departments: Deletar departamento
+
+  #0.1.6
+  label_people_new_mail: Nova mensagem
+
+  #0.1.7
+  label_people_show_for_registered_users: Exibir pessoas para usuários registados
+
+   #1.1.0
+  label_people_tags_plural: Tags
+  label_visibility_public: Para qualquer usuário
+  label_visibility_private: Somente para mim
+  label_people_default_list_style: padrão
+  label_people_list_partial_style: Lista
+  label_people_list_excerpt: Excerpt list
+  label_people_list_list: Tabela
+  label_people_company: Empresa
+  button_people_edit_query: Alterar consulta
+  button_people_delete_query: Excluir consulta
+  people_permission_manage_public_people_queries: Gerenciar consultas públicas
+  label_people_add_tag: + Adicionar tag
+  field_person_full_name: Nome compelto
+  label_people_edit_tags: Editar tags
+  people_permission_manage_tags: Gerenciar tags
+  label_people_hide_age: Esconder idade
+  label_people_is_system: Sistema
+  label_people_edit_own_data: Editar informações próprias
+
+  # 1.2.0
+  label_announcement_description: Descrição
+  label_announcement_frequency: Frequência
+  label_announcement_active: Ativo
+  label_announcement_start_date: Data inicial
+  label_announcement_end_date: Data final
+  label_announcement_new: Novo anúncio
+  label_announcement_plural: Anúncios
+  label_announcement_successful_update: Anúncio alterado com sucesso
+  label_announcement: Anúncio
+  label_people_use_announcement: Utilizar anúncios
+  field_frequency: Frequência
+  field_end_date: Data final
+  field_kind: Tipo
+
+  frequency_once: uma vez
+  frequency_everyday: todo dia
+  frequency_wday: uma vez por semana
+  frequency_mday: uma vez por mês
+
+  announcement_kind_notice: Notícia
+  announcement_kind_warning: Aviso
+  announcement_kind_error: Erro
+  announcement_status_active: Ativo
+  announcement_status_all: Todos
+  label_people_close: Fechar
+  label_people_birthday_today: Aniversariantes de hoje
+  label_people_birthday_tomorrow: Aniversariantes de amanhã
+  label_people_birthday_this_week: Aniversariantes desta semana
+  label_people_show_birthday_announcements: Exibir anúncios dos aniversários
+  label_people_subordinates: Subordinados
+  label_people_manager: Gerente
+  people_permission_edit_subordinates: Editar subordinados
+
+  label_people_default_group: Grupo padrão
+  label_people_choose_manager: Selecionar gerente
+
+  label_people_work_experience: Experiências profissionais
+  label_people_work_experience_new: Nova experiência
+  label_people_work_experience_edit: Alterar experiência
+  label_people_previous_company_name: Empresa anterior
+  label_people_previous_job_title: Cargo anterior
+  label_people_from_date: Desde
+  label_people_to_date: Até
+  label_people_to_description: Descrição
+
+  label_people_calendar: Calendário
+  label_people_holidays: Feriados
+  label_people_birthdays: Aniversários
+
+  label_people_holiday_name: Nome
+  label_people_holiday_start_date: Data inicial
+  label_people_holiday_end_date: Data final
+  label_people_holiday_description: Descrição
+  label_people_holiday_is_workday: É dia de trabalho
+  label_people_holiday_notify: Notificação
+  label_people_holiday_notify_subject: "Feriado %{name} foi adicionado na data: %{from}%{to}."
+  label_people_holidays_next: Próximos feriados
+
+  label_people_holiday_new: Novo feriado
+  label_people_holiday_edit: Editar feriado
+
+  people_permission_manage_departments: Gerenciar departamentos
+
+  people_permission_edit_work_experience: Editar experiência de trabalho
+  people_permission_edit_own_work_experience: Editar as próprias experiências
+  people_permission_manage_calendar: Gerenciar calendário

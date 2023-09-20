@@ -1,0 +1,15 @@
+<td class="issue-backlog-col" rowspan="<%= rowspan %>">
+  <div class="issue-backlog-search">
+    <%= text_field_tag('search', '', placeholder: l(:label_agile_board_search_backlog_issues)) %>
+    <%= javascript_tag("observeIssueSearchfield('search', '#{backlog_autocomplete_agile_boards_path(project_id: query.project.try(:id))}');") %>
+  </div>
+  <div class="backlog-issues issue-status-col <%= 'empty' if @backlog_issues.empty? %>" data-id="">
+    <% paginator = query.issues_paginator(@backlog_issues, params[:page]) %>
+      <%= render partial: 'issues_list', locals: { column_id: nil,
+                                                  project: query.project,
+                                                  issues: @backlog_issues.offset(paginator.offset).limit(paginator.per_page).all,
+                                                  more_url: paginator.next_page ? backlog_load_more_agile_boards_path(project_id: query.project.try(:id),
+                                                                                                q: params[:q],
+                                                                                                page: paginator.next_page) : nil } %>
+  </div>
+</td>

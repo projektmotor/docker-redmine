@@ -1,0 +1,6 @@
+<%= raw @users.map { |user|
+      { id: user.id,
+        text: user.name.html_safe,
+        avatar: avatar(user, size: 16) }
+    }.to_json
+%>

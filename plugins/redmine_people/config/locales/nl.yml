@@ -1,0 +1,60 @@
+# Dutch strings go here for Rails i18n
+nl:
+  label_people: Medewerkers
+  label_people_edit_person: Bewerk medewerker informatie
+  label_people_new_person: Nieuwe medewerker
+  label_people_group_plular: Groepen
+  label_people_search: Zoek op naam
+  label_people_show_on_map: Laat zien op kaart
+  label_people_person: Persoon
+  label_people_all: Laat alle medewerkers zien
+  label_people_next_birthdays: Komende verjaardagen
+  label_people_new_people: Nieuwe medewerkers
+  label_people_male: Man
+  label_people_female: Vrouw
+  label_people_settings: Medewerkers instellingen
+
+  button_people_edit_profile: Bewerk profiel
+
+  label_people_avatar: Avatar
+  label_people_job_title: Functie
+  label_people_phone: Telefoonnummer
+  label_people_phone_plural: Telefoonnummers
+  label_people_skype: Skype
+  label_people_twitter: Twitter
+  label_people_facebook: Facebook
+  label_people_linkedin: LinkedIn
+  label_people_middlename: Tweede naam
+  label_people_background: Achtergrond informatie
+  label_people_address: Adres
+  label_people_gender: Geslacht
+  label_people_birthday: Geboortedatum
+  label_people_appearance_date: Datum in dienst
+  label_people_age: Leeftijd
+
+  people_permission_edit_people: Medewerkers bewerken
+  people_permission_view_people: Medewerkers bekijken
+  people_permission_add_people: Medewerkers toevoegen
+  people_permission_delete_people: Medewerkers verwijderen
+  people_permission_add_attachments: Bijlage toevoegen
+
+  #0.0.2
+  label_people_acl_settings: ACL instellingen
+  label_people_visibility: Medewerkers zichtbaarheid
+  label_people_visibility_select: Laat medewerkers zien
+  label_people_visibility_resistered: Voor geregistreerde gebruikers
+  label_people_visibility_selected: Voor geselecteerde gebruikers
+  label_people_visibility_anonymous: Voor anonieme gebruikers
+
+  #0.0.3
+  label_department_plural: Afdelingen
+  label_department_new: Nieuwe afdeling
+  label_department: Afdeling
+  label_department_head: Hoofd
+  label_people_department: Afdeling
+  label_people_at_department: van
+  field_department_parent: Onderdeel van
+  people_permission_edit_departments: Bewerk afdelingen
+
+  #0.1.5
+  people_permission_delete_departments: Verwijder afdelingen

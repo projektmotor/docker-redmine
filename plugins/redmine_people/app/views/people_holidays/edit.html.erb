@@ -1,0 +1,17 @@
+<h2><%=l(:label_people_holiday_edit)%></h2>
+
+<%= labelled_form_for @holiday, :url => people_holiday_path(@holiday),
+                      :html => {:id => 'people_holiday', :multipart => true} do |f| %>
+    <%= error_messages_for 'holiday' %>
+    <div class="box tabular">
+      <div id="all_attributes">
+        <%= render :partial => 'form', :locals => {:f => f} %>
+      </div>
+    </div>
+
+    <%= submit_tag l(:button_update) %>
+<% end %>
+
+<% content_for :sidebar do %>
+    <%= render :partial => 'people/sidebar' %>
+<% end %>

@@ -1,0 +1,15 @@
+<% if department.head.blank? %>
+  <%= link_to department, department_path(department) %>
+<% else %>
+  <% person = department.head %>
+
+  <div class="person-data">
+    <div class="person">
+      <div class="image"><%= link_to avatar(person, size: '32'), person_path(person), id: 'avatar' %></div>
+      <div class="data">
+        <h4 class="name" title="<%= department.name %>"><%= link_to department, department_path(department) %></h4>
+        <p class="info" title="<%= person.name %>"><%= link_to person.name, person_path(person) %></p>
+      </div>
+    </div>
+  </div>
+<% end %>

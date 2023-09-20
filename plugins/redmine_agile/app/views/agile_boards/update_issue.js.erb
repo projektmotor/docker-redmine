@@ -1,0 +1,1 @@
+$(".issue-card[data-id='<%= @issue.id %>']").replaceWith("<%= escape_javascript(render partial: 'issue_card', locals: { issue: @issue }) %>")

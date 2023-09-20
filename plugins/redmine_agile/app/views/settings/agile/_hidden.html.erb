@@ -1,0 +1,5 @@
+<p>
+  <label for="settings_chart_future_data"><%= l(:label_chart_future_data) %></label>
+  <%= hidden_field_tag 'settings[chart_future_data]', 0, :id => nil %>
+  <%= check_box_tag 'settings[chart_future_data]', 1, RedmineAgile.chart_future_data? %>
+</p>

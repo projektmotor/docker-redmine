@@ -1,0 +1,13 @@
+
+  <% if User.current.allowed_to?(:manage_sprints, @project) %>
+    <% if @project.agile_sprints_any? %>
+      <p>
+        <%= label_tag 'issue_agile_data_attributes_agile_sprint_id', l(:label_agile_sprint) %>
+        <%= select 'issue[agile_data_attributes]', :agile_sprint_id,
+                   grouped_options_for_select(sprint_values_for_select_for(@project)),
+                       { :include_blank => true } %>
+      </p>
+    <% else %>
+      <%= hidden_field 'issue[agile_data_attributes][agile_sprint_id]', value: 0 %>
+    <% end %>
+  <% end %>

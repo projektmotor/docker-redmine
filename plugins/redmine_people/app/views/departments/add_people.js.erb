@@ -1,0 +1,4 @@
+$('#tab-content-people').html('<%= escape_javascript(render :partial => 'departments/people') %>');
+<% @people.each do |person| %>
+  $('#person-<%= person.id %>').effect("highlight");
+<% end %>

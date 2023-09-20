@@ -1,0 +1,225 @@
+# encoding: utf-8
+# Simplified Chinese strings go here for Rails i18n
+# Author: Salivaxiu@163.com
+# Based on file: en.yml
+
+zh:
+  label_people: 人员
+  label_people_edit_person: 编辑个人信息
+  label_people_new_person: 新人员
+  label_people_group_plular: 组
+  label_people_search: 搜索名字
+  label_people_show_on_map: 地图上显示
+  label_people_person: 人员
+  label_people_all: 显示所有人员
+  label_people_next_birthdays: 马上过生日
+  label_people_new_people: 新人员
+  label_people_male: 男
+  label_people_female: 女
+  label_people_settings: 人员设置
+
+  button_people_edit_profile: 编辑属性
+
+  label_people_avatar: 头像
+  label_people_job_title: 职位
+  label_people_phone: 电话
+  label_people_phone_plural: 手机
+  label_people_skype: 微信
+  label_people_twitter: 微博
+  label_people_facebook: QQ
+  label_people_linkedin: 领英
+  label_people_workday_length: 每日工作时长
+  label_people_middlename: 中间名
+  label_people_background: 背景信息
+  label_people_address: 地址
+  label_people_gender: 性别
+  label_people_birthday: 生日
+  label_people_appearance_date: 见面日期
+  label_people_age: 年龄
+
+  people_permission_edit_people: 编辑人员
+  people_permission_view_people: 浏览人员
+  people_permission_add_people: 增加人员
+  people_permission_delete_people: 删除人员
+  people_permission_add_attachments: 增加附件
+  people_permission_edit_announcement: 编辑通知
+  people_permission_view_performance: 查看效能
+  people_permission_view_leave: 查看休假
+  people_permission_edit_leave: 编辑休假
+
+  #0.0.2:
+  label_people_acl_settings: ACL设置
+  label_people_visibility: 知名度
+  label_people_visibility_select: 显示人员
+  label_people_visibility_resistered: 对于注册用户
+  label_people_visibility_selected: 对于选定用户
+  label_people_visibility_anonymous: 对于匿名用户
+
+  #0.0.3:
+  label_department_plural: 部门
+  label_department_new: 新部门
+  label_department: 部门
+  label_department_head: 领导
+  label_people_department: 部门
+  label_people_at_department: 在
+  field_department_parent: 的子部门
+  people_permission_edit_departments: 编辑部门
+
+  #0.1.5:
+  people_permission_delete_departments: 删除部门
+
+  #0.1.6:
+  label_people_new_mail: 新消息
+
+  #0.1.7:
+  label_people_show_for_registered_users: 显示注册用户的人员
+
+  #1.1.0:
+  label_people_tags_plural: 标签
+  label_visibility_public: 任何用户
+  label_visibility_private: 只有我
+  label_people_default_list_style: 默认的列表样式
+  label_people_list_partial_style: 列表样式
+  label_people_list_excerpt: 摘录列表
+  label_people_list_list: 名片
+  label_people_company: 公司
+  button_people_edit_query: 编辑查询
+  button_people_delete_query: 删除查询
+  people_permission_manage_public_people_queries: 管理公共查询
+  label_people_add_tag: +添加标签
+  field_person_full_name: 姓名
+  label_people_edit_tags: 编辑标签
+  people_permission_manage_tags: 管理标签
+  label_people_hide_age: 隐藏年龄
+  label_people_is_system: 系统
+  label_people_edit_own_data: 编辑自己的数据
+
+  # 1.2.0:
+  label_announcement_description: 描述
+  label_announcement_frequency: 频率
+  label_announcement_active: 活动
+  label_announcement_start_date: 开始日期
+  label_announcement_end_date: 结束日期
+  label_announcement_new: 新通知
+  label_announcement_plural: 通知
+  label_announcement_successful_update: 通知成功更新
+  label_announcement: 通知
+  label_people_use_announcement: 使用通知
+  field_frequency: 频率
+  field_end_date: 结束日期
+  field_kind: 类型
+
+  frequency_once: 只一次
+  frequency_everyday: 每一天
+  frequency_wday: 每周一次
+  frequency_mday: 每月一次
+
+  announcement_kind_notice: 注意
+  announcement_kind_warning: 警告
+  announcement_kind_error: 错误
+  announcement_status_active: 活动
+  announcement_status_all: 所有
+  label_people_close: 关闭
+  label_people_birthday_today: 今日生日
+  label_people_birthday_tomorrow: 明日生日
+  label_people_birthday_this_week: 本周生日
+  label_people_show_birthday_announcements: 显示生日公告
+  label_people_subordinates: 下属
+  label_people_manager: 经理
+  people_permission_edit_subordinates: 编辑下属
+
+  label_people_default_group: 默认用户组
+  label_people_choose_manager: 选择经理
+
+  label_people_work_experience: 工作经历
+  label_people_work_experience_new: 新工作经历
+  label_people_work_experience_edit: 编辑工作经历
+  label_people_previous_company_name: 上一家公司名
+  label_people_previous_job_title: 上一个工作职位
+  label_people_from_date: 开始日期
+  label_people_to_date: 结束日期
+  label_people_to_description: 描述
+
+  label_people_performance: 效能
+  label_people_total_hours: 总小时数
+  label_people_overtime: 加班
+  label_people_weekends: 周末
+  label_people_hour: 小时
+  label_people_minute: 分钟
+  label_people_deviation: 偏差
+  label_time_spent: 耗时
+  label_people_period: 上一期间
+  label_people_calendar: 工作日历
+  label_people_holidays: 假期
+  label_people_organization_chart: 公司架构
+  label_people_organization_name: 公司名
+  label_people_set_organization_name: 设置公司名
+  label_people_organization_head: 公司领导人
+  label_people_birthdays: 生日
+
+  label_people_holiday_name: 名称
+  label_people_holiday_start_date: 开始日期
+  label_people_holiday_end_date: 结束日期
+  label_people_holiday_description: 描述
+  label_people_holiday_is_workday: 是工作日
+  label_people_holiday_notify: 提醒
+  label_people_holiday_notify_subject:  "添加从日期 %{from} 到 %{to} 为 %{name} 假日. "
+  label_people_holidays_next: 下一个假日
+
+  label_people_holiday_new: 新建假日
+  label_people_holiday_edit: 编辑假日
+
+  people_permission_manage_departments: 部门管理
+
+  people_permission_edit_work_experience: 编辑工作经历
+  people_permission_edit_own_work_experience: 编辑自己的工作经历
+  people_permission_manage_calendar: 管理工作日历
+
+  notice_failed_to_save_people:  "无法将 %{count} 人员保存在所选的 %{total} 上"
+  people_label_bulk_edit_selected_people: 编辑所有选择的人员
+
+  label_people_add_tags: 添加标签
+  label_people_delete_tags: 删除标签
+  label_people_report_plural: 人员报表
+  label_people_user_activity: 用户活动
+  label_people_average_time_per_day: 平均每日
+  label_people_total_coverage: 全部覆盖范围
+  label_people_filter_activity_type: 活动类型
+  label_people_filter_time_interval: 报表时间区间
+
+  label_activity_type_issue_create: 创建Issue
+  label_activity_type_issue_update: 更新Issue
+  label_activity_type_spent_time_added: 添加耗时
+
+  label_people_by_month: 每月
+  label_people_by_year: 每年
+
+  label_people_leave_planner: 休假计划
+  label_people_leave_type: 休假类型
+  label_people_leave_types: 休假类型
+  label_people_leave_type_new: 新建休假类型
+  label_people_leave_type_edit: 编辑休假类型
+  label_people_leave_new: 新休假
+  label_people_leave_edit: 编辑休假
+  label_people_leave_comment: 留言
+  label_people_graph: 图表
+  label_people_not_approved: 未批准
+  label_people_scheduled_for: 给
+  label_people_added_day_off: 添加调休
+
+  notice_leave_type_successfully_destroyed: 休假类型已被成功销毁
+
+  field_paid: 支付
+  field_approvable: 审批
+  field_approved: 已批准
+  field_color: 颜色
+  field_leave_type: 休假类型
+  field_hours_per_day: 小时/日
+  field_duration: 持续
+  field_hours_per_day_abbreviation: 小时/天
+
+  label_people_contact_plural: 联系人
+  activerecord:
+    errors:
+      messages:
+        greater_than_or_equal_to_start_date: 必须大于或等于开始日期

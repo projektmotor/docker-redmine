@@ -1,0 +1,8 @@
+<% unless User.current.allowed_people_to?(:edit_people, User.current) %>
+<script>
+  $(function() {
+      $("#user_firstname, #user_lastname, #user_mail, [name*='user[custom_field_values]']").attr('disabled','disabled');
+      $('a[href="/my/account/destroy"').hide();
+  });
+</script>
+<% end %>

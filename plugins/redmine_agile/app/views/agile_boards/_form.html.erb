@@ -1,0 +1,28 @@
+
+<h3 class="title"><%= l(:label_agile_edit_issue) %></h3>
+<div class="issue-edit-modal">
+  <%= form_tag(agile_update_issue_path(id: @issue), remote: true, method: :put) do %>
+    <%= labelled_fields_for :issue, @issue do |f| %>
+      <% if @issue.safe_attribute? 'subject' %>
+      <p><%= f.text_field :subject, :size => 80, :maxlength => 255, :required => true %></p>
+      <% end %>
+
+      <% if @issue.safe_attribute? 'description' %>
+      <p>
+        <%= f.label_for_field :description, :required => @issue.required_attribute?('description') %>
+        <%= f.text_area :description,
+                       :cols => 60,
+                       :rows => [[10, @issue.description.to_s.length / 50].max, 20].min,
+                       :accesskey => accesskey(:edit),
+                       :class => 'wiki-edit',
+                       :no_label => true %>
+      </p>
+      <% end %>
+    <% end %>
+
+    <p class="buttons">
+      <%= submit_tag l(:button_submit), name: nil, onclick: "hideModal(this);", class: "modal-action-button" %>
+      <%= submit_tag l(:button_cancel), name: nil, onclick: "hideModal(this);", type: 'button', class: "modal-action-button" %>
+    </p>
+  <% end %>
+</div>

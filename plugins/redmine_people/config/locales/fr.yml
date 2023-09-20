@@ -1,0 +1,60 @@
+# French strings go here for Rails i18n - Laurent HADJADJ 08/04/2013
+fr:
+  label_people: Utilisateur
+  label_people_edit_person: Editer les informtions de l'utilisateur
+  label_people_new_person: Nouvel utilisateur
+  label_people_group_plular: Groupes
+  label_people_search: Recherche par nom
+  label_people_show_on_map: Affiche sur la carte
+  label_people_person: Utilisateur
+  label_people_all: Affcihe tout les utilisateurs
+  label_people_next_birthdays: Prochain anniversaire
+  label_people_new_people: Nouvel utilisateur
+  label_people_male: Homme
+  label_people_female: Femme
+  label_people_settings: Informations utilisateur
+
+  button_people_edit_profile: Edition du profile
+
+  label_people_avatar: Avatar
+  label_people_job_title: Fonction
+  label_people_phone: Téléphone
+  label_people_phone_plural: Téléphones
+  label_people_skype: Skype
+  label_people_twitter: Twitter
+  label_people_facebook: Facebook
+  label_people_linkedin: LinkedIn
+  label_people_middlename: Second prénom
+  label_people_background: Descriptif
+  label_people_address: Adresse
+  label_people_gender: Genre
+  label_people_birthday: Date de naissance
+  label_people_appearance_date: Date d'entrée
+  label_people_age: Age
+
+  people_permission_edit_people: Editer l'utilisateur
+  people_permission_view_people: Voir l'utilisateur
+  people_permission_add_people: Ajouter un utilisateur
+  people_permission_delete_people: Effacer un utilisateur
+  people_permission_add_attachments: Ajouter une pièce jointe
+
+  #0.0.2
+  label_people_acl_settings: Configuration des droits
+  label_people_visibility: Visibilité de l'utilisateur
+  label_people_visibility_select: Affiche l'utilisateur
+  label_people_visibility_resistered: Pour les utilisateurs enregistrés uniquement
+  label_people_visibility_selected: Pour les utilisateurs sélectionnés
+  label_people_visibility_anonymous: Pour les utilisateurs anonymes
+
+  #0.0.3
+  label_department_plural: Direction
+  label_department_new: Nouveau département
+  label_department: Département
+  label_department_head: Responsable
+  label_people_department: Département
+  label_people_at_department: a
+  field_department_parent: Sous-département de
+  people_permission_edit_departments: Editer le département
+
+  #0.1.5
+  people_permission_delete_departments: Effacer le département

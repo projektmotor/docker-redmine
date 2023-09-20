@@ -1,0 +1,18 @@
+agile_data_1:
+  id: 1
+  issue_id: 1
+  position: 1
+  story_points: 1.1
+  agile_sprint_id: nil
+agile_data_2:
+  id: 2
+  issue_id: 2
+  position: 1
+  story_points: 2.2
+  agile_sprint_id: 1
+agile_data_3:
+  id: 3
+  issue_id: 3
+  position: 3
+  story_points: nil
+  agile_sprint_id: 2

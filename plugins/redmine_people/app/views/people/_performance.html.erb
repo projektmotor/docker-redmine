@@ -1,0 +1,119 @@
+<table class="chart_table">
+  <tbody>
+    <tr class="metrics">
+      <% if @prfm_collector.performance.present? %>
+        <td>
+          <p><%= l(:label_people_performance) %></p>
+          <span class="num"><%= @prfm_collector.performance.round %>%</span>
+          <%= metric_deviation_html(@prfm_collector.previous_performance, @prfm_collector.performance, format: nil, period: @prfm_collector.incomplete_period) %>
+        </td>
+      <% end %>
+
+      <td>
+        <p><%= l(:label_people_total_hours) %></p>
+        <%= time_metric_label(@prfm_collector.total_hours) %>
+        <%= metric_deviation_html(@prfm_collector.previous_total_hours, @prfm_collector.total_hours, period: @prfm_collector.incomplete_period) %>
+      </td>
+
+      <td class="delimiter"></td>
+
+      <% if @prfm_collector.overtime.present? %>
+        <td>
+          <p><%= l(:label_people_overtime) %></p>
+          <%= time_metric_label(@prfm_collector.overtime) %>
+          <%= metric_deviation_html(@prfm_collector.previous_overtime, @prfm_collector.overtime, positive_metric: false, period: @prfm_collector.incomplete_period) %>
+        </td>
+      <% end %>
+
+      <td>
+        <p><%= l(:label_people_weekends) %></p>
+        <%= time_metric_label(@prfm_collector.weekends_hours) %>
+        <%= metric_deviation_html(@prfm_collector.previous_weekends_hours, @prfm_collector.weekends_hours, positive_metric: false, period: @prfm_collector.incomplete_period) %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="date_period_block">
+  <%= interval_type_select :interval_type, params[:interval_type] %>
+  <% if params[:interval_type] == PersonPerformanceCollector::YEAR %>
+    <%= year_filter_select :date_period, @person, params[:date_period] %>
+  <% else %>
+    <%= month_filter_select :date_period, params[:date_period] %>
+  <% end %>
+</div>
+<script type='text/javascript'>
+  function updatePerformanceTab(interval_type, date_period) {
+    var data = {
+      tab_name: 'performance',
+      partial: 'performance',
+      interval_type: interval_type || '',
+      date_period: date_period || ''
+    };
+
+    updateTab('performance', '<%= load_tab_person_path(@person) %>', data);
+  };
+
+  $('#interval_type').on('change', function (e) {
+    updatePerformanceTab($('#interval_type').val());
+  });
+
+  $('#date_period').on('change', function (e) {
+    updatePerformanceTab($('#interval_type').val(), $('#date_period').val());
+  });
+</script>
+
+<h3><%= l(:label_time_spent) %></h3>
+
+<% if params[:interval_type] == PersonPerformanceCollector::YEAR %>
+  <div id="performance-glanceyear-chart" class="glanceyear-container autoscroll">
+    <div class="glanceyear-content" id="js-glanceyear"></div>
+  </div>
+
+  <script>
+    $(function() {
+      var massive = <%= raw @prfm_collector.chart_data.to_json %>;
+      $('#js-glanceyear').empty().glanceyear(massive, {
+        dateFrom: new Date('<%= @prfm_collector.from.beginning_of_year.to_s %>'),
+        dateTo: new Date('<%= @prfm_collector.from.end_of_year.to_s %>'),
+        weeks: <%= raw I18n.t('date.abbr_day_names').to_json %>,
+      });
+    });
+  </script>
+<% else %>
+  <div id="performance-histogram" class="autoscroll">
+    <table class="chart_table histogram">
+      <tbody>
+      <tr class="header">
+        <% @prfm_collector.chart_data.each do |data| %>
+          <td class="column_data<%= ' empty' if data[:spent_time].to_i <= 0 %>">
+
+            <% if data[:spent_time].to_i > 0 %>
+              <p class="issues_count"><%= data[:spent_time] %></p>
+
+              <% if data[:performance].to_i > 0 %>
+                <p><%= data[:performance] %>%</p>
+              <% end %>
+            <% end %>
+
+          </td>
+        <% end %>
+      </tr>
+
+      <tr class="main_block">
+        <% @prfm_collector.chart_data.each do |data| %>
+          <td class="column_data<%= ' empty' if data[:spent_time].to_i <= 0 %>">
+            <div class="percents" style="height: <%= 20 * data[:height_ratio] %>em"></div>
+          </td>
+        <% end %>
+      </tr>
+
+      <tr class="footer">
+        <% (1..@prfm_collector.chart_data.length).each do |i| %>
+          <td class="column_data"><%= i %></td>
+        <% end %>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+<% end %>

@@ -1,0 +1,10 @@
+<table class="person_data" >
+  <% PeopleHoliday.next_holidays.each do |holiday| %>
+  <tr>
+    <td class="name">
+      <h4 class="contacts_header"><%= link_to holiday.name, calendar_people_path(:set_filter => 1, :month => holiday.start_date.month, :year => holiday.start_date.year) %></h4>
+      <p><span><%= holiday.start_date.strftime('%d %B') %><%= (holiday.end_date.present? ? " - #{holiday.end_date.strftime('%d %B')}" : '' ) %></span></p>
+    </td>
+  </tr>
+  <% end %>
+</table>

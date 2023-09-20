@@ -1,0 +1,11 @@
+<%= render  :partial => "people_settings/departments" %>
+
+<% html_title(l(:label_department_plural)) -%>
+
+<% content_for :header_tags do %>
+  <%= javascript_include_tag :redmine_people, :plugin => 'redmine_people'  %>
+<% end %>
+
+<% content_for :sidebar do %>
+    <%= render :partial => 'people/sidebar' %>
+<% end %>

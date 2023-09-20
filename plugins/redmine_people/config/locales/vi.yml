@@ -1,0 +1,29 @@
+# Russian strings go here for Rails i18n
+vi:
+  label_questions: 'Hỏi & Giúp đỡ'
+  label_questions_search: 'Tìm kiếm câu hỏi, trả lời hoặc chủ đề ...'
+  label_questions_new: Câu hỏi mới
+  label_questions_message: Lời nhắn
+  label_questions_added_time: "Được thêm %{value} trước"
+  label_questions_related_messages: Lời nhắn liên quan
+  label_questions_latest_messages: Lời nhắn mới nhất
+  label_questions_views: 'Được xem %{count} lần'
+  label_questions_votes: 'Có %{count} bình chọn'
+  label_questions_answers: '%{count} trả lời'
+  label_questions_tags: Tags
+  label_questions_tagged_by: '%{count} chủ đề được đánh dấu %{tag}'
+  label_questions_notice_message: Lời nhắn thông báo
+  label_questions_notice: Thông báo
+  label_questions_most_voted: Bầu chọn nhiều nhất
+
+  button_questions_vote: Bầu chọn
+  button_questions_unvote: Hủy bầu chọn
+  button_questions_like: Thích
+  button_questions_unlike: Không thích
+
+  field_questions_tags: Đánh dấu
+
+  permission_view_questions: Hiển thị Hỏi & Đáp
+  permission_edit_messages_tags: Thay đổi đánh dấu
+  permission_edit_vote_messages: Lời nhắn bầu chọn
+  label_questions_for_me: Câu hỏi dành cho tôi

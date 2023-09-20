@@ -1,0 +1,5 @@
+<%= l(:label_people_holiday_notify_subject,
+      name: h(@holiday.name),
+      from: h(format_date(@holiday.start_date)),
+      to: h(@holiday.end_date.present? ? " - #{format_date(@holiday.end_date)}" : '')).html_safe %>
+<%= calendar_people_url(set_filter: 1, month: @holiday.start_date.month, year: @holiday.start_date.year) %>

@@ -1,0 +1,28 @@
+---
+leave_type_1:
+  id: 1
+  name: Vacation
+  paid: true
+  approvable: true
+  color: <%= LeaveType::COLORS[:green] %>
+
+leave_type_2:
+  id: 2
+  name: Leave
+  paid: false
+  approvable: true
+  color: <%= LeaveType::COLORS[:blue] %>
+
+leave_type_3:
+  id: 3
+  name: Sick leave
+  paid: true
+  approvable: false
+  color: <%= LeaveType::COLORS[:yellow] %>
+
+leave_type_4:
+  id: 4
+  name: Homeworking
+  paid: true
+  approvable: false
+  color: <%= LeaveType::COLORS[:red] %>

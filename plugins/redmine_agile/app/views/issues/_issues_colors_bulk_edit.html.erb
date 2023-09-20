@@ -1,0 +1,22 @@
+<% if @safe_attributes.include?('agile_color_attributes') && RedmineAgile.use_colors? %>
+    <p>
+      <%= label_tag 'issue_agile_color_attributes_color', l(:label_agile_color) %>
+      <%= select 'issue[agile_color_attributes]', :color,
+                     options_for_select(AgileColor::AGILE_COLORS),
+                     { :include_blank => true } %>
+      <label class="inline">
+        <%= check_box_tag 'issue[agile_color_attributes][color]',
+                          'none',
+                          false,
+                          :id => nil,
+                          :data => {:disables => '#issue_agile_color_attributes_color'} %>
+        <%= l(:button_clear) %>
+      </label>
+    </p>
+
+    <%= javascript_tag "$('#issue_agile_color_attributes_color').simplecolorpicker({picker: true});"%>
+    <% content_for :header_tags do %>
+      <%= javascript_include_tag 'jquery.simplecolorpicker.js', :plugin => "redmine_agile" %>
+      <%= stylesheet_link_tag 'jquery.simplecolorpicker.css', :plugin => 'redmine_agile' %>
+    <% end %>
+<% end %>

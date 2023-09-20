@@ -1,0 +1,106 @@
+<div class="contextual">
+  <% if !@query.new_record? && @query.editable_by?(User.current) %>
+    <%= link_to l(:button_edit), edit_project_agile_version_query_path(@project, @query), class: 'icon icon-edit' %>
+    <%= delete_link project_agile_version_query_path(@project, @query) %>
+  <% end %>
+  <% if User.current.allowed_to?(:manage_versions, @project) %>
+    <%= link_to(l(:label_agile_version_add), new_project_version_path(@project), class: 'icon icon-add') %>
+  <% end %>
+</div>
+
+<h2><%= l(:label_agile_version_planning) %></h2>
+<%= render partial: 'filters_form', locals: { query: @query,
+                                              form_url: project_agile_versions_path(@project),
+                                              save_url: new_project_agile_version_query_path(@project) } %>
+
+<% if User.current.allowed_to?(:edit_issues, @project) %>
+  <%= javascript_tag do %>
+    new PlanningBoard().init({
+      project_id: '<%= @project && @project.id %>',
+      update_agile_board_path: '<%= escape_javascript update_agile_board_path %>',
+      issues_path: '<%= escape_javascript issues_path %>'
+    });
+  <% end %>
+<% end %>
+
+<%= render partial: 'tabs' %>
+
+<% if @project.shared_versions.any? %>
+  <%= form_tag({}) do -%>
+    <%= hidden_field_tag 'back_url', url_for(params.respond_to?(:to_unsafe_hash) ? params.to_unsafe_hash : params) %>
+    <%= hidden_field_tag 'project_id', @project.id if @project %>
+
+    <div class="autoscroll">
+      <div class="flash error" style="display: none;" id="agile-board-errors"></div>
+      <div class="planning-board-wrapper">
+        <div class="planning-board" data-estimated-unit="<%= estimated_unit %>">
+
+          <div class="no-version-column">
+            <div class="column-content">
+              <div class="column-header">
+                <%= text_field_tag "search", '', placeholder: l(:label_agile_no_version_issues) %>
+                <%= javascript_tag "observeIssueSearchfield('search', '#{escape_javascript autocomplete_project_agile_versions_path(@project)}');" %>
+              </div>
+              <div class="column-issues no-version-issues" data-version-id="">
+                <%= render partial: 'issues_list', locals: {
+                  issues: @no_version_issues,
+                  page: @paginator.try(:next_page),
+                  more_url: load_more_project_agile_versions_path(@project, version_id: nil,
+                                                                            q: params[:q],
+                                                                            page: @paginator.try(:next_page))
+                  }  %>
+              </div>
+            </div>
+          </div>
+
+          <% @query.versions.each do |version| %>
+            <% @version_paginator = @query.version_paginator(version, params) %>
+            <div class="version-column">
+              <div class="column-content">
+                <div class="column-header">
+                  <span class="version-name"><%= version.name %></span>
+                  <span class="version-estimate"></span>
+                </div>
+                <div class="column-issues version-<%= version.id %>-issues" data-version-id="<%= version.id %>">
+                  <%= render partial: 'issues_list', locals: {
+                        issues: @query.version_issues(version).limit(@version_paginator.per_page),
+                        page: @version_paginator.try(:next_page),
+                        more_url: load_more_project_agile_versions_path(@project, version_id: version.id,
+                                                                                  q: params[:q],
+                                                                                  page: @version_paginator.try(:next_page))
+                      }  %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <%= javascript_tag do %>
+    recalculateHours();
+    $(document).ajaxSuccess(recalculateHours);
+    $('.planning-board').dragscrollable({dragSelector:'.version-column', acceptPropagatedEvent: false, allowY: false });
+  <% end %>
+<% else %>
+  <p class="nodata"><%= l(:label_no_data) %></p>
+<% end %>
+
+<% content_for :sidebar do %>
+  <%= render partial: 'agile_boards/issues_links' %>
+  <%= render partial: 'agile_charts/agile_charts' %>
+  <% if User.current.allowed_to?(:view_backlog, @project) %>
+    <%= render_sidebar_agile_version_queries %>
+  <% end %>
+<% end %>
+
+<% html_title l(:label_agile_version_planning) %>
+<%= javascript_tag "agileContextMenuInit('#{ url_for(issues_context_menu_path) }')" %>
+<% content_for :header_tags do %>
+  <%= javascript_include_tag "redmine_agile", plugin: 'redmine_agile' %>
+  <%= javascript_include_tag "jquery.ui.touch-punch.js", plugin: 'redmine_agile' %>
+  <%= javascript_include_tag "redmine_agile_context_menu", plugin: 'redmine_agile' %>
+  <%= javascript_include_tag "dragscrollable.min", plugin: 'redmine_agile' %>
+  <%= stylesheet_link_tag 'context_menu' %>
+<% end %>

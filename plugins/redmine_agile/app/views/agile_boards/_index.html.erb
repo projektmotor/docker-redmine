@@ -1,0 +1,187 @@
+<div class="contextual">
+  <%= link_to l(:label_agile_charts), @project ? project_agile_charts_path(project_id: @project) : agile_charts_path, class: 'icon icon-stats agile_charts_link', onclick: 'chartLinkGenerator();' %>
+  <% if !@query.new_record? && @query.editable_by?(User.current) %>
+    <%= link_to l(:button_edit), edit_agile_query_path(@query), class: 'icon icon-edit' %>
+    <%= delete_link agile_query_path(@query) %>
+  <% end %>
+</div>
+
+<% html_title(@query.new_record? ? l(:label_agile_board) : @query.name) %>
+<%= form_tag({ controller: 'agile_boards', action: 'index', project_id: @project }, method: :get, id: 'query_form', onsubmit: 'DisableNullFields()') do %>
+  <h2>
+    <%= @query.new_record? ? l(:label_agile_board) : h(@query.name) %>
+    <% if @query.sprints_enabled.to_i > 0 %>
+      <span class="selected_sprint">
+        <%= select_tag('sprint_id', grouped_options_for_select(sprint_values_for_select_for(@project), @query.sprint_id), onchange: "$(this).closest('form').submit()") if @project.try(:agile_sprints_any?) %>
+      </span>
+      <span>
+        <%= link_to('', new_project_agile_sprint_path(project_id: @project.identifier), class: 'icon icon-add') if @project %>
+      </span>
+    <% else %>
+      <span class="live_search">
+        <%= text_field_tag(:search, '', :id => 'agile_live_search', :class => 'live_search_field', :placeholder => l(:label_cards_search)) %>
+      </span>
+    <% end %>
+  </h2>
+
+  <div id="query_form_with_buttons" class="hide-when-print">
+    <%= hidden_field_tag 'set_filter', '1' %>
+    <div id="query_form_content">
+      <fieldset id="filters" class="collapsible <%= @query.new_record? ? "" : "collapsed" %>">
+        <legend onclick="toggleFieldset(this);" class="icon icon-<%= @query.new_record? ? "expanded" : "collapsed" %>"><%= l(:label_filter_plural) %></legend>
+        <div style="<%= @query.new_record? ? "" : "display: none;" %>">
+          <%= render :partial => 'queries/filters', :locals => {:query => @query} %>
+        </div>
+      </fieldset>
+      <fieldset id="options" class="collapsible collapsed">
+        <legend onclick="toggleFieldset(this);" class="icon icon-collapsed"><%= l(:label_options) %></legend>
+        <div style="display: none;">
+          <table class="options agile_options">
+            <tr>
+              <td collspan="2">
+                <% if @project.try(:agile_sprints_any?) %>
+                  <div class="agile_options_field">
+                    <label class="agile_options_label" for='sprints_enabled'><%= l(:label_agile_board_type) %></label>
+                    <%= select_tag('sprints_enabled', options_for_select([[l(:label_agile_board_type_kanban), '0'], [l(:label_agile_board_type_scrum), '1']], @query.sprints_enabled.to_s))  %>
+                  </div>
+                <% end %>
+                <% if @query.sprints_enabled.to_i > 0 %>
+                  <div class="agile_options_field">
+                    <label class="agile_options_label" for='backlog_column'><%= l(:label_agile_board_backlog_column) %></label>
+                    <%= check_box_tag('backlog_column', 1, @query.backlog_column, id: :backlog_column) %>
+                  </div>
+                <% end %>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <fieldset class="card-fields">
+                  <legend><%= l(:label_agile_board_columns) %></legend>
+                  <%= render_board_fields_status(@query) %>
+                </fieldset>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <fieldset class="card-fields">
+                  <legend><%= l(:label_agile_fields) %></legend>
+                  <%= render_board_fields_selection(@query) %>
+                </fieldset>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <div class="agile_options_field">
+                  <label class="agile_options_label" for='default_chart'><%= l(:label_agile_sprint_default_chart) %></label>
+                  <%= select_tag('default_chart', options_charts_for_select(@query.default_chart || RedmineAgile.default_chart)) %>
+                </div>
+
+                <div class="agile_options_field">
+                  <label class="agile_options_label" for='chart_units'><%= l(:label_agile_sprint_chart_units) %></label>
+                  <%= select_tag('chart_unit', options_chart_units_for_select(@query.chart_unit || RedmineAgile.default_chart)) %>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td colspan="2">
+                <div class="agile_options_field">
+                  <label class="agile_options_label" for='group_by'><%= l(:label_agile_swimlanes) %></label>
+                  <%= select_tag('group_by',
+                                 options_for_select(
+                                   [[]] + @query.groupable_columns.collect {|c| [c.caption, c.name.to_s]},
+                                   @query.group_by)
+                              ) %>
+                </div>
+
+                <% if RedmineAgile.use_colors? && @query.respond_to?(:color_base) %>
+                  <div class="agile_options_field">
+                    <label class="agile_options_label" for='color_base'><%= l(:label_agile_color_based_on) %></label>
+                    <%= select_tag 'color_base', options_card_colors_for_select(@query.color_base) %>
+                  </div>
+                <% end %>
+              </td>
+            </tr>
+
+            <% if Redmine::VERSION.to_s > '3.2' %>
+              <% if @query.sprints_enabled.to_i > 0 %>
+              <tr>
+                <td colspan="2">
+                  <label class="agile_options_label"><%= l(:button_show) %></label>
+                  <label class="inline">
+                    <%= check_box_tag 'show_description', 1, @query.show_description?, id: nil %>
+                    <%= l(:label_agile_board_totals_description) %>
+                  </label>
+                </td>
+              </tr>
+              <% end %>
+              <tr>
+                <td colspan="2">
+                  <label class="agile_options_label"><%= l(:label_agile_board_totals) %></label>
+                  <%= available_totalable_columns_tags(@query) %>
+                </td>
+              </tr>
+            <% end %>
+          </table>
+        </div>
+      </fieldset>
+    </div>
+    <p class="buttons">
+    <%= link_to_function l(:button_apply), '$("#query_form").submit()', :class => 'icon icon-checked' %>
+    <%= link_to l(:button_clear), { :set_filter => 1, :project_id => @project }, :class => 'icon icon-reload'  %>
+    <% if @query.new_record? && User.current.allowed_to?(:add_agile_queries, @project, :global => true) %>
+        <%= link_to_function l(:button_save),
+                             "$('#query_form').attr('action', '#{ @project ? new_project_agile_query_path(@project) : new_agile_query_path }').submit()",
+                             :class => 'icon icon-save' %>
+    <% end %>
+    <%= link_to_function l(:label_agile_fullscreen), '$("html").toggleClass("agile-board-fullscreen"); saveFullScreenState()', :class => 'icon icon-fullscreen' %>
+    </p>
+
+  </div>
+<% end %>
+
+<%= error_messages_for 'query' %>
+<% if @query.valid? %>
+  <% empty_data = @issues.empty? || @board_columns.empty? %>
+  <% empty_data = false if @query.backlog_column? && @backlog_issues.any? %>
+  <% if empty_data %>
+    <p class="nodata"><%= l(:label_no_data) %></p>
+  <% else %>
+    <% if @query.truncated %>
+      <p class="warning"><%= l(:label_agile_board_truncated, :max => RedmineAgile.board_items_limit) %></p>
+    <% end %>
+    <%= render :partial => 'board' %>
+  <% end %>
+<% end %>
+
+<% content_for :sidebar do %>
+  <%= render :partial => 'issues_links' %>
+  <% if @project && @project.assignable_users.any? %>
+    <%= render :partial => 'members' %>
+  <% end %>
+  <%= render :partial => 'agile_charts/agile_charts' %>
+<% end %>
+
+<% html_title l(:label_agile_board) %>
+<%= javascript_tag "agileContextMenuInit('#{ url_for(issues_context_menu_path) }')" %>
+<% content_for :header_tags do %>
+  <%= javascript_include_tag "redmine_agile", plugin: 'redmine_agile' %>
+  <%= javascript_include_tag "jquery.ui.touch-punch.js", plugin: 'redmine_agile' %>
+  <%= javascript_include_tag "visibility.min.js", plugin: 'redmine_agile' %>
+  <%= javascript_include_tag "redmine_agile_context_menu", plugin: 'redmine_agile' %>
+  <%= stylesheet_link_tag 'context_menu' %>
+  <%= stylesheet_link_tag "redmine_agile.css", plugin: "redmine_agile", media: "print" %>
+  <%= javascript_include_tag('jstoolbar/jstoolbar') +
+      javascript_include_tag('jstoolbar/textile') +
+      javascript_include_tag("jstoolbar/lang/jstoolbar-#{current_language.to_s.downcase}") +
+      stylesheet_link_tag('jstoolbar') %>
+<% end %>
+<% if User.current.allowed_to?(:edit_issues, @project, global: true) %>
+  <script type="text/javascript">
+    var agileBoard = new AgileBoard({
+      project_id: '<%= @project && @project.id %>',
+      update_agile_board_path: '<%= escape_javascript update_agile_board_path %>',
+      issues_path: '<%= escape_javascript issues_path %>',
+      create_issue_path: '<%= escape_javascript(agile_create_issue_path(project_id: @project)) if @project %>'
+    });
+  </script>
+<% end %>

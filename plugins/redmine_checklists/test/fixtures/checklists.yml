@@ -1,0 +1,27 @@
+---
+# === Checklist for Issue(1) ===
+one:
+  id: 1
+  is_done: false
+  subject: First todo
+  issue_id: 1
+
+two:
+  id: 2
+  is_done: true
+  subject: Second todo
+  issue_id: 1
+
+# === Checklist for Issue(2) ===
+section_one:
+  id: 4
+  is_done: false
+  subject: New section
+  is_section: true
+  issue_id: 2
+
+three:
+  id: 3
+  is_done: true
+  subject: Third todo
+  issue_id: 2

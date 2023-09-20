@@ -1,0 +1,31 @@
+<div class="contextual">
+  <% if User.current.allowed_people_to?(:edit_personal_leave) %>
+    <%= link_to l(:label_people_leave_new), new_dayoff_path(return_url: tabs_person_path(@person, tab: 'leaves')),
+                                            remote: true, method: 'get', class: 'icon icon-add' %>
+  <% end %>
+</div>
+<h3><%= l(:label_people_leave_plural) %></h3>
+<table class="list dayoffs odd-even">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th><%= l(:field_leave_type) %></th>
+    <th><%= l(:label_people_holiday_start_date) %></th>
+    <th><%= l(:label_people_holiday_end_date) %></th>
+    <th><%= l(:field_duration) %></th>
+    <th><%= l(:field_approved) %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @person.dayoffs.find_each do |dayoff| %>
+    <tr id="dayoff-<%= dayoff.id %>" class="dayoff <%= cycle("odd", "even") %>">
+      <td><%= dayoff.id %></td>
+      <td><%= dayoff.leave_type %></td>
+      <td><%= dayoff.start_date %></td>
+      <td><%= dayoff.end_date %></td>
+      <td><%= dayoff.hours_per_day %></td>
+      <td><span class="icon <%= 'icon-ok' if dayoff.approved? %>"></span></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

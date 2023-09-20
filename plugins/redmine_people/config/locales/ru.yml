@@ -1,0 +1,231 @@
+# English strings go here for Rails i18n
+ru:
+  label_people: Сотрудники
+  label_people_edit_person: Редактирование сотрудника
+  label_people_new_person: Новый сотрудник
+  label_people_group_plular: Группы
+  label_people_search: Поиск по имени
+  label_people_show_on_map: Показать на карте
+  label_people_person: Сотрудник
+  label_people_all: Показать всех
+  label_people_next_birthdays: Дни рождения
+  label_people_new_people: Новые сотрудники
+  label_people_male: 'Муж.'
+  label_people_female: 'Жен.'
+  label_people_settings: Настройки сотрудников
+
+  button_people_edit_profile: Редактировать профиль
+
+  label_people_avatar: Avatar
+  label_people_job_title: Должность
+  label_people_phone: Телефон
+  label_people_phone_plural: Телефоны
+  label_people_skype: Skype
+  label_people_twitter: Twitter
+  label_people_facebook: Facebook
+  label_people_linkedin: LinkedIn
+  label_people_workday_length: Продолжительность рабочего дня
+  label_people_middlename: Отчество
+  label_people_background: Дополнительная информация
+  label_people_address: Адрес
+  label_people_gender: Пол
+  label_people_birthday: Дата рождения
+  label_people_appearance_date: Дата начала работы
+  label_people_age: Возраст
+
+  people_permission_edit_people: Редактирования сотрудников
+  people_permission_view_people: Просмотр сотрудников
+  people_permission_add_people: Добавление сотрудников
+  people_permission_delete_people: Удаление сотрудников
+  people_permission_add_attachments: Добавление файлов
+  people_permission_edit_announcement: Редактирование оповещений
+  people_permission_view_performance: Просмотр производительности сотрудников
+  people_permission_view_leave: Просмотр отпусков
+  people_permission_edit_leave: Редактирование отпусков
+  people_permission_edit_personal_leave: Редактирование собственных отпусков
+
+  #0.0.2
+  label_people_acl_settings: Права доступа
+  label_people_visibility: Видимость
+  label_people_visibility_select: Показывать сотрудников
+  label_people_visibility_resistered: Для зарегистрированных пользователей
+  label_people_visibility_selected: Для выбранных пользователей
+  label_people_visibility_anonymous: Для анонимных пользователей
+
+  #0.0.3
+  label_department_plural: Отделы
+  label_department_new: Новый отдел
+  label_department: Отдел
+  label_department_head: Руководитель
+  label_people_department: Отдел
+  label_people_at_department: в
+  field_department_parent: Родительский отдел
+  people_permission_edit_departments: Редактирование отделов
+
+  #0.1.5
+  people_permission_delete_departments: Удаление отделов
+
+  #0.1.6
+  label_people_new_mail: Новое сообщение
+
+  #0.1.7
+  label_people_show_for_registered_users: Показывать сотрудников зарегистрированным пользователям
+
+  #1.1.0
+  label_people_tags_plural: Тэги
+  label_visibility_public: всем пользователям
+  label_visibility_private: только мне
+  label_people_default_list_style: Вид списка по умолчанию
+  label_people_list_partial_style: Отображать как
+  label_people_list_excerpt: Списком
+  label_people_list_list: Таблицей
+  label_people_company: Компания
+  button_people_edit_query: Редактировать запрос
+  button_people_delete_query: Удалить запрос
+  people_permission_manage_public_people_queries: Управление общими запросами
+  label_people_add_tag: + добавить тэг
+  field_person_full_name: Полное имя
+  label_people_edit_tags: Редактировать тэги
+  people_permission_manage_tags: Редактировать тэги
+  label_people_hide_age: Скрывать возраст
+  label_people_is_system: Системный
+  label_people_edit_own_data: Редактировать собственные данные
+
+  # 1.2.0
+  label_announcement_description: Описание
+  label_announcement_frequency: Периодичность
+  label_announcement_active: Активно
+  label_announcement_start_date: Дата начала показа
+  label_announcement_end_date: Дата окончания показа
+  label_announcement_end_department: Отдел
+  label_announcement_new: Новое оповещение
+  label_announcement_plural: Оповещения
+  label_announcement_successful_update: Оповещение успешно сохранено
+  label_announcement: Оповещение
+  label_people_use_announcement: Использовать оповещения
+  field_frequency: Периодичность
+  field_end_date: Дата окончания
+  field_kind: Тип
+
+  frequency_once: однократно
+  frequency_everyday: каждый день
+  frequency_wday: раз в неделю
+  frequency_mday: раз в месяц
+
+  announcement_kind_notice: Объявление
+  announcement_kind_warning: Предупреждение
+  announcement_kind_error: Тревога
+  announcement_status_active: Активные
+  announcement_status_all: Все
+  label_people_close: Закрыть
+  label_people_birthday_today: Дни рождения сегодня
+  label_people_birthday_tomorrow: Дни рождения завтра
+  label_people_birthday_this_week: Дни рождения на этой неделе
+  label_people_show_birthday_announcements: Уведомления о днях рождениях
+  label_people_subordinates: Подчинённые
+  label_people_manager: Менеджер
+  people_permission_edit_subordinates: Редактировать подчиненных
+
+  label_people_default_group: Группа по умолчанию
+  label_people_choose_manager: Выберите менеджера
+
+  label_people_work_experience: Опыт работы
+  label_people_work_experience_new: Новый опыт работы
+  label_people_work_experience_edit: Редактировать опыт работы
+  label_people_previous_company_name: Предыдущая компания
+  label_people_previous_job_title: Предыдущая должность
+  label_people_from_date: Дата начала работы
+  label_people_to_date: Дата окончания работы
+  label_people_to_description: Описание
+
+  label_people_performance: Производительность
+  label_people_total_hours: Всего часов
+  label_people_overtime: Сверхурочное время
+  label_people_weekends: Работа на выходных
+  label_people_hour: ч
+  label_people_minute: м
+  label_people_deviation: Отклонение
+  label_time_spent: Затраченное время
+  label_people_period: Период
+
+  label_people_calendar: Календарь
+  label_people_holidays: Праздники
+  label_people_organization_chart: Структура организации
+  label_people_organization_name: Название организации
+  label_people_set_organization_name: Установить название организации
+  label_people_organization_head: Руководитель организации
+  label_people_birthdays: Дни рождения
+
+  label_people_holiday_name: Название
+  label_people_holiday_start_date: Дата начала
+  label_people_holiday_end_date: Дата окончания
+  label_people_holiday_description: Описание
+  label_people_holiday_is_workday: Рабочий день
+  label_people_holiday_notify: Оповестить
+  label_people_holiday_notify_subject: "Добавлен праздник: %{name} (%{from}%{to})."
+  label_people_holidays_next: Следующие праздники
+
+  label_people_holiday_new: Новый праздник
+  label_people_holiday_edit: Редактировать праздник
+
+  people_permission_manage_departments: Управление департаментами
+
+  people_permission_edit_work_experience: Редактировать опыт работы
+  people_permission_edit_own_work_experience: Редактировать собственный опыт работы
+  people_permission_manage_calendar: Управление календарем
+
+  notice_failed_to_save_people: "Невозможно сохранить %{count} сотрудника(ов) из %{total} выбранных: %{ids}."
+  people_label_bulk_edit_selected_people: Редактировать всех выбранных сотрудников
+
+
+  label_people_add_tags: Добавить тэги
+  label_people_delete_tags: Снять тэги
+  label_people_report_plural: Отчеты по пользователям
+  label_people_user_activity: Активность пользователей
+  label_people_average_time_per_day: Среднее за день
+  label_people_total_coverage: Покрытие всего
+  label_people_filter_activity_type: Тип активности
+  label_people_filter_time_interval: Интервал времени
+
+  label_activity_type_issue_create: Создание задачи
+  label_activity_type_issue_update: Обовление задачи
+  label_activity_type_spent_time_added: Добавление трудозатрат
+
+  label_people_by_month: За месяц
+  label_people_by_year: За год
+
+  label_people_leave_plural: Отпуска/отгулы
+  label_people_leave_planner: Отпуска
+  label_people_leave_type: Тип выходного
+  label_people_leave_types: Типы отгулов
+  label_people_leave_type_new: Новый тип отгула
+  label_people_leave_type_edit: Редактировать тип отгула
+  label_people_leave_new: Новый отгул
+  label_people_leave_edit: Редактировать отгул
+  label_people_leave_comment: Оставить комментарий
+  label_people_graph: Графиком
+  label_people_not_approved: Не согласовано
+  label_people_scheduled_for: на
+  label_people_added_day_off: Добавлен выходной
+  label_people_appoved_notification: Статус выходного изменился
+  label_people_notes_notification: Примечание выходного изменилось
+
+  notice_leave_type_successfully_destroyed: Тип отпуска успешно удален
+
+  field_paid: Oплачиваемый
+  field_approvable: Необходимость согласования
+  field_approved: Согласовано
+  field_color: Цвет
+  field_leave_type: Тип отгула
+  field_hours_per_day: Часов/День
+  field_duration: Продолжительность
+  field_hours_per_day_abbreviation: ч/д
+
+  label_people_contact_plural: Контакты
+
+  people_permission_view_reports: Просмотр отчетов
+
+  activerecord:
+    errors:
+      messages:
+        greater_than_or_equal_to_start_date: должна быть позднее либо равна дате начала

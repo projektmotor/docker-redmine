@@ -1,0 +1,20 @@
+<% html_title(l(:label_people_organization_chart)) %>
+
+<% content_for :header_tags do %>
+  <%= javascript_include_tag 'jquery.orgchart.js', plugin: 'redmine_people' %>
+<% end %>
+
+<% content_for :sidebar do %>
+  <%= render partial: 'people/sidebar' %>
+<% end %>
+
+<h2><%= l(:label_people_organization_chart) %></h2>
+
+<div style="display: none;"><%= org_chart_tree %></div>
+<div id="org-chart"></div>
+
+<%= javascript_tag do %>
+  $(function() {
+    $('#org-chart-tree').orgChart({ container: $('#org-chart'), interactive: true });
+  });
+<% end %>

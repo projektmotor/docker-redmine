@@ -1,0 +1,93 @@
+<div id="attributes">
+
+<h3><%= l(:label_people_person) %></h3>
+
+<table class="person attributes vcard">
+  <%= call_hook(:view_people_sidebar_attributes_top) %>
+	<tr>
+		<th class = "first-name"><%= l(:field_name) %>:</th><td class="name fn "><%= @person.firstname %></td>
+	</tr>
+	<tr>
+		<th class = "middle-name"><%= l(:label_people_middlename) %>:</th><td class="name mn "><%= @person.middlename %></td>
+	</tr>
+	<tr>
+		<th class = "last-name"><%= l(:field_lastname) %>:</th><td class="name ln "><%= @person.lastname %></td>
+	</tr>
+	<% if !@person.job_title.blank? %>
+	<tr> <th class = "job_title"><%= l(:label_people_job_title) %>:</th><td class="job_title title"><%= @person.job_title %></td></tr>
+	<% end %>
+	<% if !@person.manager.blank? %>
+		<tr>
+		<th class = "manager"><%= l(:label_people_manager) %>:</th><td class="manager title"><%= link_to_user(@person.manager) %></td></tr>
+	<% end %>
+	<tr>
+		<th class = "address"><%= l(:label_people_address) %>:</th>
+		<td class="address adr"><%= @person.address %>
+				<% if !@person.address.blank? %>
+					<br>
+					<%= link_to l(:label_people_show_on_map), "http://maps.google.com/maps?f=q&q=#{h @person.address.gsub("\r\n"," ").gsub("\n"," ")}+(#{h @person.name})&ie=UTF8&om=1"%>
+				<% end %>
+		</td>
+		</tr>
+	<tr class = "tel">
+		<th class = "phone"><%= l(:label_people_phone_plural) %>:</th>
+		<td class = "phones">
+		<% @person.phones.each do |phone| %>
+			<span  class="value"><%= h phone %> <br></span>
+		 <% end %>
+		</td>
+	</tr>
+	<tr class = "email">
+		<th><%= l(:field_mail) %>:</th>
+		<td>
+			<%= mail_to @person.email  %>
+		</td>
+	</tr>
+ 	<% unless @person.skype.blank? %>
+	<tr>
+	  <th class = "skype"><%= l(:label_people_skype) %>:</th>
+	  <td class="skype icon icon-skype"><%= link_to @person.skype, "skype:#{@person.skype}?call" %></td>
+	</tr>
+	<% end %>
+  <% unless @person.twitter.blank? %>
+	<tr>
+	  <th class = "twitter"><%= l(:label_people_twitter) %>:</th>
+	  <td class="twitter icon icon-twitter"><%= link_to @person.twitter, "http://twitter.com/" + @person.twitter %></td>
+	</tr>
+  <% end %>
+  <% unless @person.facebook.blank? %>
+	<tr>
+	  <th class = "facebook"><%= l(:label_people_facebook) %>:</th>
+	  <td class="facebook icon icon-facebook"><%= link_to @person.facebook.gsub(/^.*facebook.com\//, ''), "http://facebook.com/#{@person.facebook}" %></td>
+	</tr>
+  <% end %>
+  <% unless @person.linkedin.blank? %>
+	<tr>
+	  <th class = "linkedin"><%= l(:label_people_linkedin) %>:</th>
+	  <td class="linkedin icon icon-linkedin"><%= link_to @person.name, "http://www.linkedin.com/profile/view?id=#{@person.linkedin}"%></td>
+	</tr>
+  <% end %>
+
+	<% unless @person.birthday.blank? %>
+	<tr> <th class = "birthday"><%= l(:label_people_birthday) %>:</th><td class="birthday bday" title="<%= "#{format_date(@person.birthday)}" %>"><%= "#{@person.birthday.day} #{t('date.month_names')[@person.birthday.month]}"%></td> </tr>
+	<% unless RedminePeople.hide_age? %>
+		<tr> <th class = "age"><%= l(:label_people_age) %>:</th><td class="ega"><%= @person.age %></td> </tr>
+	<% end %>
+	<% end %>
+
+	<% @person.custom_values.each do |custom_value| %>
+		<% if !custom_value.value.blank? && (User.current.admin? || custom_value.custom_field.visible?) %>
+		<tr> <th class = "custom_field"><%= custom_value.custom_field.name%>:</th><td> <%=h show_value(custom_value) %></td> </tr>
+		<% end %>
+	<% end %>
+
+  <tr> <th class = "registered_on"> <%=l(:label_registered_on)%>:</th><td class="registered_on"> <%= format_date(@person.created_on) %></td> </tr>
+  <% unless @person.last_login_on.nil? %>
+	<tr> <th class = "last_login_on"> <%=l(:field_last_login_on)%>:</th><td class="last_login_on"> <%= format_time(@person.last_login_on) %></td> </tr>
+  <% end %>
+
+	<%= call_hook(:view_people_sidebar_attributes_bottom) %>
+
+</table>
+
+</div>

@@ -1,0 +1,67 @@
+<div class="contextual">
+    <%= link_to l(:label_user_new), {:controller => 'people', :action => 'new', :department_id => @department}, :class => 'icon icon-add' if User.current.allowed_people_to?(:add_people, @person) %>
+    <%= call_hook(:view_people_action_menu) %>
+</div>
+
+<% html_title(@query.new_record? ? l(:label_people) : @query.name) %>
+
+<div class="filters">
+	<%= form_tag({:contoller => "people", :action => "index"}, :method => :get,  :id => "query_form") do %>
+    <%= hidden_field_tag 'set_filter', '1' %>
+
+    <script type="text/javascript">
+       jQuery(function($) {
+          // when the #search field changes
+          $("#search").observe_field(2, function() {
+            var form = $("#query_form"); // grab the form wrapping the search bar.
+            var url = form.attr("action");
+            form.find('[name="c[]"] option').each(function(i, elem){
+              $(elem).attr('selected', true)
+            });
+            var formData = form.serialize();
+            form.find('[name="c[]"] option').each(function(i, elem){
+              $(elem).attr('selected', false)
+            });
+            $.get(url, formData, function(data) { // perform an AJAX get, the trailing function is what happens on successful get.
+                $("#people_list").html(data); // replace the "results" div with the result of action taken
+            });
+          });
+        });
+    </script>
+
+    <h2 class="people_header">
+        <span id='scope_header' class="scope_title">
+        <%= @query.new_record? ? l(:label_people) : @query.name %>
+        </span>
+
+        <span class="live_search">
+            <%= text_field_tag(:search, params[:search], :autocomplete => "off", :class => "live_search_field", :placeholder => l(:label_people_search) ) %>
+        </span>
+    </h2>
+	<% end %>
+</div>
+
+<div id="people_list">
+<% if @people.blank? %>
+    <p class="nodata"><%= l(:label_no_data) %></p>
+<% else %>
+    <%= render :partial => people_list_style %>
+    <span class="pagination"><%= pagination_links_full @people_pages, @people_count %></span>
+<% end %>
+</div>
+
+<% html_title l(:label_people) %>
+
+<% if Redmine::VERSION.to_s >= '3.4' || Redmine::VERSION::BRANCH != 'stable' %>
+    <%= context_menu %>
+<% else %>
+    <%= context_menu url_for( {:controller => "people", :action => "context_menu"} ) %>
+<% end %>
+
+<%= render :partial => 'people/sidebar', :locals => {:tags => @tags} %>
+
+<% content_for :header_tags do %>
+  <%= select2_assets %>
+  <%= javascript_include_tag :redmine_people, :plugin => 'redmine_people'  %>
+  <meta name = "format-detection" content = "telephone=no">
+<% end %>

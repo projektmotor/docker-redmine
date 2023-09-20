@@ -1,0 +1,18 @@
+<div id="person_files">
+  <div class="contextual">
+    <%= link_to l(:button_add), {}, :onclick => "$('#add_attachment_form').show(); $('#add_attachment_link').hide(); return false;", :class => 'icon icon-add', :id => 'add_attachment_link' if User.current.allowed_people_to?(:edit_people, @person) %>
+  </div>
+  <%= labelled_form_for :person, @person,
+                               :url => {:action => 'update', :id => @person},
+                               :html => { :multipart => true, :method => :put, :id => "add_attachment_form", :style => "display:none;" } do |f|  %>
+      <fieldset>
+        <%= error_messages_for 'person' %>
+
+        <%= hidden_field_tag 'tab', 'files' %>
+        <p><%=l(:label_attachment_plural)%><br /><%= render :partial => 'attachments/form', :locals => {:container => @person} %></p>
+        <%= submit_tag l(:button_save) -%>
+        <%= link_to l(:button_cancel), {}, :onclick => "$('#add_attachment_form').hide(); $('#add_attachment_link').show(); return false;"  %>
+      </fieldset>
+  <% end -%>
+  <%= render partial: 'attachments/links', locals: { container: @person, attachments: @person.all_visible_attachments, options: { author: true, deletable: :true }, thumbnails: Setting.thumbnails_enabled? } %>
+</div>

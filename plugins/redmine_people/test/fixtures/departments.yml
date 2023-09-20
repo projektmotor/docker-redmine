@@ -1,0 +1,21 @@
+department_001:
+  id: 1
+  parent_id:
+  lft: 1
+  rgt: 4
+  name: FBI department 1
+  background: what
+department_002:
+  id: 2
+  parent_id:
+  lft: 5
+  rgt: 6
+  name: FBI department 2
+  background: what
+department_012:
+  id: 3
+  parent_id: 1
+  lft: 2
+  rgt: 3
+  name: FBI department 1.1
+  background: what

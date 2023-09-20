@@ -1,0 +1,15 @@
+<% if @project.module_enabled?('agile') &&
+      RedmineAgile.use_story_points? &&
+      RedmineAgile.use_story_points_for?(@target_tracker) %>
+      <p>
+        <% if RedmineAgile.sp_values.any? %>
+          <%= label_tag 'issue_agile_data_attributes_story_points', l(:label_agile_story_points) %>
+          <%= select 'issue[agile_data_attributes]', :story_points,
+                     options_for_select(RedmineAgile.sp_values),
+                     { :include_blank => true } %>
+        <% else %>
+          <%= label_tag 'issue_agile_data_attributes_story_points', l(:label_agile_story_points) %>
+          <%= text_field_tag 'issue[agile_data_attributes][story_points]', '', :size => 3 %>
+        <% end %>
+      </p>
+<% end %>

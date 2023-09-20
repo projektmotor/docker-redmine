@@ -1,0 +1,5 @@
+<%
+    @tab = params[:tab_name]
+    @partial = params[:partial]
+%>
+$('#tab-placeholder-<%= @tab %>').html("<%= j(render :partial => @partial) %>");

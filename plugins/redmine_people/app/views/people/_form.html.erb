@@ -1,0 +1,86 @@
+<div class = "box tabular" id="person_data">
+  <% if PeopleInformation::modified_system_fields?(@person) %>
+    <p id="issue_is_private_wrap">
+      <%= hidden_field_tag 'person[information_attributes][is_system]', 0, :id => nil %>
+      <%= check_box_tag 'person[information_attributes][is_system]', 1, @person.is_system %><label class="inline" for="person_information_attributes_is_system" id="person_is_system_label"><%= l(:label_people_is_system) %></label>
+    </p>
+  <% end %>
+  <p class="avatar" id="watchers">
+    <%= avatar(@person, :size => "64", :height => 64, :width => 64, :style => "vertical-align: middle;") %>
+    <%= link_to image_tag('delete.png'), destroy_avatar_person_path(@person),
+                                           :confirm => l(:text_are_you_sure),
+                                           :method => :delete,
+                                           :class => 'delete',
+                       :style => "vertical-align: middle;",
+                                           :title => l(:button_delete) unless @person.avatar.blank? %>
+  </p>
+  <p><%= label_tag l(:label_people_avatar) %> <%= file_field_tag 'person_avatar[file]', :size => 30, :id => nil  -%> </p>
+  <p><%= f.text_field :firstname, :required => true %></p>
+
+  <%= f.fields_for :information do |information| %>
+    <p><%= information.text_field :middlename, :label => l(:label_people_middlename) %></p>
+    <p><%= f.text_field :lastname, :required => true %></p>
+
+    <% if @person.available_managers.any? || @person.new_record? %>
+      <p id="person_information_attributes_manager_id_wrap">
+        <label><%= l(:label_people_manager) %></label>
+        <%= hidden_field_tag 'person[information_attributes][manager_id]', nil %>
+        <%= select2_tag 'person[information_attributes][manager_id]',
+                        options_for_select(@person.available_managers.where(id: information.object.manager_id).map { |manager| [manager.name, manager.id] }, information.object.manager_id),
+                        url: autocomplete_for_manager_person_path(id: f.object.id || 'new'),
+                        placeholder: '',
+                        format_state: 'formatStateWithAvatar',
+                        allow_clear: true %>
+      </p>
+    <% end %>
+
+    <% if @person.id != User.current.id %>
+    <p><%= f.select :status, options_for_select([[l(:status_active), User::STATUS_ACTIVE], [l(:status_locked), User::STATUS_LOCKED]], @person.status.to_s) %></p>
+    <% end %>
+
+    <% unless @departments.blank? %>
+      <p><%= information.select :department_id, department_tree_options_for_select(@departments,  :selected => @person.department_id), :include_blank => true, :label => l(:label_people_department) %></p>
+    <% end %>
+    <p><%= information.select :gender, Person.genders, :label => l(:label_people_gender)%></p>
+    <p><%= information.text_field :appearance_date, :size => 12, :label => l(:label_people_appearance_date), type: 'date', value: @person.appearance_date.try(:to_date) %><%= calendar_for('person_information_attributes_appearance_date') %> </p>
+    <p><%= information.text_field :birthday, :size => 12, :label => l(:label_people_birthday), type: 'date', value: @person.birthday.try(:to_date) %><%= calendar_for('person_information_attributes_birthday') %> </p>
+    <p><%= information.text_field :job_title, :label => l(:label_people_job_title) %></p>
+    <p><%= f.text_field :mail, :required => true %></p>
+    <p><%= information.text_area :address, :label=>l(:label_people_address), :rows => 5 -%></p>
+
+    <div id="phones_fields">
+      <p>
+        <%= information.text_field :phone, :label => l(:label_people_phone), :size => 80 -%>
+        <br>
+        <em><%= l(:text_comma_separated) %></em>
+       </p>
+    </div>
+
+    <p><%= information.text_field :skype, :label => l(:label_people_skype) -%></p>
+    <p><%= information.text_field :facebook, :label => l(:label_people_facebook) + ' ID'-%></p>
+    <p><%= information.text_field :twitter, :label => l(:label_people_twitter) -%></p>
+    <p><%= information.text_field :linkedin, :label => l(:label_people_linkedin) + ' ID' -%></p>
+
+    <% custom_field_values = @person.custom_field_values.find_all {|v| User.current.admin? || v.custom_field.editable?} %>
+    <div class="splitcontent">
+      <div class="splitcontentleft">
+      <% i = 0 %>
+      <% split_on = (custom_field_values.size / 2.0).ceil - 1 %>
+      <% custom_field_values.each do |value| %>
+        <p><%= custom_field_tag_with_label :person, value, :required => value.custom_field.is_required? %></p>
+      <% if i == split_on -%>
+      </div><div class="splitcontentright">
+      <% end -%>
+      <% i += 1 -%>
+      <% end -%>
+      </div>
+    </div>
+
+    <p class  = "notes"><%= information.text_area :background , :cols => 80, :rows => 8, :class => 'wiki-edit', :label => l(:label_people_background)  %></p>
+    <% if Redmine::VERSION.to_s >= '4.0' %>
+      <%= wikitoolbar_for 'person_information_attributes_background', preview_text_path %>
+    <% else %>
+      <%= wikitoolbar_for 'person_information_attributes_background' %>
+    <% end %>
+  <% end %>
+</div>

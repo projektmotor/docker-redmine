@@ -1,0 +1,15 @@
+<% if issues.any? %>
+  <% issues.each do |issue| %>
+    <%= render partial: 'issue_card', locals: { issue: issue } %>
+  <% end %>
+
+  <% if more_url %>
+    <div class="load-more">
+      <div class="pagination-wrapper">
+        <span class="pagination">
+          <%= link_to l(:label_agile_planning_board_more), more_url, remote: true %>
+        </span>
+      </div>
+    </div>
+  <% end %>
+<% end %>

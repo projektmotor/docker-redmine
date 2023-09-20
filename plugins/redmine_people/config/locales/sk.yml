@@ -1,0 +1,60 @@
+# Slovak strings go here for Rails i18n
+sk:
+  label_people: Ľudia
+  label_people_edit_person: Upraviť človeka
+  label_people_new_person: Nový človek
+  label_people_group_plular: Skupiny
+  label_people_search: Hľadať podľa mena
+  label_people_show_on_map: Zobraziť na mape
+  label_people_person: Človek
+  label_people_all: Zobraziť všetkých ľudí
+  label_people_next_birthdays: Následujúce narodeniny
+  label_people_new_people: Nový ľudia
+  label_people_male: Muž
+  label_people_female: Žena
+  label_people_settings: Nastavenia ľudí
+
+  button_people_edit_profile: Upraviť profil
+
+  label_people_avatar: Avatar
+  label_people_job_title: Funkcia
+  label_people_phone: Telefón
+  label_people_phone_plural: Telefóny
+  label_people_skype: Skype
+  label_people_twitter: Twitter
+  label_people_facebook: Facebook
+  label_people_linkedin: LinkedIn
+  label_people_middlename: Stedné meno
+  label_people_background: Vzdelanie
+  label_people_address: Adresa
+  label_people_gender: Pohlavie
+  label_people_birthday: Narodeniny
+  label_people_appearance_date: Nastúpil/a dňa
+  label_people_age: Vek
+
+  people_permission_edit_people: Upraviť ľudí
+  people_permission_view_people: Zobraziť ľudí
+  people_permission_add_people: Pridať ľudí
+  people_permission_delete_people: Vymazať ľudí
+  people_permission_add_attachments: Pridať prílohy
+
+  #0.0.2
+  label_people_acl_settings: Oprávnenia
+  label_people_visibility: Viditeľnosť ľudí
+  label_people_visibility_select: Zobraziť ľudí
+  label_people_visibility_resistered: Pre registrovaných užívateľov
+  label_people_visibility_selected: Pre vybraných užívateľov
+  label_people_visibility_anonymous: Pre anonýmnych užívateľov
+
+  #0.0.3
+  label_department_plural: Oddelenia
+  label_department_new: Nové oddelenie
+  label_department: Oddelenie
+  label_department_head: Vedúci
+  label_people_department: Oddelenie
+  label_people_at_department: v
+  field_department_parent: Nadradené oddelenie
+  people_permission_edit_departments: Upraviť oddelenia
+
+  #0.1.5
+  people_permission_delete_departments: Vymazať oddelenia

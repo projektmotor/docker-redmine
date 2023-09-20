@@ -1,0 +1,16 @@
+<h2><%= l(:label_department) %></h2>
+
+
+<% person_tabs = [{:name => 'general', :partial => 'general', :label => :label_general},
+        {:name => 'people', :partial => 'people', :label => :label_people}
+        ]   %>   
+
+<%= render_tabs person_tabs %>  
+
+<% content_for :header_tags do %>
+  <%= javascript_include_tag :redmine_people, :plugin => 'redmine_people'  %>
+<% end %>
+
+<% content_for :sidebar do %>
+    <%= render :partial => 'people/sidebar' %>
+<% end %>

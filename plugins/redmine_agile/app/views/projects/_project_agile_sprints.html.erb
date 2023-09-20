@@ -1,0 +1,45 @@
+
+<h3><%= l(:label_agile_sprint_plural) %></h3>
+<p><%= link_to_if_authorized l(:label_agile_sprint_new), { controller: 'agile_sprints', action: 'new', project_id: @project }, class: 'icon icon-add' %></p>
+
+<%= form_tag(settings_project_path(@project, tab: 'agile_sprints'), method: :get) do %>
+<fieldset><legend><%= l(:label_filter_plural) %></legend>
+<label for='status'><%= l(:field_status) %>:</label>
+<%= select_tag 'sprint_status', options_for_select([[l(:label_all), '']] + AgileSprint::STATUSES.collect {|k, v| [l("label_agile_sprint_status_#{k}"), v]}, @sprint_status), :onchange => "this.form.submit(); return false;"  %>
+</fieldset>
+<% end %>
+&nbsp;
+
+<% if @project_sprints %>
+  <table class="agile_sprint_list list">
+    <thead><tr>
+    <th><%= l(:label_agile_sprint_name) %></th>
+    <th><%= l(:label_agile_sprint_status) %></th>
+    <th><%= l(:label_agile_sprint_sharing) %></th>
+    <th><%= l(:label_agile_sprint_start_date) %></th>
+    <th><%= l(:label_agile_sprint_end_date) %></th>
+    <th><%= l(:label_agile_sprint_description) %></th>
+    <th></th>
+    </tr></thead>
+    <tbody>
+      <% for agile_sprint in @project_sprints %>
+        <% unless agile_sprint.new_record? %>
+          <tr class="<%= cycle 'odd', 'even' %>">
+          <td><%= link_to agile_sprint.name, edit_project_agile_sprint_path(@project, agile_sprint) %></td>
+          <td><%=  l("label_agile_sprint_status_#{agile_sprint.status_name}") %></td>
+          <td><%=  l("label_agile_sprint_sharing_#{agile_sprint.sharing_name}") %></td>
+          <td><%=  agile_sprint.start_date %></td>
+          <td><%=  agile_sprint.end_date %></td>
+          <td><%=  agile_sprint.description %></td>
+          <td class="buttons">
+            <%= link_to l(:button_edit), edit_project_agile_sprint_path(@project, agile_sprint), class: 'icon icon-edit' %>
+            <%= delete_link project_agile_sprint_path(@project, agile_sprint) %>
+          </td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p class="nodata"><%= l(:label_no_data) %></p>
+<% end %>

@@ -1,0 +1,14 @@
+<h2><%= l(:label_department_new) %></h2>
+
+<%= labelled_form_for @department, :url => departments_path(@department)  do |f| %>
+  <%= render :partial => 'form', :locals => {:f => f} %>
+  <%= submit_tag l(:button_create) %>
+<% end %>
+
+<% content_for :header_tags do %>
+  <%= javascript_include_tag :redmine_people, :plugin => 'redmine_people'  %>
+<% end %>
+
+<% content_for :sidebar do %>
+    <%= render :partial => 'people/sidebar' %>
+<% end %>

@@ -1,0 +1,35 @@
+<%= form_tag(form_url, method: :get, id: 'query_form') do %>
+  <div id="query_form_with_buttons" class="hide-when-print">
+    <%= hidden_field_tag 'set_filter', '1' %>
+    <div id="query_form_content">
+      <fieldset id="filters" class="collapsible <%= query.new_record? ? "" : "collapsed" %>">
+        <legend onclick="toggleFieldset(this);" class="icon icon-<%= @query.new_record? ? "expanded" : "collapsed" %>"><%= l(:label_filter_plural) %></legend>
+        <div style="<%= query.new_record? ? "" : "display: none;" %>">
+          <%= render partial: 'queries/filters', locals: {query: query} %>
+        </div>
+      </fieldset>
+      <fieldset id="options" class="collapsible collapsed">
+        <legend onclick="toggleFieldset(this);" class="icon icon-collapsed"><%= l(:label_options) %></legend>
+        <div style="display: none;">
+          <table class="options">
+            <tr>
+              <td><%= l(:label_agile_fields) %></td>
+              <td class="card-fields">
+                <%= render_board_fields_selection(query) %>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </fieldset>
+    </div>
+    <p class="buttons">
+      <%= link_to_function l(:button_apply), '$("#query_form").submit()', class: 'icon icon-checked' %>
+      <%= link_to l(:button_clear), { set_filter: 1, sort: '', project_id: query.project }, class: 'icon icon-reload'  %>
+      <% if query.new_record? && User.current.allowed_to?(:manage_backlog, query.project) %>
+          <%= link_to_function l(:button_save),
+                              "$('#query_form').attr('action', '#{save_url}').submit()",
+                              :class => 'icon icon-save' %>
+      <% end %>
+    </p>
+  </div>
+<% end %>

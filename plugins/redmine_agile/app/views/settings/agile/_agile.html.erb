@@ -1,0 +1,9 @@
+<% agile_tabs = [
+    {:name => 'general', :partial => 'settings/agile/general', :label => :label_agile_general},
+  ] %>
+
+<% agile_tabs.push({name: 'hidden', partial: 'settings/agile/hidden', label: :label_agile_hidden}) if params[:hidden] %>
+
+<%= render_tabs agile_tabs %>
+
+<% html_title(l(:label_settings), l(:label_agile)) -%>

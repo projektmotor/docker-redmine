@@ -1,0 +1,48 @@
+<div class="contextual">
+  <%= link_to l(:button_add), new_people_holiday_path, :class => 'icon icon-add' if User.current.allowed_people_to?(:manage_calendar) %>
+</div>
+<h2><%= l(:label_people_holidays) %></h2>
+<%# unless @people_holidays.blank? %>
+    <%= form_tag({}) do %>
+        <div class="autoscroll" >
+          <table class="list issues">
+            <thead>
+            <tr>
+              <%= content_tag('th', h(l(:label_people_holiday_name))) %>
+              <%= content_tag('th', h(l(:label_people_holiday_start_date))) %>
+              <%= content_tag('th', h(l(:label_people_holiday_end_date))) %>
+              <%= content_tag('th', h(l(:label_people_holiday_is_workday))) %>
+              <% if User.current.allowed_people_to?(:manage_calendar) %>
+              <th></th>
+              <% end %>
+            </tr>
+            </thead>
+            <tbody>
+            <% @people_holidays.each do |people_holiday| %>
+                <tr id="person-<%= h(people_holiday.id) %>" class="<%= cycle("odd", "even") -%>">
+                  <td style="display: none;"><%= check_box_tag("ids[]", people_holiday.id, false, :id => nil) %></td>
+                  <td class=""><%= people_holiday.name %></td>
+                  <td class=""><%= format_date people_holiday.start_date %></td>
+                  <td class=""><%= format_date people_holiday.end_date %></td>
+                  <td class=""><%= people_holiday.is_workday ? l(:general_text_Yes) : l(:general_text_No) %></td>
+                  <% if User.current.allowed_people_to?(:manage_calendar) %>
+                  <td class="">
+                    <%= link_to l(:button_edit), edit_people_holiday_path(people_holiday),
+                                :class => 'icon icon-edit' %>
+                    <%= link_to l(:button_delete), people_holiday_path(people_holiday),
+                                :data => {:confirm => l(:text_are_you_sure)},
+                                :method => :delete,
+                                :class => 'icon icon-del' %>
+                  </td>
+                  <% end %>
+                </tr>
+            <% end -%>
+            </tbody>
+          </table>
+        </div>
+    <% end %>
+<%# end %>
+
+<% content_for :sidebar do %>
+    <%= render :partial => 'people/sidebar' %>
+<% end %>

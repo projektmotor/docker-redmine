@@ -1,0 +1,67 @@
+<%= render 'index' %>
+<%= javascript_tag do %>
+  var fullScreenState = localStorage.getItem('full-screen-board');
+  if (fullScreenState == "true") {
+    $("html").toggleClass("agile-board-fullscreen");
+  }
+
+  function updateBoard() {
+    if ( $('html').hasClass('agile-board-fullscreen') ) {
+      if ( $('.ui-sortable-helper').length == 0  &&
+        $('textarea:focus').length == 0 && $('.lock:visible').size() == 0 )
+      {
+        var lastScrollPosition = $('.agile-board.autoscroll').scrollTop();
+        var url = location.href;
+        var closedSwimlines = calcClosedSwimlines();
+        if ($('.swimlane').length > 0 && closedSwimlines.length > 0 ) {
+          url = url +  (url.indexOf('?') > 0 ? '&' : '?') + $.param({'closed_swimline_ids[]': closedSwimlines})
+        }
+        $('.lock').show();
+        $.ajax(url, {
+          dataType: 'script',
+          contentType: 'text/javascript',
+          success: function(){
+            $(".agile-board.autoscroll").scrollTop(lastScrollPosition);
+          },
+          error: function(){
+            $(".agile-board.autoscroll").scrollTop(lastScrollPosition);
+          },
+          complete: function(){
+            $('.lock').hide();
+          }
+        });
+      }
+    };
+  }
+
+
+  Visibility.every(20 * 1000, function () {
+    updateBoard();
+  });
+
+  Visibility.change(function (e, state) {
+    if (state == 'visible') {
+      updateBoard();
+    }
+  });
+
+  function checkBoardVisibility() {
+    if (Visibility.state() != 'visible') {
+      updateBoard();
+    }
+  }
+
+  function calcClosedSwimlines() {
+    var lines = []
+    $.map($('.group.swimlane'), function(elm){
+      if (!$(elm).hasClass('open')) {
+        lines.push($(elm).data('id'));
+      }
+    });
+    return lines;
+  }
+
+  setInterval(checkBoardVisibility, 1200000);
+<% end %>
+<%= init_agile_tooltip_info %>
+<%= call_hook(:view_agile_board_bottom, { :issues => @issues, :project => @project, :query => @query }) %>

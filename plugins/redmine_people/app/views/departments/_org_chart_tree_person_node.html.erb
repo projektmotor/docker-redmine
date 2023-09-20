@@ -1,0 +1,9 @@
+<div class="person-data">
+  <div class="person">
+    <div class="image"><%= link_to avatar(person, size: '32'), person_path(person), id: 'avatar' %></div>
+    <div class="data">
+      <h4 class="name" title="<%= person.name %>"><%= link_to person.name, person_path(person) %></h4>
+      <p class="info" title="<%= person.job_title %>"><%= person.job_title %></p>
+    </div>
+  </div>
+</div>

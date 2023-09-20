@@ -1,0 +1,48 @@
+custom_values_001: 
+  customized_type: Principal
+  custom_field_id: 1
+  customized_id: 1
+  id: 1
+  value: Sitroen
+custom_values_002: 
+  customized_type: Principal
+  custom_field_id: 2
+  customized_id: 1
+  id: 2
+  value: 176
+custom_values_003: 
+  customized_type: Principal
+  custom_field_id: 1
+  customized_id: 4
+  id: 3
+  value: Volvo
+custom_values_004: 
+  customized_type: Principal
+  custom_field_id: 2
+  customized_id: 4
+  id: 4
+  value: 190
+custom_values_007:
+  customized_type: Principal
+  custom_field_id: 3
+  customized_id: 4
+  id: 5
+  value: 190
+custom_values_008:
+  customized_type: Principal
+  custom_field_id: 4
+  customized_id: 4
+  id: 6
+  value: 190
+custom_values_009:
+  customized_type: Principal
+  custom_field_id: 5
+  customized_id: 4
+  id: 7
+  value: 190
+custom_values_010:
+  customized_type: Principal
+  custom_field_id: 6
+  customized_id: 4
+  id: 8
+  value: 190

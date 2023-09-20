@@ -1,0 +1,6 @@
+
+<% if User.current.allowed_to?(:add_issues, @project, :global => true) && @project && RedmineAgile.allow_create_card? && @project.trackers.any? %>
+  <div class="add-issue">
+    <input class="new-card__input" placeholder='<%= l(:label_agile_add_new_issue) %>' >
+  </div>
+<% end %>

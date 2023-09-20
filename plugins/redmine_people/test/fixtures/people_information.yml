@@ -1,0 +1,76 @@
+people_information_001:
+  user_id: 1
+  phone: 89125555555
+  address: 'Korolevo street'
+  skype: 'Flex'
+  birthday: 1991-07-19
+  job_title: disigner
+  company: IBM
+  middlename: Petrovich
+  gender: 0
+  twitter: sky
+  facebook: sky
+  linkedin: sky
+  department_id: 2
+#  custom_field_values:
+#  custom_fields: 
+  background:
+  appearance_date: 2014-07-20
+people_information_002:
+  user_id: 2
+  phone: 89122222222
+  address: 'WALL STREET'
+  skype: 'arny'
+  birthday: 1991-07-19
+  job_title: architect
+  company: IBM
+  middlename: Ibn Hattab
+  gender: 0
+  twitter: arny
+  facebook: arny
+  linkedin: arny
+  department_id: 2
+#  custom_field_values:
+#  custom_fields: 
+  background:
+  appearance_date: 2014-07-20
+people_information_003:
+  user_id: 3
+  phone: 89123333333
+  address: 'Blue Oyster Bar'
+  skype: 'Orlando'
+  birthday: 1991-07-19
+  job_title: disigner
+  company: IBM
+  middlename: Mikhalych
+  gender: 0
+  twitter: blue
+  facebook: blue
+  linkedin: blue
+  department_id: 2
+#  custom_field_values:
+#  custom_fields: 
+  background:
+  appearance_date: 2014-07-22
+people_information_004:
+  user_id: 4
+  phone: 89121212121
+  address: 'Pushkina street'
+  skype: 'Alex'
+  birthday: 1990-07-19
+  job_title: builder
+  company: IBM
+  middlename: Vahtangovich
+  gender: 0
+  twitter: vaxa
+  facebook: vaxa
+  linkedin: vaxa
+  department_id: 3
+#  custom_field_values:
+#  custom_fields: 
+  background:
+  appearance_date: 2014-07-19
+  manager_id: 3
+people_information_007:
+  user_id: 7
+  is_system: true

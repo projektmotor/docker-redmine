@@ -1,0 +1,25 @@
+api.agile_sprint do
+  api.id @agile_sprint.id
+  api.project_id @agile_sprint.project_id
+  api.name @agile_sprint.name
+  api.story_points @story_points
+  api.done_ratio @done_ratio
+
+  if User.current.allowed_to?(:view_time_entries, @project)
+    api.estimated_hours @estimated_hours
+    api.spent_hours @spent_hours
+  end
+
+  api.array :issues do
+    @agile_sprint.issues.each do |issue|
+      api.issue do
+        api.id issue.id
+        api.subject issue.subject
+        api.estimated_hours issue.estimated_hours
+        api.spent_hours issue.spent_hours
+        api.story_points issue.story_points
+        api.done_ratio issue.done_ratio
+      end
+    end
+  end if include_in_api_response?('issues')
+end

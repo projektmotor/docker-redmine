@@ -1,0 +1,6 @@
+
+  <% if @issue.project.module_enabled?('agile') && @issue.agile_sprint %>
+    <%= issue_fields_rows do |rows|
+      rows.right l(:label_agile_sprint), @issue.agile_sprint
+    end %>
+  <% end %>

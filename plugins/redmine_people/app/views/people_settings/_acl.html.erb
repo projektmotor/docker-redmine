@@ -1,0 +1,81 @@
+<div class="splitcontentleft">
+<% if @users_acl.any? %>
+  <table class="list users members">
+    <thead><tr>
+      <th><%= l(:label_user) %></th>
+      <th><%= l(:label_permissions) %></th>
+      <th style="width:15%"></th>
+    </tr></thead>
+    <tbody>
+    <% @users_acl.each do |acl| %>
+      <tr id="user-<%= acl.principal_id %>" class="<%= cycle 'odd', 'even' %>">
+        <td class="user name <%= 'group' if acl.principal.is_a?(Group) %>"><%= link_to_user acl.principal %></td>
+        <td class="acls">
+          <span id="principal-<%= acl.principal_id %>-permissions"><%= acl.permissions.map{|a| l_or_humanize(a, :prefix => 'people_permission_') }.join(', ') %></span>
+
+
+          <%= form_tag({:controller => :people_settings, :action => :create}, :remote => true,
+                      :method => :post, :id => "principal-#{acl.principal_id}-permissions-form", :class => 'hol'
+               ) do |f| %>
+          <p>
+            <% RedminePeople.available_permissions.each do |permission| %>
+            <label>
+              <%= check_box_tag('acls[]',
+                                permission, acl.permissions.include?(permission),
+                                :id => nil ) %> <%= l_or_humanize(permission, :prefix => 'people_permission_') %>
+            </label><br />
+            <% end %>
+          </p>
+          <%= hidden_field_tag 'user_ids[]', acl.principal_id, :id => nil %>
+          <p>
+            <%= submit_tag l(:button_save), :class => "small" %>
+            <%= link_to_function(l(:button_cancel),
+                                 "$('#principal-#{acl.principal_id}-permissions').show(); $('#principal-#{acl.principal_id}-permissions-form').hide(); return false;") %>
+          </p>
+        <% end %>
+
+
+        </td>
+        <td class="buttons">
+          <%= link_to_function l(:button_edit),
+                           "$('#principal-#{acl.principal_id}-permissions').hide(); $('#principal-#{acl.principal_id}-permissions-form').show(); return false;",
+                           :class => 'icon icon-edit' %>
+
+          <%= delete_link url_for(:controller => "people_settings", :action => "destroy",  :id => acl.principal_id ), :remote => true %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p class="nodata"><%= l(:label_no_data) %></p>
+<% end %>
+</div>
+
+<div class="splitcontentright">
+
+<% if @principals.any? %>
+  <%= form_tag({:controller => :people_settings, :action => :create}, :remote => true,
+               :method => :post, :id => "people_acl_form", :class => "select-users") do %>
+    <fieldset><legend><%=l(:label_user_new)%></legend>
+
+    <p><%= label_tag "user_search", l(:label_user_search) %><%= text_field_tag 'user_search', nil %></p>
+    <%= javascript_tag "observeSearchfield('user_search', 'principals', '#{ escape_javascript url_for(:controller => :people_settings, :action => :autocomplete_for_user) }')" %>
+
+    <div id="principals">
+      <%= people_principals_check_box_tags 'user_ids[]', @principals %>
+    </div>
+    <p><%= l(:label_permissions) %>:
+    <% RedminePeople.available_permissions.each do |role| %>
+      <label>
+        <%= check_box_tag 'acls[]', role %>
+        <%= l_or_humanize(role, :prefix => 'people_permission_') %>
+      </label>
+    <% end %></p>
+
+    <p><%= submit_tag l(:button_add) %></p>
+    </fieldset>
+  <% end %>
+<% end %>
+
+</div>

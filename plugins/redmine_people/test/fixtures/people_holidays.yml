@@ -1,0 +1,28 @@
+holiday_001:
+  id: 1
+  name: Holiday 1
+  start_date: 2017-04-01
+  end_date: 2017-04-03
+  description:
+  is_workday:
+holiday_002:
+  id: 2
+  name: Holiday 2
+  start_date: 2017-01-01
+  end_date:
+  description:
+  is_workday:
+last_day_holiday:
+  id: 98
+  name: This year 31 Dec
+  start_date: "<%= Date.today.end_of_year%>"
+  end_date: "<%= Date.today.end_of_year%>"
+  description:
+  is_workday:
+next_year_holiday:
+  id: 99
+  name: Next year 6 Jan
+  start_date: "<%= Date.today.end_of_year + 6.days %>"
+  end_date: "<%= Date.today.end_of_year + 6.days %>"
+  description:
+  is_workday:

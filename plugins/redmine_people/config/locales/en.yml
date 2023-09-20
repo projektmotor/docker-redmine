@@ -1,0 +1,231 @@
+# English strings go here for Rails i18n
+en:
+  label_people: People
+  label_people_edit_person: Editing person information
+  label_people_new_person: New person
+  label_people_group_plular: Groups
+  label_people_search: Search by name
+  label_people_show_on_map: Show on map
+  label_people_person: Person
+  label_people_all: Show all people
+  label_people_next_birthdays: Next birthdays
+  label_people_new_people: New people
+  label_people_male: Male
+  label_people_female: Female
+  label_people_settings: People settings
+
+  button_people_edit_profile: Edit profile
+
+  label_people_avatar: Avatar
+  label_people_job_title: Job title
+  label_people_phone: Phone
+  label_people_phone_plural: Phones
+  label_people_skype: Skype
+  label_people_twitter: Twitter
+  label_people_facebook: Facebook
+  label_people_linkedin: LinkedIn
+  label_people_workday_length: Workday length
+  label_people_middlename: Middle name
+  label_people_background: Background info
+  label_people_address: Address
+  label_people_gender: Gender
+  label_people_birthday: Birthday
+  label_people_appearance_date: Appearance date
+  label_people_age: Age
+
+  people_permission_edit_people: Edit people
+  people_permission_view_people: View people
+  people_permission_add_people: Add people
+  people_permission_delete_people: Delete people
+  people_permission_add_attachments: Add atthachments
+  people_permission_edit_announcement: Edit announcement
+  people_permission_view_performance: View performance
+  people_permission_view_leave: View leave
+  people_permission_edit_leave: Edit leave
+  people_permission_edit_personal_leave: Edit personal leave
+
+
+  #0.0.2
+  label_people_acl_settings: ACL settings
+  label_people_visibility: People visibility
+  label_people_visibility_select: Show people
+  label_people_visibility_resistered: For registered users
+  label_people_visibility_selected: For selected users
+  label_people_visibility_anonymous: For anonymous users
+
+  #0.0.3
+  label_department_plural: Departments
+  label_department_new: New department
+  label_department: Department
+  label_department_head: Head
+  label_people_department: Department
+  label_people_at_department: at
+  field_department_parent: Subdepartment of
+  people_permission_edit_departments: Edit departments
+
+  #0.1.5
+  people_permission_delete_departments: Delete departments
+
+  #0.1.6
+  label_people_new_mail: New message
+
+  #0.1.7
+  label_people_show_for_registered_users: Show people for registered users
+
+  #1.1.0
+  label_people_tags_plural: Tags
+  label_visibility_public: to any users
+  label_visibility_private: to me only
+  label_people_default_list_style: Default list style
+  label_people_list_partial_style: List style
+  label_people_list_excerpt: Excerpt list
+  label_people_list_list: Table
+  label_people_company: Company
+  button_people_edit_query: Edit query
+  button_people_delete_query: Delete query
+  people_permission_manage_public_people_queries: Manage public queries
+  label_people_add_tag: + add tag
+  field_person_full_name: Full name
+  label_people_edit_tags: Edit tags
+  people_permission_manage_tags: Manage tags
+  label_people_hide_age: Hide age
+  label_people_is_system: System
+  label_people_edit_own_data: Edit own data
+
+  # 1.2.0
+  label_announcement_description: Description
+  label_announcement_frequency: Frequency
+  label_announcement_active: Active
+  label_announcement_start_date: Start date
+  label_announcement_end_date: End date
+  label_announcement_end_department: Department
+  label_announcement_new: New announcement
+  label_announcement_plural: Announcements
+  label_announcement_successful_update: Announcement succeful updated
+  label_announcement: Announcement
+  label_people_use_announcement: Use announcements
+  field_frequency: Frequency
+  field_end_date: End date
+  field_kind: Type
+
+  frequency_once: once
+  frequency_everyday: every day
+  frequency_wday: once a week
+  frequency_mday: once a month
+
+  announcement_kind_notice: Notice
+  announcement_kind_warning: Warning
+  announcement_kind_error: Error
+  announcement_status_active: Active
+  announcement_status_all: All
+  label_people_close: Close
+  label_people_birthday_today: Today birthdays
+  label_people_birthday_tomorrow: Tomorrow birthdays
+  label_people_birthday_this_week: This week birthdays
+  label_people_show_birthday_announcements: Show birthday announcements
+  label_people_subordinates: Subordinates
+  label_people_manager: Manager
+  people_permission_edit_subordinates: Edit subordinates
+
+  label_people_default_group: Default group
+  label_people_choose_manager: Choose manager
+
+  label_people_work_experience: Work experience
+  label_people_work_experience_new: New work experience
+  label_people_work_experience_edit: Edit work experience
+  label_people_previous_company_name: Previous company name
+  label_people_previous_job_title: Previous job title
+  label_people_from_date: From date
+  label_people_to_date: To date
+  label_people_to_description: Description
+
+  label_people_performance: Performance
+  label_people_total_hours: Total hours
+  label_people_overtime: Overtime
+  label_people_weekends: Weekends
+  label_people_hour: h
+  label_people_minute: m
+  label_people_deviation: Deviation
+  label_time_spent: Time spent
+  label_people_period: Period
+
+  label_people_calendar: Calendar
+  label_people_holidays: Holidays
+  label_people_organization_chart: Organization chart
+  label_people_organization_name: Organization name
+  label_people_set_organization_name: Set organization name
+  label_people_organization_head: Head of Organization
+  label_people_birthdays: Birthdays
+
+  label_people_holiday_name: Name
+  label_people_holiday_start_date: Start date
+  label_people_holiday_end_date: End date
+  label_people_holiday_description: Description
+  label_people_holiday_is_workday: Is workday
+  label_people_holiday_notify: Notify
+  label_people_holiday_notify_subject: "Holiday %{name} added in date(s) %{from}%{to}."
+  label_people_holidays_next: Next holidays
+
+  label_people_holiday_new: New holiday
+  label_people_holiday_edit: Edit holiday
+
+  people_permission_manage_departments: Manage departments
+
+  people_permission_edit_work_experience: Edit work experience
+  people_permission_edit_own_work_experience: Edit own work experience
+  people_permission_manage_calendar: Manage calendar
+
+  notice_failed_to_save_people: "Failed to save %{count} person(people) on %{total} selected: %{ids}."
+  people_label_bulk_edit_selected_people: Edit all selected people
+
+  label_people_add_tags: Add tags
+  label_people_delete_tags: Delete tags
+  label_people_report_plural: People reports
+  label_people_user_activity: User activity
+  label_people_average_time_per_day: Average per day
+  label_people_total_coverage: Total coverage
+  label_people_filter_activity_type: Activity type
+  label_people_filter_time_interval: Report time interval
+
+  label_activity_type_issue_create: Create issue
+  label_activity_type_issue_update: Update issue
+  label_activity_type_spent_time_added: Add spent time
+
+  label_people_by_month: By month
+  label_people_by_year: By year
+
+  label_people_leave_plural: Leaves
+  label_people_leave_planner: Leave planner
+  label_people_leave_type: Leave type
+  label_people_leave_types: Leave types
+  label_people_leave_type_new: New leave type
+  label_people_leave_type_edit: Edit leave type
+  label_people_leave_new: New leave
+  label_people_leave_edit: Edit leave
+  label_people_leave_comment: Leave a comment
+  label_people_graph: Graph
+  label_people_not_approved: Not approved
+  label_people_scheduled_for: for
+  label_people_added_day_off: Added day off
+  label_people_appoved_notification: Day off status changed
+  label_people_notes_notification: Day off notes changed
+
+  notice_leave_type_successfully_destroyed: Leave type was successfully destroyed
+
+  field_paid: Paid
+  field_approvable: Approvable
+  field_approved: Approved
+  field_color: Color
+  field_leave_type: Leave type
+  field_hours_per_day: Hours/Day
+  field_duration: Duration
+  field_hours_per_day_abbreviation: h/d
+
+  label_people_contact_plural: Contacts
+
+  people_permission_view_reports: View reports
+
+  activerecord:
+    errors:
+      messages:
+        greater_than_or_equal_to_start_date: must be greater than or equal to start date

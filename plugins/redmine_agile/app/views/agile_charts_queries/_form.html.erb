@@ -1,0 +1,76 @@
+
+<%= error_messages_for 'query' %>
+
+<div class="box">
+  <div class="tabular">
+    <%= hidden_field_tag 'gantt', '1' if params[:gantt] %>
+
+    <p>
+      <label for="query_name"><%= l(:field_name) %></label>
+      <%= text_field 'query', 'name', size: 80 %>
+    </p>
+
+    <% if User.current.admin? || User.current.allowed_to?(:manage_public_agile_queries, @project) %>
+      <% if Redmine::VERSION.to_s < "2.4" %>
+        <p><label for="query_is_public"><%= l(:field_is_public) %></label>
+          <%= check_box 'query', 'is_public',
+                        :onchange => (User.current.admin? ? nil : 'if (this.checked) {$("#query_is_for_all").removeAttr("checked"); $("#query_is_for_all").attr("disabled", true);} else {$("#query_is_for_all").removeAttr("disabled");}') %>
+        </p>
+      <% else %>
+        <p><label><%= l(:field_visible) %></label>
+          <label class="block"><%= radio_button 'query', 'visibility', Query::VISIBILITY_PRIVATE %> <%= l(:label_visibility_private) %></label>
+          <label class="block"><%= radio_button 'query', 'visibility', Query::VISIBILITY_ROLES %> <%= l(:label_visibility_roles) %>
+            :</label>
+          <% Role.givable.sorted.each do |role| %>
+            <label class="block role-visibility"><%= check_box_tag 'query[role_ids][]', role.id, @query.roles.include?(role), :id => nil %> <%= role.name %></label>
+          <% end %>
+          <label class="block"><%= radio_button 'query', 'visibility', Query::VISIBILITY_PUBLIC %> <%= l(:label_visibility_public) %></label>
+          <%= hidden_field_tag 'query[role_ids][]', '' %>
+        </p>
+      <% end %>
+    <% end %>
+
+    <p><label for="query_is_for_all"><%= l(:field_is_for_all) %></label>
+      <%= check_box_tag 'query_is_for_all', 1, @query.project.nil?,
+                        :disabled => (!@query.new_record? && (@query.project.nil? || (@query.is_public? && !User.current.admin?))) %>
+    </p>
+
+    <fieldset>
+      <legend><%= l(:label_options) %></legend>
+      <p>
+        <label for="chart"><%= l(:label_agile_chart) %></label>
+        <%= select_tag 'chart', options_charts_for_select(query.chart), onchange: "toggleChartUnit($(this).val(), 'chart-unit-row');" %>
+        <span id="chart-unit-row">
+          <label for='chart_unit' style="margin-left: 0; float: none;"><%= l(:label_agile_chart_units) %></label>
+          <%= select_tag 'chart_unit', options_chart_units_for_select(query.chart_unit) %>
+        </span>
+      </p>
+      <p>
+        <label for="interval_size"><%= l(:label_agile_interval_size) %></label>
+        <%= select_tag 'interval_size', options_for_select(RedmineAgile::Charts::AgileChart::TIME_INTERVALS.map { |i| [l(:"label_agile_#{i}"), i] }, @query.interval_size) %>
+      </p>
+    </fieldset>
+  </div>
+
+  <fieldset id="filters">
+    <legend><%= l(:label_filter_plural) %></legend>
+    <%= render partial: 'queries/filters', locals: { query: query } %>
+  </fieldset>
+</div>
+
+<% content_for :header_tags do %>
+  <%= javascript_include_tag 'redmine_agile', plugin: 'redmine_agile' %>
+<% end %>
+
+<%= javascript_tag do %>
+  var chartsWithUnits = <%= raw RedmineAgile::Charts::Helper::CHARTS_WITH_UNITS.to_json %>
+  $(document).ready(function() {
+    $("input[name='query[visibility]']").change(function() {
+    var checked = $('#query_visibility_1').is(':checked');
+    $("input[name='query[role_ids][]'][type=checkbox]").attr('disabled', !checked);
+    }).trigger('change');
+
+    toggleChartUnit($('#chart').val(), 'chart-unit-row');
+    hideChartPeriodCheckbox();
+  });
+<% end %>

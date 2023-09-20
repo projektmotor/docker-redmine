@@ -1,0 +1,211 @@
+# encoding: utf-8
+# Italian strings go here for Rails i18n
+it:
+  label_people: Persone
+  label_people_edit_person: Modifica informazioni sulla persona
+  label_people_new_person: Nuova persona
+  label_people_group_plular: Gruppi
+  label_people_search: Ricerca per nome
+  label_people_show_on_map: Mostra sulla mappa
+  label_people_person: Persona
+  label_people_all: Mostra tutte le persone
+  label_people_next_birthdays: I prossimi compleanni
+  label_people_new_people: Nuove persone
+  label_people_male: Maschio
+  label_people_female: Femmina
+  label_people_settings: Impostazioni persone
+
+  button_people_edit_profile: Modifica profilo
+
+  label_people_avatar: Avatar
+  label_people_job_title: Titolo
+  label_people_phone: Telefono
+  label_people_phone_plural: Telefoni
+  label_people_skype: Skype
+  label_people_twitter: Twitter
+  label_people_facebook: Facebook
+  label_people_linkedin: LinkedIn
+  label_people_workday_length: Durata del giorno lavorativo
+  label_people_middlename: Secondo nome
+  label_people_background: Informazioni di base
+  label_people_address: Indirizzo
+  label_people_gender: Genere
+  label_people_birthday: Compleanno
+  label_people_appearance_date: Data di apparizione
+  label_people_age: Età
+
+  people_permission_edit_people: Modifica persone
+  people_permission_view_people: Visualizza le persone
+  people_permission_add_people: Aggiungi persone
+  people_permission_delete_people: Cancella le persone
+  people_permission_add_attachments: Aggiungere allegati
+  people_permission_edit_announcement: Modifica annuncio
+  people_permission_view_performance: Visualizza le prestazioni
+  people_permission_view_rates: Visualizza le tariffe
+  people_permission_edit_rates: Modifica le tariffe
+  people_permission_view_own_rates: Visualizza le proprie tariffe
+
+  #0.0.2
+  label_people_acl_settings: Impostazioni ACL
+  label_people_visibility: Visibilità delle persone
+  label_people_visibility_select: Mostra le persone
+  label_people_visibility_resistered: Per gli utenti registrati
+  label_people_visibility_selected: Per utenti selezionati
+  label_people_visibility_anonymous: Per utenti anonimi
+
+  #0.0.3
+  label_department_plural: Strutture
+  label_department_new: Nuova struttura
+  label_department: Struttura
+  label_department_head: Responsabile
+  label_people_department: Struttura
+  label_people_at_department: all'indirizzo
+  field_department_parent: Sottostruttura di
+  people_permission_edit_departments: Modifica strutture
+
+  #0.1.5
+  people_permission_delete_departments: Cancella struttura
+
+  #0.1.6
+  label_people_new_mail: Nuovo messaggio
+
+  #0.1.7
+  label_people_show_for_registered_users: Mostra le persone per gli utenti registrati
+
+  #1.1.0
+  label_people_tags_plural: Tags
+  label_visibility_public: a tutti gli utenti
+  label_visibility_private: solo a me
+  label_people_default_list_style: Stile elenco predefinito
+  label_people_list_partial_style: Elenca stile
+  label_people_list_excerpt: Elenco degli estratti
+  label_people_list_list: Tabella
+  label_people_company: Azienda
+  button_people_edit_query: Modifica query
+  button_people_delete_query: Cancellare la query
+  people_permission_manage_public_people_queries: Gestire le query pubbliche
+  label_people_add_tag: + aggiungi tag
+  field_person_full_name: Nome e cognome
+  label_people_edit_tags: Modifica i tag
+  people_permission_manage_tags: Gestire i tag
+  label_people_hide_age: Nascondi l'età
+  label_people_is_system: Sistema
+  label_people_edit_own_data: Modificare i propri dati
+
+  # 1.2.0
+  label_announcement_description: Descrizione
+  label_announcement_frequency: Frequenza
+  label_announcement_active: Attivo
+  label_announcement_start_date: Data di inizio
+  label_announcement_end_date: Data di fine
+  label_announcement_new: Nuovo annuncio
+  label_announcement_plural: Annunci
+  label_announcement_successful_update: Annuncio succeful aggiornato
+  label_announcement: Annuncio
+  label_people_use_announcement: Utilizzare gli annunci
+  field_frequency: Frequenza
+  field_end_date: Data di fine
+  field_kind: Tipo
+
+  frequency_once: una volta
+  frequency_everyday: ogni giorno
+  frequency_wday: una volta alla settimana
+  frequency_mday: una volta al mese
+
+  announcement_kind_notice: Avviso
+  announcement_kind_warning: Attenzione
+  announcement_kind_error: Errore
+  announcement_status_active: Attivo
+  announcement_status_all: Tutti
+  label_people_close: Chiudere
+  label_people_birthday_today: Compleanni di oggi
+  label_people_birthday_tomorrow: Compleanni di domani
+  label_people_birthday_this_week: Compleanni di  questa settimana
+  label_people_show_birthday_announcements: Mostra annunci di compleanno
+  label_people_subordinates: Sottoposti
+  label_people_manager: Manager
+  people_permission_edit_subordinates: Modificare i sottoposti
+
+  label_people_default_group: Gruppo predefinito
+  label_people_choose_manager: Scegliere il manager
+
+  label_people_work_experience: Esperienze lavorative
+  label_people_work_experience_new: Nuove esperienze di lavoro
+  label_people_work_experience_edit: Modificare l'esperienza lavorativa
+  label_people_previous_company_name: Nome precedente dell'azienda
+  label_people_previous_job_title: Titolo di lavoro precedente
+  label_people_from_date: Dalla data
+  label_people_to_date: Ad oggi
+  label_people_to_description: Descrizione
+
+  label_people_performance: Prestazioni
+  label_people_total_hours: Ore totali
+  label_people_overtime: Lavoro straordinario
+  label_people_weekends: Fine settimana
+  label_people_hour: h
+  label_people_minute: m
+  label_people_deviation: Deviazione
+  label_time_spent: Tempo trascorso
+  label_people_period: Periodo
+  label_people_rates: Tariffe
+  label_people_cost_rate: Tariffa di costo
+  label_people_bill_rate: Tariffa di fatturazione
+  label_people_cost_rates: Tariffe di costo
+  label_people_bill_rates: Tariffe delle bollette
+  label_people_current_cost_rate: Tariffa di costo corrente
+  label_people_current_bill_rate: Tariffa di fatturazione attuale
+  label_people_default_cost_rate: Tariffa di costo predefinito
+  label_people_default_bill_rate: Tariffa di fatturazione predefinito
+  label_people_rates_history: Storico tariffe
+  label_people_rate_new: Nuova tariffa
+  label_people_rate_edit: Modifica tariffa
+  label_people_weekly_cost: Costo settimanale
+  label_people_monthly_cost: Costo mensile
+  label_people_rate_currency: Tariffa corrente
+
+  field_rate: Tariffa
+  field_rate_type: Tipo di tariffa
+  field_from_date: Dalla data
+  field_costs: Costi
+  notice_people_rate_successfully_destroyed: La tariffa delle persone è stata eliminata con successo
+
+  label_people_calendar: Calendario
+  label_people_holidays: Vacanze
+  label_people_birthdays: Compleanni
+
+  label_people_holiday_name: Nome
+  label_people_holiday_start_date: Data di inizio
+  label_people_holiday_end_date: Data di fine
+  label_people_holiday_description: Descrizione
+  label_people_holiday_is_workday: È giorno di lavoro
+  label_people_holiday_notify: Avviso
+  label_people_holiday_notify_subject: "Vacanze %{name} aggiunto in data(s) %{from}%{to}"
+  label_people_holidays_next: Prossime vacanze
+
+  label_people_holiday_new: Nuova vacanza
+  label_people_holiday_edit: Modifica vacanza
+
+  people_permission_manage_departments: Gestire le strutture
+
+  people_permission_edit_work_experience: Modificare l'esperienza lavorativa
+  people_permission_edit_own_work_experience: Modifica la propria esperienza lavorativa
+  people_permission_manage_calendar: Gestire il calendario
+
+  notice_failed_to_save_people: "Non è riuscito a salvare %{count} persona(person) su %{total} selezionato: %{ids}."
+  people_label_bulk_edit_selected_people: Modifica tutte le persone selezionate
+
+  label_people_add_tags: Aggiungi tag
+  label_people_delete_tags: Cancellare i tag
+  label_people_report_plural: Rapporti sulle persone
+  label_people_user_activity: Attività dell'utente
+  label_people_average_time_per_day: Media al giorno
+  label_people_total_coverage: Copertura totale
+  label_people_filter_activity_type: Tipo di attività
+  label_people_filter_time_interval: Intervallo temporale di Report
+
+  label_activity_type_issue_create: Crea segnalazione
+  label_activity_type_issue_update: Aggiorna segnalazione
+  label_activity_type_spent_time_added: Aggiungi tempo impiegato
+
+  label_people_by_month: Per mese
+  label_people_by_year: Per anno

@@ -1,0 +1,32 @@
+# encoding: utf-8
+# Simplified Chinese strings go here for Rails i18n
+# Author: Steven.W
+# Based on file: en.yml
+
+zh-TW:
+  label_checklist_plural: Checklist
+  field_checklist: Checklist
+  label_checklist_save_log: 保存檢查清單變更到問題日誌
+  label_checklist_done_ratio: 設置列表完成比率
+  permission_view_checklists: 查看Checklist
+  permission_done_checklists: 完成Checklist
+  permission_edit_checklists: 編輯Checklist
+  label_checklist_template_category_plural: 範本類別
+  label_checklist_template_category_new: 新類別
+  field_checklist_template_category: 類別
+  label_checklist_templates: 檢查清單範本
+  label_checklist_new_checklist_template: 新檢查清單範本
+  field_template_items: 範本項
+  label_checklist_template: 檢查清單範本
+  label_add_checklists_from_template: 從範本新建
+  label_select_template: "-- 選擇範本 --"
+  label_checklist_category_not_specified: "-- 未指定 --"
+  label_checklists_description: '允許多重值 (每一行的值)'
+  label_checklist_item: Checklist item
+  label_checklist_deleted: 刪除
+  label_checklist_changed_from: 改變自
+  label_checklist_changed_to: 到
+  label_checklist_added: 添加
+  label_checklist_done: 設置完成
+  label_checklist_undone: 設置未完成
+  label_checklist_updated: Checklist item編輯

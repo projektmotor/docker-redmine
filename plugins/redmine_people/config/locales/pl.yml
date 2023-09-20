@@ -1,0 +1,60 @@
+# Polish strings go here for Rails i18n
+pl:
+  label_people: Osoby
+  label_people_edit_person: Edytuj informacje o osobie
+  label_people_new_person: Nowa osoba
+  label_people_group_plular: Groupy
+  label_people_search: Szukaj po nazwisku
+  label_people_show_on_map: Pokazna mapie
+  label_people_person: Osoba
+  label_people_all: Pokaż wszystkich
+  label_people_next_birthdays: Najbliższe urodziny
+  label_people_new_people: Nowe osoby
+  label_people_male: Mężczyzna
+  label_people_female: Kobieta
+  label_people_settings: Ustawienia osób
+
+  button_people_edit_profile: Edytuj profil
+
+  label_people_avatar: Avatar
+  label_people_job_title: Stanowisko
+  label_people_phone: Telefon
+  label_people_phone_plural: Telefony
+  label_people_skype: Skype
+  label_people_twitter: Twitter
+  label_people_facebook: Facebook
+  label_people_linkedin: LinkedIn
+  label_people_middlename: Drugie imię
+  label_people_background: Informacje
+  label_people_address: Adres
+  label_people_gender: Płeć
+  label_people_birthday: Urodziny
+  label_people_appearance_date: Data dołączenia
+  label_people_age: Wiek
+
+  people_permission_edit_people: Edycja osób
+  people_permission_view_people: Przeglądanie osób
+  people_permission_add_people: Dodawanie osób
+  people_permission_delete_people: Usuwanie osób
+  people_permission_add_attachments: Dodawanie załączników
+
+  #0.0.2
+  label_people_acl_settings: Ustawienia kontroli dostępu
+  label_people_visibility: Widoczność osób
+  label_people_visibility_select: Pokaż osoby
+  label_people_visibility_resistered: Dla zarejestrowanych użytkowników
+  label_people_visibility_selected: Dla wybranych użytkowników
+  label_people_visibility_anonymous: Dla anonimowych użytkowników
+
+  #0.0.3
+  label_department_plural: Działy
+  label_department_new: Nowy dział
+  label_department: Dział
+  label_department_head: Head
+  label_people_department: Dział
+  label_people_at_department: at
+  field_department_parent: Subdepartment of
+  people_permission_edit_departments: Edytuj działy
+
+  #0.1.5
+  people_permission_delete_departments: Usuń działy

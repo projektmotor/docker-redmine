@@ -1,0 +1,10 @@
+<h2><%=l(:label_agile_sprint)%></h2>
+
+<%= labelled_form_for @agile_sprint, url: project_agile_sprint_path(@project, @agile_sprint), html: { method: :put} do |f| %>
+  <%= render partial: 'agile_sprints/form', locals: { f: f } %>
+  <%= submit_tag l(:button_save) %>
+<% end %>
+
+<% content_for :header_tags do %>
+  <%= javascript_include_tag :redmine_agile_sprint, :plugin => 'redmine_agile'  %>
+<% end %>

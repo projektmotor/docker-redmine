@@ -1,0 +1,50 @@
+<%= error_messages_for 'department' %>
+
+<% html_title "#{l(:label_department)} ##{@department.id}: #{@department.name}" %>
+
+<div class="contextual">
+  <% if User.current.allowed_people_to?(:manage_departments) %>
+    <%= link_to l(:button_edit), edit_department_path(@department), :class => 'icon icon-edit' %>
+    <%= link_to l(:button_delete), department_path(@department), :confirm => l(:text_are_you_sure), :method => :delete, :class => 'icon icon-del' %>
+  <% end %>
+</div>
+
+<h2><%= l(:label_department) %> #<%= @department.id %></h2>
+
+<div class="department issue details">
+
+
+  <%= avatar(@department.head, :size => "50") %>
+
+<div class="subject">
+<h3><%= @department.name %></h3>
+</div>
+        <p class="author">
+          <%= l(:label_department_head) %>
+          <%= link_to_user @department.head %>
+        </p>
+
+  <% if @department.background? || @department.attachments.any? -%>
+
+  <% if @department.background? %>
+    <p><strong><%=l(:label_people_background)%></strong></p>
+    <div class="wiki">
+    <%= textilizable @department, :background, :attachments => @department.attachments %>
+    </div>
+  <% end %>
+  <% end -%>
+</div>
+
+<%= render_department_tabs department_tabs%>
+
+<% content_for :sidebar do %>
+  <div id="department_people">
+    <h3><%= l(:label_people) %></h3>
+    <%= render :partial => 'people/person_data', :collection => @department.people.active %>
+  </div>
+
+<% end %>
+
+<% content_for :header_tags do %>
+  <%= javascript_include_tag :redmine_people, :plugin => 'redmine_people'  %>
+<% end %>

@@ -1,0 +1,1 @@
+$(".issues-board div[data-id='<%= @column_id %>'] .load-more").replaceWith('<%= escape_javascript(render partial: "issues_list", locals: { project: @project, issues: @issues, more_url: @more_url }) %>')

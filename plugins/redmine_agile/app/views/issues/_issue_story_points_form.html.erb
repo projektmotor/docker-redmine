@@ -1,0 +1,15 @@
+<% if @issue.project.module_enabled?('agile') && RedmineAgile.use_story_points? %>
+  <div class="splitcontentleft">
+      <%= form.fields_for :agile_data do |f| %>
+        <p>
+        <% if RedmineAgile.sp_values.any? %>
+          <%= f.select :story_points, RedmineAgile.sp_values.unshift(@issue.story_points).uniq, 
+            :include_blank => @issue.story_points, :selected => @issue.story_points %>
+        <% else %>
+          <%= f.text_field :story_points, :size => 3, :required => @issue.required_attribute?('agile_data_attributes') %>
+        <% end %>
+        </p>
+      <% end %>
+  </div>
+  <div class="splitcontentright"></div>
+<% end %>

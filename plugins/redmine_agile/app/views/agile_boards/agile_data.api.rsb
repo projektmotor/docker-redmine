@@ -1,0 +1,9 @@
+api.agile_data do
+  api.id @agile_data.id
+  api.issue_id @agile_data.issue_id
+  api.position @agile_data.position
+  api.story_points @agile_data.story_points
+  api.agile_sprint_id @agile_data.agile_sprint_id
+  api.color @issue.color
+  
+end

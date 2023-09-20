@@ -1,0 +1,25 @@
+<% content_for :header_tags do %>
+  <%= select2_assets %>
+<% end %>
+
+<%= error_messages_for @department %>
+
+<div class="box tabular">
+  <p><%= f.text_field :name, required: true %></p>
+  <p><%= f.text_area :background, rows: 5, label: :label_people_background, class: 'wiki-edit' %></p>
+
+  <p>
+    <%= label_tag l(:label_department_head), nil, for: :department_head_id %>
+    <%= select2_tag 'department[head_id]',
+                    options_for_select2_people(@department.head_id),
+                    width: '20%',
+                    url: autocomplete_for_person_people_path,
+                    format_state: 'formatStateWithAvatar',
+                    allow_clear: true,
+                    include_blank: true %>
+  </p>
+
+  <% unless @department.allowed_parents.compact.empty? %>
+    <p><%= label(:department, :parent_id, l(:field_department_parent)) %><%= parent_department_select_tag(@department) %></p>
+  <% end %>
+</div>

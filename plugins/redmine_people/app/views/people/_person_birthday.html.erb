@@ -1,0 +1,7 @@
+<div class="person">
+  <div class="image"><%= link_to avatar(person_birthday, size: '32'), person_path(person_birthday), id: 'avatar' %></div>
+  <div class="data">
+    <h4 class="name"><%= link_to person_birthday.name, person_path(person_birthday) %></h4>
+    <p class="info" title="<%= format_date(person_birthday.birthday) %>"><%= birthday_date(person_birthday) %></p>
+  </div>
+</div>

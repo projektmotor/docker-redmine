@@ -1,0 +1,9 @@
+# encoding: utf-8
+fr:
+  label_checklist_plural: Liste de Tâches
+  field_checklist: Tâche
+  label_checklist_templates: Template de checklists
+  label_checklist_new_checklist_template: Ajouter un template
+  field_is_for_tracker:
+  label_checklist_is_default: Checklist par d  faut
+  field_template_items: Eléments

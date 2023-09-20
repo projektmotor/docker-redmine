@@ -1,0 +1,47 @@
+# Hungarian translations for redmine_checklists
+# by Lilla Basilides basilides.h.lilla@gmail.com)
+# Hungarian strings go here for Rails i18n
+hu:
+  activerecord:
+    attributes:
+      checklists:
+        subject: Ellenőrző lista tárgya
+  label_checklist_plural: Ellenőrző lista
+  field_checklist: Ellenőrző lista
+  label_checklist_save_log: Változások mentése a jegy naplójába
+  label_checklist_done_ratio: Állítsa be az elkészült jegyek arányát
+  permission_view_checklists: Ellenőrző lista megtekintése
+  permission_done_checklists: Elkészült ellenőrzőlista elemek
+  permission_edit_checklists: Ellenőrzőlista elemeinek szerkesztése
+  label_checklist_template_category_plural: Sablon kategóriák
+  label_checklist_template_category_new: Új kategória
+  field_checklist_template_category: Kategória
+  label_checklist_templates: Ellenőrzőlista sablonok
+  label_checklist_new_checklist_template: Új ellenőrzőlista sablon
+  field_template_items: Sablon elemek
+  label_checklist_template: Ellenőrzőlista sablon
+  label_add_checklists_from_template: Hozzáadás sablonból
+  label_checklists_from_template: A sablonból
+  label_select_template: "-- Sablon kiválasztása --"
+  label_checklist_category_not_specified: "-- Nincs meghatározva --"
+  label_checklists_description: 'Több érték megengedett (értékenként egy sor)'
+  label_checklist_item: Ellenőrzőlista elem
+  label_checklist_section: Ellenőrzőlista szakasz
+  label_checklist_deleted: törölve
+  label_checklist_changed_from: változott a következőből
+  label_checklist_changed_to: a  címre
+  label_checklist_added: hozzáadva
+  label_checklist_done: készre állítva
+  label_checklist_undone: Nem készre állítva
+  label_checklist_updated: Szerkesztett ellenőrzőlista elem
+  label_checklist_status: Ellenőrzőlista állapota
+  label_checklist_status_done: Elkészült
+  label_checklist_status_undone: visszavonva
+  label_checklist_is_default: Alapértelmezett
+  field_is_for_tracker: Nyomkövető
+  label_checklists_must_be_completed: A jegy összes ellenőrző listáját el kell végezni a lezárás előtt.
+  label_checklist_block_issue_closing: Blokkjegy zárás
+  label_checklist_show_closed: Mutasd a zártakat
+  label_checklist_hide_closed: Rejtsd el zártakat
+  label_checklist_new_section: Új szakasz
+  

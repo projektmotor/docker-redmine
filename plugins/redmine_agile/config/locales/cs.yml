@@ -1,0 +1,238 @@
+# Czech strings go here for Rails i18n
+cs:
+  label_agile: Agile
+  label_agile_board: Agile panel
+  label_agile_board_plural: Agile panely
+  label_agile_board_thumbnails: Miniatury
+  label_agile_board_more_issues: Více úkolů
+  error_agile_status_transition: Nalze změnit status úkolu
+  label_agile_board_new: Nový agile panel
+  label_agile_board_edit: Editace agile panelu
+  label_agile_my_boards: Moje agile panely
+  label_agile_issue_id: Číslo úkolu
+
+  permission_manage_public_agile_queries: Spravovat veřejné agile panely
+  permission_add_agile_queries: Přidat agile panel
+  permission_view_agile_queries: Zobraz agile panely
+
+  #1.1.0
+  label_agile_board_default_fields: Výchozí pole karty
+  label_agile_charts_issues_burndown: Zadání úkolů skončilo
+  label_agile_charts_work_burndown_hours: Čas vypršel
+  label_agile_charts_work_burndown_sp: Řešení bodů skončilo
+  label_agile_charts_number_of_hours: Počet hodin
+  label_agile_charts_number_of_issues: Počet úkolů
+  label_agile_charts_cumulative_flow: Cumulative flow
+  label_agile_charts_trackers_cumulative_flow: Kumulativní pohyb trackerů
+  label_agile_charts_issues_velocity: Rychlost řešení úkolů
+  label_agile_charts_cycle_time: Cyklus řešení úkolu
+  label_agile_charts_lead_time: Cyklus řešení úkolu
+  label_agile_charts_average_lead_time: Průměrný čas řešení úkolu
+  label_agile_chart_plural: Grafy
+  label_agile_chart_new: Nový graf
+  label_agile_chart_edit: Oprava grafu
+  permission_view_agile_charts: Zobrazení grafu
+  label_agile_ideal_work_remaining: Ideální
+  label_agile_actual_work_remaining: Aktuální
+  label_agile_chart: Graf
+  label_agile_date_from: Z
+  label_agile_date_to: Do
+  label_agile_chart_dates: Interval grafu
+  label_agile_weighed_ideal_work_remaining: Ideální vážená hodnota
+  label_agile_status_colors: Barva statusu
+  label_agile_charts_burnup: Splnění úkolu
+  label_agile_charts_number_of_days: Počet dní
+  label_agile_too_many_items: "Graf nelze vytvořit, protože překračuje maximální počet položek, které lze zobrazit (%{max})"
+  label_agile_time_reports_items_limit: Problém s grafy založených na časových hodnotách
+  label_agile_total_work_remaining: Celkem
+  label_agile_default_chart: Výchozí graf
+
+  #1.1.1
+  label_agile_charts_average_velocity: Průměrná rychlost
+  label_agile_charts_average_number_of_issues: Průměrný počet úkolů
+  label_agile_charts_average_number_of_hours: Průměrný počet hodin
+
+  #1.2.0
+  label_agile_color: Barva
+  permission_manage_agile_verions: Spravování verzí
+  label_agile_version_planning: Spravování verzí
+  error_agile_version_transition: Nelze změnit verzi úkolu
+  label_agile_tracker_colors: Barva trackeru
+  label_agile_issue_priority_colors: Barva prioritního úkolu
+  label_agile_color_based_on: Zbarveno na
+  label_agile_color_no_colors: Bezbarvý
+  label_agile_manage_colors: Správa barev
+  label_agile_fullscreen: Celá obrazovka
+  label_agile_no_version_issues: Úkol bez verze
+  label_agile_charts_work_burnup_hours: Splnění úkolu v hodinách
+  label_agile_charts_work_burnup_sp: Splnění úkolu
+  label_agile_completed: Kompletní
+  label_agile_exclude_weekends: Kromě víkendů
+  label_agile_board_truncated: "Panel byl zkrácena, protože překračuje maximální počet položek, které lze zobrazit (%{max})"
+  label_agile_board_items_limit: Limit položek panelu
+  label_agile_swimlanes: Grupovat po
+  label_agile_minimize_closed: Minimalizovat uzavřené úkoly
+  label_agile_fields: Pole karty
+  label_agile_default_board: Výchozí panel
+
+  #1.3.6
+  text_agile_move_not_possible: Tento přesun není možný
+
+  #1.3.8
+  label_agile_parent_issue_tracker_id: Rodičovská tracker
+  label_agile_sub_issues: Podúkol
+  label_agile_color_green: Zelený
+  label_agile_color_blue: Modrý
+  label_agile_color_turquoise: Tyrkysový
+  label_agile_color_lightgreen: Světle zelený
+  label_agile_color_yellow: Žlutý
+  label_agile_color_orange: Oranžový
+  label_agile_color_red: Červený
+  label_agile_color_purple: Purpurový
+  label_agile_color_gray: Šedý
+  label_agile_has_sub_issues: Má podúkoly
+  label_agile_light_free_version: Agile odlehčená volná verze
+  label_agile_link_to_pro: Upgrade do PRO
+  label_agile_link_to_pro_demo: PRO verze živé demo
+  label_agile_link_to_more_plugins: Najdi více RedmineUP doplňků
+  label_agile_button_agree: Souhls
+  label_agile_license: RedmineUP Licence
+  label_agile_saving_boards: Ukládání panelu
+  label_agile_horizontal_swim_lines: Horizontalní linky
+  label_agile_board_sub_columns: Další sloupce panelu
+  label_agile_additional_agile_charts: Doplňkové agile grafy
+  label_agile_coloured_issue_cards: Zbervené karty úkolů
+  label_agile_4_more_features: Více než 4 zlepšení...
+  label_agile_upgrade_to_pro: Upgradem do PRO verze využijete toto vylepšení
+
+  label_agile_day_in_state: Ve stavu
+
+  #1.3.10
+  label_agile_hide_closed_issues_data: Skrytí dat uzavřených úkolů
+  project_module_agile: Agile
+
+  #1.3.13
+  label_agile_last_comment: Poslední komentář
+
+  #1.4.0
+  label_agile_esitmate_units: Odhad jednotek
+  label_agile_trackers_for_sp: Trackeři pro story points
+  label_agile_story_points: Story points
+  field_story_points: Story pointa
+  label_agile_charts_number_of_story_points: Počet story pointů
+  label_agile_board_columns: Sloupce panelu
+  lable_agile_wip_limit_exceeded: Překročen limit práce
+  label_agile_wip_limit: Limit práce
+  label_agile_add_new_issue: "+ NOVÝ ÚKOL"
+  label_agile_allow_create_cards: Vytvoření karty
+  label_agile_auto_assign_on_move: Automatické přiřazení při přesunu
+  text_agile_create_issue_error: Neznámá chyba při vytváření úkolu
+  label_agile_inline_comment: Komentář
+  label_agile_hours: Hodiny
+  field_color: Barvy
+
+  field_duration: Doba trvání
+
+  field_closed_on_trendline: Uzavřený trendline
+  field_created_on_trendline: Vytvořený trendline
+
+  label_agile_sp_values: Průběh hodnot
+
+  label_agile_interval_size: Velikost intervalu
+  label_agile_day: Den
+  label_agile_week: Týden
+  label_agile_month: Měsíc
+  label_agile_quarter: Čtvrtletí
+  label_agile_year: Rok
+  label_cards_search: Vyhledání předmětem
+
+  field_agile_sprint: Práce
+  field_end_date: Konečné datum
+  label_agile_sprints_on: Aktivace výchozí práce
+  label_agile_sprint: Práce
+  label_agile_sprint_plural: Práce
+  label_agile_sprint_name: Název
+  label_agile_sprint_description: Popis
+  label_agile_sprint_status: Status
+  label_agile_sprint_sharing: Sdílení
+  label_agile_sprint_start_date: Datum zahájení
+  label_agile_sprint_end_date: Datum ukončení
+  label_agile_sprint_new: Nová práce
+  label_agile_sprint_status_open: Otevřený
+  label_agile_sprint_status_active: Aktivní
+  label_agile_sprint_status_closed: Uzavřený
+  label_agile_sprint_duration: Doba trvání
+  label_agile_sprint_duration_select: <<Výběr doby trvání>>
+  label_agile_sprint_duration_week_1: 1 týden
+  label_agile_sprint_duration_week_2: 2 týdny
+  label_agile_sprint_duration_week_3: 3 týdny
+  label_agile_sprint_duration_week_4: 4 týdny
+  label_agile_sprint_errors_crossed: Data práce se kříží s jinou prací
+  label_agile_sprint_errors_end_more_start: Datum ukončení by mělo být delší než datum zahájení
+  label_agile_sprint_errors_open_issues: Práce s otevřenými úkoly nemůže bát uzavřena
+  label_agile_sprint_default_chart: Graf
+  label_agile_sprint_chart_units: Odhad
+  label_agile_chart_for_sprint: "Pro práci: %{sprint}"
+
+  label_agile_charts: Grafy
+  label_agile_chart_burndown: Graf ukončení
+  label_agile_chart_burnup: Graf zahájení
+  label_agile_chart_units: Jednotky
+
+  label_agile_planning_board_more: Nahraj více...
+  label_agile_version_query_new: Dotaz na novou Agile verzi
+  label_agile_version_my_boards: Moje verze agilní 
+  label_agile_version_board_plural: Verze agile  
+  label_agile_version_board_edit: Oprave agile verze
+
+  label_agile_edit_issue: Oprava úkolu
+
+  label_agile_board_type: Typ panelu
+  label_agile_board_type_kanban: Kanban panel
+  label_agile_board_type_scrum: Scrum panel
+  label_agile_board_totals: Celkem
+  label_agile_board_totals_story_points: Průběh - Story points
+  label_agile_board_totals_hours: Hodiny
+  label_agile_board_totals_spent_time: Strávený čas
+  label_agile_board_totals_percent_done: Splněno v procentech
+  label_agile_board_totals_velocity: Rychlost
+  label_agile_board_totals_interval: Interval
+  label_agile_board_totals_remaining: Zbývá
+  label_agile_board_totals_description: Celkový popis
+
+
+  label_agile_sprint_list_active: Aktivní práce
+  label_agile_sprint_list_future: Budoucí práce
+  label_agile_sprint_list_old: Bývalé práce
+
+  label_agile_mixed_trackers: Promíchané trackery
+  label_agile_moving_average: Průměr přesunutí
+
+  label_agile_board_backlog: Backlog
+  label_agile_board_backlog_column: Backlog sloupce
+  label_agile_board_search_backlog_issues: Vyhledání backlog úkolů
+  label_agile_version_plural: Verze
+  label_agile_sprint_add: Přidej práci
+  label_agile_version_add: Přidej verzi
+
+  label_agile_sprint_query_new: Nový dotaz na práci
+  label_agile_sprint_my_boards: Můje panely práce
+  label_agile_sprint_board_plural: Panely práce
+  label_agile_sprint_board_edit: Oprava panelu práce
+  field_sprint: Práce
+  label_agile_no_sprint_issues: Úkoly bez práce
+  field_closed_sprints: Uzavřené práce
+  field_closed_versions: Uzavřené verze
+  label_allow_ovelapping_sprints: APovolit překrývající se práce
+
+  label_agile_sprint_sharing_none: Nesdílený
+  label_agile_sprint_sharing_descendants: S podřízenými projekty
+  label_agile_sprint_sharing_hierarchy: S hierarchickými projekty
+  label_agile_sprint_sharing_tree: Se stromem projektu
+  label_agile_sprint_sharing_system: Se všemi projekty
+
+  label_agile_action_not_available: Akce není dostupná
+  label_agile_general: Všeobecně
+  label_agile_hidden: Skrytý
+
+  label_chart_future_data: Zobrazit budoucí data v grafech

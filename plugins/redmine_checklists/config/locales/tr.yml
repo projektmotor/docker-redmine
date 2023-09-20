@@ -1,0 +1,44 @@
+# Turkish strings go here for Rails i18n
+tr:
+  activerecord:
+    attributes:
+      checklists:
+        subject: Kontrol Listesi konusu
+  label_checklist_plural: Kontrol listeleri
+  field_checklist: Kontrol Listesi
+  label_checklist_save_log: Değişiklikleri iş geçmişine kaydet
+  label_checklist_done_ratio: İş tamamlanma oranını ayarla
+  permission_view_checklists: Kontrol listesini görüntüle
+  permission_done_checklists: Kontrol Listesi elemanlarını tamamlandı olarak işaretle
+  permission_edit_checklists: Kontrol Listesini düzenle
+  label_checklist_template_category_plural: Taslak kategorileri
+  label_checklist_template_category_new: Yeni kategori
+  field_checklist_template_category: Kategori
+  label_checklist_templates: Kontrol listesi taslakları
+  label_checklist_new_checklist_template: Yeni kontrol listesi taslağı
+  field_template_items: Taslak elemanları
+  label_checklist_template: Kontrol listesi taslağı
+  label_add_checklists_from_template: Taslaktan ekle
+  label_checklists_from_template: Taslaktan
+  label_select_template: "-- Taslak seç --"
+  label_checklist_category_not_specified: "-- Belirtilmemiş --"
+  label_checklists_description: 'Birden fazla değer kabul edilir (her değer için bir satır)'
+  label_checklist_item: Kontrol listesi elemanı
+  label_checklist_section: Kontrol listesi kısmı
+  label_checklist_deleted: silindi
+  label_checklist_changed_from: ''
+  label_checklist_changed_to: '>>'
+  label_checklist_added: eklendi
+  label_checklist_done: Bitti olarak işaretlendi
+  label_checklist_undone: Bitti işareti kaldırıldı
+  label_checklist_updated: Kontrol listesi elemanı eklendi
+  label_checklist_status: Kontrol listesi durumu
+  label_checklist_status_done: Bitti
+  label_checklist_status_undone: Bitmedi
+  label_checklist_is_default: Varsayılan
+  field_is_for_tracker: İş tipi
+  label_checklists_must_be_completed: İş kapatılmadan önce tüm kontrol listeleri elemanlarının bitti olarak işaretlemesi mecburi olsun.
+  label_checklist_block_issue_closing: Block issue closing
+  label_checklist_show_closed: Kapalıları göster
+  label_checklist_hide_closed: Kapalıları gizle
+  label_checklist_new_section: Yeni kısım

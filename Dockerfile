@@ -1,4 +1,8 @@
-FROM redmine:4.2
+# redmine_git_hosting is not working with Debian Bookworm at the moment (20.09.2023)
+# before update:
+# > test Redmine Administration -> Redmine Git Hosting -> Rescue -> Flush Git Cache?
+# > in docker container /usr/src/redmine/log/git_hosting.log should not report any errors during gitolite-admin repo cloning
+FROM redmine:5.0.4
 
 # install dependencies
 RUN apt-get update && apt-get install -y \
@@ -39,14 +43,15 @@ RUN sed -i -e "s/GIT_CONFIG_KEYS.*/GIT_CONFIG_KEYS  =>  '.*',/g" /etc/gitolite3/
     sed -i -e "s/# LOCAL_CODE.*=>.*\"\$ENV{HOME}\/local\"/LOCAL_CODE => \"\$ENV{HOME}\/local\"/" /etc/gitolite3/gitolite.rc
 
 RUN sed -i -e "s/#Port 22/Port 2222/g" /etc/ssh/sshd_config && \
-    sed -i -e "s/AcceptEnv LANG .*/#AcceptEnv LANG LC_\*/g" /etc/ssh/sshd_config
+    sed -i -e "s/AcceptEnv LANG .*/#AcceptEnv LANG LC_\*/g" /etc/ssh/sshd_config && \
+    # redmine_git_hosting seem to except only RSA host keys, so force the daemon \
+    # to only use rsa host keys. maybe this could removed, when updating to debian bookworm (see FROM)
+    echo "HostKeyAlgorithms ssh-rsa" >> /etc/ssh/sshd_config
 
 # clone redmine git hosting repository & fix dependency problem
 RUN cd /usr/src/redmine/plugins && \
-#    git clone https://github.com/jbox-web/redmine_bootstrap_kit.git -b 0.2.5 && \
-    git clone https://github.com/AlphaNodes/additionals.git -b 3.0.3 && \
-    git clone https://github.com/jbox-web/redmine_git_hosting.git -b 4.0.2 && \
-    sed -i "/gem 'rubocop'.*/d" ./redmine_git_hosting/Gemfile
+    git clone https://github.com/AlphaNodes/additionals.git -b 3.0.6 && \
+    git clone https://github.com/jbox-web/redmine_git_hosting.git -b 6.0.0
 
 COPY ./sudoers.d/redmine /etc/sudoers.d/redmine
 COPY ./plugins /usr/src/redmine/plugins
@@ -54,7 +59,9 @@ COPY ./gitolite-entrypoint.sh /gitolite-entrypoint.sh
 
 RUN chmod 440 /etc/sudoers.d/redmine
 
-RUN gosu redmine sh -c "bundle install --without development test"
+RUN gosu redmine sh -c "bundle config set --local without 'development:test'" && \
+    gosu redmine sh -c "bundle config set --local build.rugged --with-ssh" && \
+    gosu redmine sh -c "bundle install"
 
 # clone themes
 RUN cd /usr/src/redmine/public/themes && \

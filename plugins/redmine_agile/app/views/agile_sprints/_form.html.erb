@@ -1,0 +1,16 @@
+<%= back_url_hidden_field_tag %>
+<%= error_messages_for 'agile_sprint' %>
+
+<div class="box tabular">
+  <p><%= f.text_field :name, size: 50, required: true %></p>
+  <p><%= f.text_area :description, rows: 5 %></p>
+  <p><%= f.select :status, sprint_status_values_for_select, required: true %></p>
+  <p><%= f.select :sharing, sprint_sharing_values_for_select, required: true %></p>
+  <p><%= f.text_field :start_date, type: 'date', required: true %><%= calendar_for('agile_sprint_start_date') %></p>
+  <p>
+    <%= label_tag l(:label_agile_sprint_duration) %>
+    <%= select_tag(:agile_sprint_duration, options_for_select(duration_values_for_select)) %>
+  </p>
+  <p><%= f.text_field :end_date, type: 'date', required: true %><%= calendar_for('agile_sprint_end_date') %></p>
+
+</div>

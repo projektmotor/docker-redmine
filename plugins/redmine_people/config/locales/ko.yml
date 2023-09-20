@@ -1,0 +1,61 @@
+# encoding: utf-8
+# Korean strings go here for Rails i18n
+ko:
+  label_people: 임직원
+  label_people_edit_person: 일반정보 수정
+  label_people_new_person: 신규 사원
+  label_people_group_plular: 부서
+  label_people_search: 이름으로 찾기
+  label_people_show_on_map: 구글 맵으로 보기
+  label_people_person: 개인정보
+  label_people_all: 모든 직원 보기
+  label_people_next_birthdays: 생일 축하해주세요.
+  label_people_new_people: 신규 직원
+  label_people_male: 남성
+  label_people_female: 여성
+  label_people_settings: 임직원 설정
+
+  button_people_edit_profile: 개인설정 수정
+
+  label_people_avatar: 이미지
+  label_people_job_title: 업무
+  label_people_phone: 전화번호
+  label_people_phone_plural: 전화번호
+  label_people_skype: Skype
+  label_people_twitter: Twitter
+  label_people_facebook: Facebook
+  label_people_linkedin: linkedin
+  label_people_middlename: Middle name
+  label_people_background: 설명
+  label_people_address: 주소
+  label_people_gender: 성별
+  label_people_birthday: 생일
+  label_people_appearance_date: 가입 날짜
+  label_people_age: 나이
+
+  people_permission_edit_people: 직원 수정
+  people_permission_view_people: 직원 보기
+  people_permission_add_people: 직원 추가
+  people_permission_delete_people: 직원 삭제
+  people_permission_add_attachments: Add atthachments
+
+  #0.0.2
+  label_people_acl_settings: ACL 설정
+  label_people_visibility: 직원 보여주기 옵션
+  label_people_visibility_select: 임직원 보기
+  label_people_visibility_resistered: 등록된 사용자에 한해
+  label_people_visibility_selected: 선택된 사용자에 한해
+  label_people_visibility_anonymous: 모든 사용자에 한해
+
+  #0.0.3
+  label_department_plural: 팀
+  label_department_new: 새로운 팀
+  label_department: 팀
+  label_department_head: Head
+  label_people_department: 팀
+  label_people_at_department: 소속
+  field_department_parent: Subdepartment of
+  people_permission_edit_departments: 팀 수정
+
+  #0.1.5
+  people_permission_delete_departments: 팀 삭제

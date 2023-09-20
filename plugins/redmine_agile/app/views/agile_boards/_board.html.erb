@@ -1,0 +1,60 @@
+
+<%= agile_render_query_totals(@query) %>
+<%= form_tag({}) do -%>
+  <%= hidden_field_tag 'back_url', url_for(params.respond_to?(:to_unsafe_hash) ? params.to_unsafe_hash : params) %>
+  <%= hidden_field_tag 'project_id', @project.id if @project %>
+  <div class="agile-board autoscroll">
+    <div class="flash error" style="display: none;" id="agile-board-errors">
+    </div>
+    <table class="list issues-board <%= 'status-colors' if RedmineAgile.status_colors? %> <%= 'minimize-closed' if RedmineAgile.minimize_closed? %>">
+    <div class='lock'> </div>
+      <thead>
+      <%= render_board_headers(@board_columns) %>
+      </thead>
+      <% if @swimlanes.size > 0 %>
+        <tr class="group">
+          <% if @query.backlog_column? %>
+            <%= render partial: 'backlog_column', locals: { query: @query, rowspan: 9999 } %>
+          <% end %>
+          <% @swimlanes.each do |swimlane| %>
+            <tr class="group <%= 'open' if @closed_swimline_ids.exclude?(swimlane.try(:id).to_s) %> swimlane" data-id="<%= swimlane && swimlane.id || swimlane %>">
+              <td colspan="<%= @board_columns.size %>">
+                <span class="expander icon icon-expended icon-expanded" onclick="toggleRowGroup(this);">&nbsp;</span>
+                <%= swimlane.blank? ? l(:label_none) : format_swimlane_object(swimlane) %>
+                <span class="badge badge-count count"><%= @query.issue_count_by_swimlane[swimlane && swimlane.id || swimlane] %></span>
+                <span class="totals"><%= agile_group_totals(@query, swimlane) %></span>
+                <%= link_to_function("#{l(:button_collapse_all)}/#{l(:button_expand_all)}",
+                                     "toggleAllRowGroups(this)", :class => 'toggle-all') %>
+              </td>
+            </tr>
+
+            <tr style="text-align: center;white-space: nowrap; <%= 'display: none;' if @closed_swimline_ids.include?(swimlane.try(:id).to_s) %>" class="swimlane issue <%= cycle('odd', 'even') %>" data-id="<%= swimlane && swimlane.id || swimlane %>" data-field="<%= @query.grouped? && "#{@query.group_by_column.name}_id" %>">
+              <% @board_columns.each do |column| %>
+                <% column_issues = @issue_board[[column.id, swimlane && swimlane.id || swimlane]] || [] %>
+                <td class="issue-status-col <%= 'closed' if column.is_closed? %> <%= column.wp_class if column.respond_to?(:wp_class) %> <%= 'empty' if column_issues.empty? %>" data-id="<%= column.id %>">
+                <% column_issues.each do |issue| %>
+                  <%= render :partial => 'issue_card', locals: { issue: issue } %>
+                <% end if @issue_board[[column.id, swimlane && swimlane.id || swimlane]] %>
+                </td>
+                <% end %>
+            </tr>
+          <% end %>
+          </td>
+        </tr>
+      <% else %>
+        <tr style="text-align: center;white-space: nowrap;" class="issue <%= cycle('odd', 'even') %>">
+        <%= render partial: 'backlog_column', locals: { query: @query, rowspan: 0 } if @query.backlog_column? %>
+        <% @board_columns.each do |column| %>
+          <% column_issues = @issue_board[[column.id]] || [] %>
+            <td class="issue-status-col <%= 'closed' if column.is_closed? %> <%= 'collapse' if RedmineAgile.hide_closed_issues_data? %> <%= column.wp_class if column.respond_to?(:wp_class) %> <%= 'empty' if column_issues.empty? %>" data-id="<%= column.id %>">
+              <% column_issues.each do |issue| %>
+                <%= render :partial => 'issue_card', :locals => {:issue => issue} %>
+              <% end if @issue_board[[column.id]] %>
+              <%= render(:partial => 'add_issue_card') if @allowed_statuses.include?(column) && !column.is_closed? %>
+            </td>
+          <% end %>
+        </tr>
+      <% end %>
+    </table>
+</div>
+<% end %>

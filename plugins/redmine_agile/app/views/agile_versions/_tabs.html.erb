@@ -1,0 +1,10 @@
+<div class="tabs hide-when-print">
+  <ul>
+    <li><%= link_to(l(:label_agile_version_plural), project_agile_versions_path(@project, params: { set_filter: 1, sort: '' }),
+                                                    class: (@tab_versions || !@project.agile_sprints_any? ? 'selected' : nil)) %></li>
+    <% if @project.agile_sprints_any? && User.current.allowed_to?(:manage_sprints, @project) %>
+      <li><%= link_to(l(:label_agile_sprint_plural), sprints_project_agile_versions_path(@project, params: { set_filter: 1, sort: '' }),
+                                                     class: (@tab_sprints ? 'selected' : nil)) %></li>
+    <% end %>
+  </ul>
+</div>

@@ -1,0 +1,60 @@
+# Japanese strings go here for Rails i18n
+ja:
+  label_people: 個人情報
+  label_people_edit_person: 個人情報の編集
+  label_people_new_person: 個人の新規登録
+  label_people_group_plular: グループ
+  label_people_search: 名前で検索
+  label_people_show_on_map: 地図で表示
+  label_people_person: 個人
+  label_people_all: 全員を表示
+  label_people_next_birthdays: 直近の誕生日
+  label_people_new_people: 個人の新規登録
+  label_people_male: 男性
+  label_people_female: 女性
+  label_people_settings: ピープル設定
+
+  button_people_edit_profile: プロフィルの編集
+
+  label_people_avatar: 画像
+  label_people_job_title: 役職
+  label_people_phone: 電話番号
+  label_people_phone_plural: 電話番号
+  label_people_skype: Skype
+  label_people_twitter: Twitter
+  label_people_facebook: Facebook
+  label_people_linkedin: LinkedIn
+  label_people_middlename: ミドルネーム
+  label_people_background: 背景情報
+  label_people_address: 住所
+  label_people_gender: 性別
+  label_people_birthday: 誕生日
+  label_people_appearance_date: 初期アクセス日
+  label_people_age: 年齢
+
+  people_permission_edit_people: ピープルの編集
+  people_permission_view_people: ピープルの閲覧
+  people_permission_add_people: ピープルの追加
+  people_permission_delete_people: ピープルの削除
+  people_permission_add_attachments: 添付ファイルの追加
+
+  #0.0.2
+  label_people_acl_settings: ACL設定
+  label_people_visibility: 表示出来る個人情報
+  label_people_visibility_select: 個人情報が表示出来るユーザー
+  label_people_visibility_resistered: 登録されているユーザー
+  label_people_visibility_selected: 特定のユーザー
+  label_people_visibility_anonymous: 匿名ユーザー
+
+  #0.0.3
+  label_department_plural: 部門
+  label_department_new: 新規部門
+  label_department: 部門
+  label_department_head: 長
+  label_people_department: Department
+  label_people_at_department: at
+  field_department_parent: Subdepartment of
+  people_permission_edit_departments: 部門の編集
+
+  #0.1.5
+  people_permission_delete_departments: 部門の削除

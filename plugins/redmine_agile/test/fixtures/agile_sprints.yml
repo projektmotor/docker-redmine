@@ -1,0 +1,16 @@
+agile_sprint_1:
+  id: 1
+  project_id: 1
+  name: "Test sprint 1"
+  description: "Test sprint 1 goal"
+  status: 0
+  start_date: "<%= (Time.now - 1.day).to_s(:db) %>"
+  end_date: "<%= (Time.now + 14.day).to_s(:db) %>"
+agile_sprint_2:
+  id: 2
+  project_id: 1
+  name: "Test sprint 2"
+  description: "Test sprint 2 desc"
+  status: 0
+  start_date: "<%= (Time.now + 15.day).to_s(:db) %>"
+  end_date: "<%= (Time.now + 30.day).to_s(:db) %>"

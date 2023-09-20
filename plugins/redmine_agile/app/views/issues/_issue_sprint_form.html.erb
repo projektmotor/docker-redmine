@@ -1,0 +1,14 @@
+
+<div class="splitcontentleft">
+  <% if User.current.allowed_to?(:manage_sprints, @issue.project) %>
+    <%= form.fields_for :agile_data do |f| %>
+      <% if @issue.project.agile_sprints_any? %>
+        <p>
+          <%= f.select :agile_sprint_id, sprint_values_for_select_for(@issue.project), include_blank: true %>
+        </p>
+      <% else %>
+        <%= f.hidden_field :agile_sprint_id, value: 0 %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

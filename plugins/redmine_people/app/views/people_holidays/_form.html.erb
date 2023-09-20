@@ -1,0 +1,60 @@
+<%= labelled_fields_for :holiday, @holiday do |f| %>
+
+    <div class="splitcontent">
+      <div class="splitcontentleft">
+        <p><%= f.text_field :name, :label => l(:label_people_holiday_name), :size => 20, :maxlength => 255, :required => true %></p>
+
+        <p><%= f.check_box :is_workday, :label => l(:label_people_holiday_is_workday) %></p>
+      </div>
+      <div class="splitcontentright">
+
+        <p id="start_date_area">
+          <%= f.text_field(:start_date, :label => l(:label_people_holiday_start_date), :size => 10, :required => true, :type => :date) %>
+          <%= calendar_for('holiday_start_date') %>
+        </p>
+
+        <p id="end_date_area">
+          <%= f.text_field(:end_date, :label => l(:label_people_holiday_end_date), :size => 10, :type => :date) %>
+          <%= calendar_for('holiday_end_date') %>
+        </p>
+      </div>
+    </div>
+
+    <p>
+      <%= f.label_for_field :description %>
+      <%= content_tag 'span', :id => "holiday_description_and_toolbar" do %>
+          <%= f.text_area :description,
+                          :cols => 60,
+                          :rows => (@holiday.description.blank? ? 10 : [[10, @holiday.description.length / 50].max, 100].min),
+                          :accesskey => accesskey(:edit),
+                          :class => 'wiki-edit',
+                          :no_label => true %>
+      <% end %>
+    </p>
+    <%= wikitoolbar_for 'holiday_description' %>
+
+    <% if @holiday.new_record? %>
+      <p><%= label_tag :notify_check, l(:label_people_holiday_notify) %><%= check_box_tag :notify_check, '1', params[:notify_check] == '1' %></p>
+      <p style="display: none;"><%= f.select :notify, notify_options_for_select, :label => '' %></p>
+    <% end %>
+
+<% end %>
+
+<%= javascript_tag do %>
+    $.toggle_notify_people = function() {
+      var checkbox = $('#notify_check');
+      var select = $('#holiday_notify').closest('p');
+      if (checkbox.is(':checked')) {
+        select.show();
+      } else {
+        select.find('option').prop('selected', '');
+        select.hide();
+      }
+    };
+
+    $.toggle_notify_people();
+
+    $('#notify_check').on('click', function() {
+      $.toggle_notify_people();
+    })
+<% end if @holiday.new_record? %>

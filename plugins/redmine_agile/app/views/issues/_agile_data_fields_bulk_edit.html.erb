@@ -1,0 +1,8 @@
+
+<%= render :partial => 'issues_sprints_bulk_edit' %>
+<%= render :partial => 'issues_colors_bulk_edit' %>
+<%= render :partial => 'issues_story_points_bulk_edit' %>
+
+<% content_for :header_tags do %>
+  <%= javascript_include_tag "redmine_agile", :plugin => 'redmine_agile' %>
+<% end %>

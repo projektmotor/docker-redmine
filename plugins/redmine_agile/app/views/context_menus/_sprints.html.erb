@@ -1,0 +1,23 @@
+<% if @can[:edit] && (@project.try(:agile_sprints_any?) || AgileSprint.common_for_projects(@projects).any? || AgileSprint.system.any?) %>
+  <li class="folder">
+    <a href="#" class="submenu"><%= l(:label_agile_sprint) %></a>
+    <ul>
+    <% sp_ids = @project.shared_agile_sprints.pluck(:id) if @project %>
+    <% sp_ids ||= AgileSprint.common_for_projects(@projects).pluck(:id) if AgileSprint.common_for_projects(@projects).any? %>
+    <% sp_ids ||= [0] %>
+    <% AgileSprint.where("sharing = ? OR id IN (?)", AgileSprint.sharings[:system], sp_ids).available.each do |agile_sprint| %>
+        <li><%= context_menu_link agile_sprint.to_s,
+                                  bulk_update_issues_path(ids: @issue_ids,
+                                                          issue: { agile_data_attributes: { id: @issue.try(:agile_data).try(:id), agile_sprint_id: agile_sprint.id } },
+                                                          back_url: @back),
+                                                          method: :post,
+                                                          selected: (@issue && @issue.agile_sprint == agile_sprint) %></li>
+    <% end -%>
+    <li><%= context_menu_link l(:label_none), bulk_update_issues_path(ids: @issue_ids,
+                                                                      issue: { agile_data_attributes: { id: @issue.try(:agile_data).try(:id), agile_sprint_id: nil } },
+                                                                      back_url: @back),
+                                                                      method: :post,
+                                                                      selected: (@issue && @issue.agile_sprint.nil?) %></li>
+    </ul>
+  </li>
+<% end %>

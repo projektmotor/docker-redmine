@@ -1,0 +1,14 @@
+api.project_id @project.id
+api.project_name @project.name
+
+api.array :sprints do
+  @sprints.each do |sprint|
+    api.sprint do
+      api.id sprint.id
+      api.name sprint.name
+      api.description sprint.description
+      api.start_date sprint.start_date
+      api.end_date sprint.end_date
+    end
+  end
+end

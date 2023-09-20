@@ -1,0 +1,35 @@
+<div class="contextual">
+<%= link_to l(:label_department_new), {:controller => 'departments', :action => 'new'}, :class => 'icon icon-add' if User.current.allowed_people_to?(:manage_departments) %>
+</div>
+
+<h2><%=l(:label_department_plural)%></h2>
+
+<% if @departments.any? %>
+<div class="autoscroll">
+<table class="list">
+  <thead><tr>
+  <th><%=l(:label_department)%></th>
+  <th><%=l(:label_department_head)%></th>
+  <% if User.current.allowed_people_to?(:manage_departments) %>
+  <th></th>
+  <% end %>
+  </tr></thead>
+  <tbody>
+<% department_tree(@departments) do |department, level| %>
+  <tr class="<%= cycle("odd", "even") %> <%= department.css_classes %> <%= level > 0 ? "idnt idnt-#{level}" : nil %>">
+  <td class="name"><span><%= link_to department, department_path(department) %></span></td>
+  <td align="center"><%= link_to_user(department.head) %></td>
+  <% if User.current.allowed_people_to?(:manage_departments) %>
+  <td class="buttons">
+    <%= link_to(l(:button_edit), edit_department_path(department), :class => 'icon icon-edit') %>
+    <%= link_to(l(:button_delete), department_path(department, :from => params[:controller]), :method => :delete, :class => 'icon icon-del') %>
+  </td>
+  <% end %>
+  </tr>
+<% end %>
+  </tbody>
+</table>
+</div>
+<% else %>
+<p class="nodata"><%= l(:label_no_data) %></p>
+<% end %>

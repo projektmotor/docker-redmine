@@ -1,0 +1,192 @@
+== Redmine People plugin changelog
+
+Redmine People plugin - User management plugin for redmine
+Copyright (C) 2011-2023 RedmineUP
+http://www.redmineup.com/
+
+== 2023-01-26 v1.6.3
+
+* Added leave requests
+* Added Hungarian translation (Krisztian Engi)
+* Fixed attachments error
+* Fixed textarea preview
+* Fixed grouped order for people list
+
+== 2022-04-11 v1.6.2
+
+* Fixed disabled gravatar bug
+* Fixed announcement description error
+* Fixed empty next year events
+* Redmine 5.0 compatibility
+
+== 2021-05-20 v1.6.1
+
+* Added Redmine 4.2 compatibility
+* Fixed MSSQL birthday error
+* Fixed vcard version for old rubies
+* Fixed LDAP source error on People create
+* Fixed avatar displaying bug for HTTP protocol
+* Fixed reports permission bug
+* Fixed people permission error
+* Updated DE locale
+* Updated BR locale
+
+== 2020-11-10 v1.6.0
+
+* Added department announcements
+* Fixed work expirence date fields
+* Fixed age announcement bug
+* Fixed leave creation alert
+
+== 2020-08-24 v1.5.2
+
+* Added select2 for tags
+* Dayoffs added to Calendar page
+* Portugal locale updated
+* Chinese locale updated
+* Taiwanese locale updated
+* Removed tags migrations
+* Fixed group-by error
+* Fixed last month bug for perfomance chart
+* Fixed initial install error
+* Updated vcard gem versions
+
+== 2020-02-18 v1.5.1
+
+* Costs and rates moved to Budgets plugin
+* Added Italian locale (Marco Congia)
+* Changed Chinese locale (Zelphar Yang)
+
+== 2020-02-18 v1.5.0
+
+* Organization chart
+* Leave management
+* Redmine 4.1 support
+* Fixed issue csv export bug
+* Fixed delete redirect bug
+
+
+== 2019-05-22 v1.4.1
+
+* User activity report
+* Costs filter and columns for time entries list
+* Fixed tags filter
+
+== 2018-09-12 v1.4.0
+
+* Redmine 4 support
+* Person Cost and Bill rates
+* Workday length
+* Person performance based on workday length
+* Fixed age for birthdays date
+* Fixed deleted issue error
+
+== 2017-09-22 v1.3.2
+
+* Bulk edit
+* Added email filter
+* Visibility rules for people custom fields
+
+== 2017-06-01 v1.3.1
+
+* Holidays email announcement
+* Next holidays on sidebar
+* Select2 control for filters and manager selection
+* Redmine 3.4 support
+* Chinese translation update
+* Birthdays announcement critical bug fixed
+
+== 2017-03-20 v1.3.0
+
+* Work experience tab
+* Calendar
+* Holidays list
+* Add manage_departments permission
+* Default group setting
+* Searching popup with autocomplete for manager field
+* Birthday notifications compatibility fixes
+* Phone icon fixed
+* Notifications renamed to Announcements
+* Chinese translation (Zuofeng Zhang)
+
+== 2016-03-09 v1.2.0
+
+* Activity and files for deparments
+* Notifications and birthdays notifications
+* Managers and subordinates with edit permissions
+* Pagination fix for Redmine 3.2+
+* Fixed bug with self registration
+* Fixed light version 500 error
+
+== 2015-12-11 v1.1.1
+
+* Edit own data restriction setting
+* System users (not shown in list by default)
+* Async tabs load on person page
+* Hide age setting
+* Editable ACL settings
+
+== 2015-11-06 v1.1.0
+
+* People queries
+* Tags for people
+* Fixed bug with user custom fields override
+* Facebook avatars excluded
+
+== 2015-09-23 v1.0.0
+
+* Redmine 3.1 support
+* Lock/Unlock link instead delete
+* Spanish translation update (Leandro Russo)
+* Czech translation (Zdenek Mikovec)
+* Twitter avatars exlcuded
+* Portuguese translation update (Rui Rebelo)
+* Swedish translation update (Khedron Wilk)
+* Spanish Translation update (Luis Blasco)
+* Chinese Translation (zhoutt)
+
+== 2014-03-26 v0.1.8
+
+* Fixed bug with CRM plugin relation
+
+== 2014-03-25 v0.1.7
+
+* Permission for view people
+* Ruby 2.0.0 support (vpim gem changed to vcard)
+* Dutch translation
+* Tukish translation (Giray Pultar)
+* Serbian translation (Miodrag Milić)
+* German translation (Bastian Lüttig)
+* Japanese tranlation (Stephane Lapie)
+* Slovak tranlation (Martin Bucko)
+* Spanish tranlation (Martin Roberto Tolava)
+* Fixed bug for group permissions
+
+== 2013-01-31 v0.1.5
+
+* Fixed bug with departments
+
+== 2013-01-22 v0.1.4
+
+* Edit button for showing departments list from people list
+* Fixed bug with custom fields in Redmine 2.2
+* Fixed bug with edit departments check permissions
+* Fixed bug with avatar image
+* Departments
+* Polish locale (thanks to Rencz Jarek)
+* Bug: Cannot add Group in ACL control
+* Bug: After editing a person i people custom field values in user profile get removed
+* Facebook and Twitter profile pictures to avatar
+* Replacement of default "user" page
+* Permissions for anonymous and registered users
+* Bug: Internal error on opening people settings
+* Bug: Permissions for group now works
+
+== 2012-11-06 v0.0.1
+
+* Local avatars for users
+* Global users list with flexible ACL
+* Attachments for users
+* Person VCF export
+* Next birthdays list
+* New people list

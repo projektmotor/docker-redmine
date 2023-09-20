@@ -1,0 +1,37 @@
+<h2><%= l(:label_people_new_person) %></h2>
+
+<%= labelled_form_for @person, :html => { :multipart => true, :method => :post, :id => "person_form" }  do |f|  %>
+  <%= error_messages_for 'person' %>
+
+  <fieldset class="box tabular">
+    <legend><%=l(:label_authentication)%></legend>
+    <p><%= f.text_field :login, :required => true, :size => 25  %></p>
+    <% unless @auth_sources.empty? %>
+    <p><%= f.select :auth_source_id, ([[l(:label_internal), ""]] + @auth_sources.collect { |a| [a.name, a.id] }), {}, :onchange => "if (this.value=='') {$('#password_fields').show();} else {$('#password_fields').hide();}" %></p>
+    <% end %>
+    <div id="password_fields" style="<%= 'display:none;' if @person.auth_source %>">
+    <p><%= f.password_field :password, :required => true, :size => 25  %>
+    <em class="info"><%= l(:text_caracters_minimum, :count => Setting.password_min_length) %></em></p>
+    <p><%= f.password_field :password_confirmation, :required => true, :size => 25  %></p>
+    </div>
+  </fieldset>
+    <% if email_delivery_enabled? %>
+    <p><label><%= check_box_tag 'send_information', 1, true %> <%= l(:label_send_information) %></label></p>
+    <% end %>
+    <% if Setting.plugin_redmine_people["default_group"].present? %>
+    <%= hidden_field_tag 'person[group_ids][]', Setting.plugin_redmine_people["default_group"], :id => nil %>
+    <% end %>
+
+  <%= render :partial => 'form', :locals => {:f => f} %>
+
+  <%= submit_tag l(:button_save) -%>
+<% end -%>
+
+<% content_for :sidebar do %>
+<% end %>
+
+<% content_for :header_tags do %>
+  <%= select2_assets %>
+  <%= javascript_include_tag :redmine_people, :plugin => 'redmine_people'  %>
+  <%= robot_exclusion_tag %>
+<% end %>

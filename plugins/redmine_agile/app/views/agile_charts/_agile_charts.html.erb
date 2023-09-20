@@ -1,0 +1,15 @@
+<% if User.current.allowed_to?(:view_agile_charts, @project, :global => true) %>
+  <% queries = AgileChartsQuery.visible.where(project_id: [nil, @project.try(:id)]) %>
+  <% if queries.present? %>
+    <h3><%= l(:label_agile_chart_plural) %></h3>
+  <% end %>
+
+  <ul class=agile-chart-queries>
+    <% queries.each do |query| %>
+      <li><%= link_to_persisted_agile_chart query %></li>
+    <% end %>
+  </ul>
+<% end %>
+<% if User.current.allowed_to?(:view_agile_queries, @project, :global => true) %>
+  <%= render_sidebar_agile_queries %>
+<% end %>
